@@ -1,0 +1,2040 @@
+<?php
+
+namespace PHPMaker2024\hercules;
+
+use Doctrine\DBAL\ParameterType;
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Query\QueryBuilder;
+use Psr\Http\Message\ServerRequestInterface as Request;
+use Psr\Http\Message\ResponseInterface as Response;
+use Psr\Container\ContainerInterface;
+use Slim\Routing\RouteCollectorProxy;
+use Slim\App;
+use Closure;
+
+/**
+ * Page class
+ */
+class ScoMttotecnicoEdit extends ScoMttotecnico
+{
+    use MessagesTrait;
+
+    // Page ID
+    public $PageID = "edit";
+
+    // Project ID
+    public $ProjectID = PROJECT_ID;
+
+    // Page object name
+    public $PageObjName = "ScoMttotecnicoEdit";
+
+    // View file path
+    public $View = null;
+
+    // Title
+    public $Title = null; // Title for <title> tag
+
+    // Rendering View
+    public $RenderingView = false;
+
+    // CSS class/style
+    public $CurrentPageName = "ScoMttotecnicoEdit";
+
+    // Audit Trail
+    public $AuditTrailOnAdd = true;
+    public $AuditTrailOnEdit = true;
+    public $AuditTrailOnDelete = true;
+    public $AuditTrailOnView = false;
+    public $AuditTrailOnViewData = false;
+    public $AuditTrailOnSearch = false;
+
+    // Page headings
+    public $Heading = "";
+    public $Subheading = "";
+    public $PageHeader;
+    public $PageFooter;
+
+    // Page layout
+    public $UseLayout = true;
+
+    // Page terminated
+    private $terminated = false;
+
+    // Page heading
+    public function pageHeading()
+    {
+        global $Language;
+        if ($this->Heading != "") {
+            return $this->Heading;
+        }
+        if (method_exists($this, "tableCaption")) {
+            return $this->tableCaption();
+        }
+        return "";
+    }
+
+    // Page subheading
+    public function pageSubheading()
+    {
+        global $Language;
+        if ($this->Subheading != "") {
+            return $this->Subheading;
+        }
+        if ($this->TableName) {
+            return $Language->phrase($this->PageID);
+        }
+        return "";
+    }
+
+    // Page name
+    public function pageName()
+    {
+        return CurrentPageName();
+    }
+
+    // Page URL
+    public function pageUrl($withArgs = true)
+    {
+        $route = GetRoute();
+        $args = RemoveXss($route->getArguments());
+        if (!$withArgs) {
+            foreach ($args as $key => &$val) {
+                $val = "";
+            }
+            unset($val);
+        }
+        return rtrim(UrlFor($route->getName(), $args), "/") . "?";
+    }
+
+    // Show Page Header
+    public function showPageHeader()
+    {
+        $header = $this->PageHeader;
+        $this->pageDataRendering($header);
+        if ($header != "") { // Header exists, display
+            echo '<div id="ew-page-header">' . $header . '</div>';
+        }
+    }
+
+    // Show Page Footer
+    public function showPageFooter()
+    {
+        $footer = $this->PageFooter;
+        $this->pageDataRendered($footer);
+        if ($footer != "") { // Footer exists, display
+            echo '<div id="ew-page-footer">' . $footer . '</div>';
+        }
+    }
+
+    // Set field visibility
+    public function setVisibility()
+    {
+        $this->Nmttotecnico->setVisibility();
+        $this->fecha_registro->Visible = false;
+        $this->user_solicita->Visible = false;
+        $this->tipo_solicitud->setVisibility();
+        $this->unidad_solicitante->setVisibility();
+        $this->area_falla->setVisibility();
+        $this->comentario->setVisibility();
+        $this->prioridad->setVisibility();
+        $this->estatus->setVisibility();
+        $this->falla_atendida_por->setVisibility();
+        $this->diagnostico->setVisibility();
+        $this->solucion->setVisibility();
+        $this->user_diagnostico->Visible = false;
+        $this->requiere_materiales->setVisibility();
+        $this->fecha_solucion->setVisibility();
+        $this->materiales->Visible = false;
+    }
+
+    // Constructor
+    public function __construct()
+    {
+        parent::__construct();
+        global $Language, $DashboardReport, $DebugTimer, $UserTable;
+        $this->TableVar = 'sco_mttotecnico';
+        $this->TableName = 'sco_mttotecnico';
+
+        // Table CSS class
+        $this->TableClass = "table table-striped table-bordered table-hover table-sm ew-desktop-table ew-edit-table";
+
+        // Initialize
+        $GLOBALS["Page"] = &$this;
+
+        // Language object
+        $Language = Container("app.language");
+
+        // Table object (sco_mttotecnico)
+        if (!isset($GLOBALS["sco_mttotecnico"]) || $GLOBALS["sco_mttotecnico"]::class == PROJECT_NAMESPACE . "sco_mttotecnico") {
+            $GLOBALS["sco_mttotecnico"] = &$this;
+        }
+
+        // Table name (for backward compatibility only)
+        if (!defined(PROJECT_NAMESPACE . "TABLE_NAME")) {
+            define(PROJECT_NAMESPACE . "TABLE_NAME", 'sco_mttotecnico');
+        }
+
+        // Start timer
+        $DebugTimer = Container("debug.timer");
+
+        // Debug message
+        LoadDebugMessage();
+
+        // Open connection
+        $GLOBALS["Conn"] ??= $this->getConnection();
+
+        // User table object
+        $UserTable = Container("usertable");
+    }
+
+    // Get content from stream
+    public function getContents(): string
+    {
+        global $Response;
+        return $Response?->getBody() ?? ob_get_clean();
+    }
+
+    // Is lookup
+    public function isLookup()
+    {
+        return SameText(Route(0), Config("API_LOOKUP_ACTION"));
+    }
+
+    // Is AutoFill
+    public function isAutoFill()
+    {
+        return $this->isLookup() && SameText(Post("ajax"), "autofill");
+    }
+
+    // Is AutoSuggest
+    public function isAutoSuggest()
+    {
+        return $this->isLookup() && SameText(Post("ajax"), "autosuggest");
+    }
+
+    // Is modal lookup
+    public function isModalLookup()
+    {
+        return $this->isLookup() && SameText(Post("ajax"), "modal");
+    }
+
+    // Is terminated
+    public function isTerminated()
+    {
+        return $this->terminated;
+    }
+
+    /**
+     * Terminate page
+     *
+     * @param string $url URL for direction
+     * @return void
+     */
+    public function terminate($url = "")
+    {
+        if ($this->terminated) {
+            return;
+        }
+        global $TempImages, $DashboardReport, $Response;
+
+        // Page is terminated
+        $this->terminated = true;
+
+        // Page Unload event
+        if (method_exists($this, "pageUnload")) {
+            $this->pageUnload();
+        }
+        DispatchEvent(new PageUnloadedEvent($this), PageUnloadedEvent::NAME);
+        if (!IsApi() && method_exists($this, "pageRedirecting")) {
+            $this->pageRedirecting($url);
+        }
+
+        // Close connection
+        CloseConnections();
+
+        // Return for API
+        if (IsApi()) {
+            $res = $url === true;
+            if (!$res) { // Show response for API
+                $ar = array_merge($this->getMessages(), $url ? ["url" => GetUrl($url)] : []);
+                WriteJson($ar);
+            }
+            $this->clearMessages(); // Clear messages for API request
+            return;
+        } else { // Check if response is JSON
+            if (WithJsonResponse()) { // With JSON response
+                $this->clearMessages();
+                return;
+            }
+        }
+
+        // Go to URL if specified
+        if ($url != "") {
+            if (!Config("DEBUG") && ob_get_length()) {
+                ob_end_clean();
+            }
+
+            // Handle modal response
+            if ($this->IsModal) { // Show as modal
+                $pageName = GetPageName($url);
+                $result = ["url" => GetUrl($url), "modal" => "1"];  // Assume return to modal for simplicity
+                if (
+                    SameString($pageName, GetPageName($this->getListUrl())) ||
+                    SameString($pageName, GetPageName($this->getViewUrl())) ||
+                    SameString($pageName, GetPageName(CurrentMasterTable()?->getViewUrl() ?? ""))
+                ) { // List / View / Master View page
+                    if (!SameString($pageName, GetPageName($this->getListUrl()))) { // Not List page
+                        $result["caption"] = $this->getModalCaption($pageName);
+                        $result["view"] = SameString($pageName, "ScoMttotecnicoView"); // If View page, no primary button
+                    } else { // List page
+                        $result["error"] = $this->getFailureMessage(); // List page should not be shown as modal => error
+                        $this->clearFailureMessage();
+                    }
+                } else { // Other pages (add messages and then clear messages)
+                    $result = array_merge($this->getMessages(), ["modal" => "1"]);
+                    $this->clearMessages();
+                }
+                WriteJson($result);
+            } else {
+                SaveDebugMessage();
+                Redirect(GetUrl($url));
+            }
+        }
+        return; // Return to controller
+    }
+
+    // Get records from result set
+    protected function getRecordsFromRecordset($rs, $current = false)
+    {
+        $rows = [];
+        if (is_object($rs)) { // Result set
+            while ($row = $rs->fetch()) {
+                $this->loadRowValues($row); // Set up DbValue/CurrentValue
+                $row = $this->getRecordFromArray($row);
+                if ($current) {
+                    return $row;
+                } else {
+                    $rows[] = $row;
+                }
+            }
+        } elseif (is_array($rs)) {
+            foreach ($rs as $ar) {
+                $row = $this->getRecordFromArray($ar);
+                if ($current) {
+                    return $row;
+                } else {
+                    $rows[] = $row;
+                }
+            }
+        }
+        return $rows;
+    }
+
+    // Get record from array
+    protected function getRecordFromArray($ar)
+    {
+        $row = [];
+        if (is_array($ar)) {
+            foreach ($ar as $fldname => $val) {
+                if (array_key_exists($fldname, $this->Fields) && ($this->Fields[$fldname]->Visible || $this->Fields[$fldname]->IsPrimaryKey)) { // Primary key or Visible
+                    $fld = &$this->Fields[$fldname];
+                    if ($fld->HtmlTag == "FILE") { // Upload field
+                        if (EmptyValue($val)) {
+                            $row[$fldname] = null;
+                        } else {
+                            if ($fld->DataType == DataType::BLOB) {
+                                $url = FullUrl(GetApiUrl(Config("API_FILE_ACTION") .
+                                    "/" . $fld->TableVar . "/" . $fld->Param . "/" . rawurlencode($this->getRecordKeyValue($ar))));
+                                $row[$fldname] = ["type" => ContentType($val), "url" => $url, "name" => $fld->Param . ContentExtension($val)];
+                            } elseif (!$fld->UploadMultiple || !ContainsString($val, Config("MULTIPLE_UPLOAD_SEPARATOR"))) { // Single file
+                                $url = FullUrl(GetApiUrl(Config("API_FILE_ACTION") .
+                                    "/" . $fld->TableVar . "/" . Encrypt($fld->physicalUploadPath() . $val)));
+                                $row[$fldname] = ["type" => MimeContentType($val), "url" => $url, "name" => $val];
+                            } else { // Multiple files
+                                $files = explode(Config("MULTIPLE_UPLOAD_SEPARATOR"), $val);
+                                $ar = [];
+                                foreach ($files as $file) {
+                                    $url = FullUrl(GetApiUrl(Config("API_FILE_ACTION") .
+                                        "/" . $fld->TableVar . "/" . Encrypt($fld->physicalUploadPath() . $file)));
+                                    if (!EmptyValue($file)) {
+                                        $ar[] = ["type" => MimeContentType($file), "url" => $url, "name" => $file];
+                                    }
+                                }
+                                $row[$fldname] = $ar;
+                            }
+                        }
+                    } else {
+                        $row[$fldname] = $val;
+                    }
+                }
+            }
+        }
+        return $row;
+    }
+
+    // Get record key value from array
+    protected function getRecordKeyValue($ar)
+    {
+        $key = "";
+        if (is_array($ar)) {
+            $key .= @$ar['Nmttotecnico'];
+        }
+        return $key;
+    }
+
+    /**
+     * Hide fields for add/edit
+     *
+     * @return void
+     */
+    protected function hideFieldsForAddEdit()
+    {
+        if ($this->isAdd() || $this->isCopy() || $this->isGridAdd()) {
+            $this->Nmttotecnico->Visible = false;
+        }
+    }
+
+    // Lookup data
+    public function lookup(array $req = [], bool $response = true)
+    {
+        global $Language, $Security;
+
+        // Get lookup object
+        $fieldName = $req["field"] ?? null;
+        if (!$fieldName) {
+            return [];
+        }
+        $fld = $this->Fields[$fieldName];
+        $lookup = $fld->Lookup;
+        $name = $req["name"] ?? "";
+        if (ContainsString($name, "query_builder_rule")) {
+            $lookup->FilterFields = []; // Skip parent fields if any
+        }
+
+        // Get lookup parameters
+        $lookupType = $req["ajax"] ?? "unknown";
+        $pageSize = -1;
+        $offset = -1;
+        $searchValue = "";
+        if (SameText($lookupType, "modal") || SameText($lookupType, "filter")) {
+            $searchValue = $req["q"] ?? $req["sv"] ?? "";
+            $pageSize = $req["n"] ?? $req["recperpage"] ?? 10;
+        } elseif (SameText($lookupType, "autosuggest")) {
+            $searchValue = $req["q"] ?? "";
+            $pageSize = $req["n"] ?? -1;
+            $pageSize = is_numeric($pageSize) ? (int)$pageSize : -1;
+            if ($pageSize <= 0) {
+                $pageSize = Config("AUTO_SUGGEST_MAX_ENTRIES");
+            }
+        }
+        $start = $req["start"] ?? -1;
+        $start = is_numeric($start) ? (int)$start : -1;
+        $page = $req["page"] ?? -1;
+        $page = is_numeric($page) ? (int)$page : -1;
+        $offset = $start >= 0 ? $start : ($page > 0 && $pageSize > 0 ? ($page - 1) * $pageSize : 0);
+        $userSelect = Decrypt($req["s"] ?? "");
+        $userFilter = Decrypt($req["f"] ?? "");
+        $userOrderBy = Decrypt($req["o"] ?? "");
+        $keys = $req["keys"] ?? null;
+        $lookup->LookupType = $lookupType; // Lookup type
+        $lookup->FilterValues = []; // Clear filter values first
+        if ($keys !== null) { // Selected records from modal
+            if (is_array($keys)) {
+                $keys = implode(Config("MULTIPLE_OPTION_SEPARATOR"), $keys);
+            }
+            $lookup->FilterFields = []; // Skip parent fields if any
+            $lookup->FilterValues[] = $keys; // Lookup values
+            $pageSize = -1; // Show all records
+        } else { // Lookup values
+            $lookup->FilterValues[] = $req["v0"] ?? $req["lookupValue"] ?? "";
+        }
+        $cnt = is_array($lookup->FilterFields) ? count($lookup->FilterFields) : 0;
+        for ($i = 1; $i <= $cnt; $i++) {
+            $lookup->FilterValues[] = $req["v" . $i] ?? "";
+        }
+        $lookup->SearchValue = $searchValue;
+        $lookup->PageSize = $pageSize;
+        $lookup->Offset = $offset;
+        if ($userSelect != "") {
+            $lookup->UserSelect = $userSelect;
+        }
+        if ($userFilter != "") {
+            $lookup->UserFilter = $userFilter;
+        }
+        if ($userOrderBy != "") {
+            $lookup->UserOrderBy = $userOrderBy;
+        }
+        return $lookup->toJson($this, $response); // Use settings from current page
+    }
+
+    // Properties
+    public $FormClassName = "ew-form ew-edit-form overlay-wrapper";
+    public $IsModal = false;
+    public $IsMobileOrModal = false;
+    public $DbMasterFilter;
+    public $DbDetailFilter;
+    public $HashValue; // Hash Value
+    public $DisplayRecords = 1;
+    public $StartRecord;
+    public $StopRecord;
+    public $TotalRecords = 0;
+    public $RecordRange = 10;
+    public $RecordCount;
+
+    /**
+     * Page run
+     *
+     * @return void
+     */
+    public function run()
+    {
+        global $ExportType, $Language, $Security, $CurrentForm, $SkipHeaderFooter;
+
+        // Is modal
+        $this->IsModal = ConvertToBool(Param("modal"));
+        $this->UseLayout = $this->UseLayout && !$this->IsModal;
+
+        // Use layout
+        $this->UseLayout = $this->UseLayout && ConvertToBool(Param(Config("PAGE_LAYOUT"), true));
+
+        // View
+        $this->View = Get(Config("VIEW"));
+
+        // Load user profile
+        if (IsLoggedIn()) {
+            Profile()->setUserName(CurrentUserName())->loadFromStorage();
+        }
+
+        // Create form object
+        $CurrentForm = new HttpForm();
+        $this->CurrentAction = Param("action"); // Set up current action
+        $this->setVisibility();
+        $this->tipo_solicitud->Required = false;
+        $this->unidad_solicitante->Required = false;
+        $this->area_falla->Required = false;
+        $this->prioridad->Required = false;
+
+        // Set lookup cache
+        if (!in_array($this->PageID, Config("LOOKUP_CACHE_PAGE_IDS"))) {
+            $this->setUseLookupCache(false);
+        }
+
+        // Global Page Loading event (in userfn*.php)
+        DispatchEvent(new PageLoadingEvent($this), PageLoadingEvent::NAME);
+
+        // Page Load event
+        if (method_exists($this, "pageLoad")) {
+            $this->pageLoad();
+        }
+
+        // Hide fields for add/edit
+        if (!$this->UseAjaxActions) {
+            $this->hideFieldsForAddEdit();
+        }
+        // Use inline delete
+        if ($this->UseAjaxActions) {
+            $this->InlineDelete = true;
+        }
+
+        // Set up lookup cache
+        $this->setupLookupOptions($this->user_solicita);
+        $this->setupLookupOptions($this->tipo_solicitud);
+        $this->setupLookupOptions($this->unidad_solicitante);
+        $this->setupLookupOptions($this->area_falla);
+        $this->setupLookupOptions($this->prioridad);
+        $this->setupLookupOptions($this->estatus);
+        $this->setupLookupOptions($this->falla_atendida_por);
+        $this->setupLookupOptions($this->requiere_materiales);
+
+        // Check modal
+        if ($this->IsModal) {
+            $SkipHeaderFooter = true;
+        }
+        $this->IsMobileOrModal = IsMobile() || $this->IsModal;
+
+        // Load record by position
+        $loadByPosition = false;
+        $loaded = false;
+        $postBack = false;
+
+        // Set up current action and primary key
+        if (IsApi()) {
+            // Load key values
+            $loaded = true;
+            if (($keyValue = Get("Nmttotecnico") ?? Key(0) ?? Route(2)) !== null) {
+                $this->Nmttotecnico->setQueryStringValue($keyValue);
+                $this->Nmttotecnico->setOldValue($this->Nmttotecnico->QueryStringValue);
+            } elseif (Post("Nmttotecnico") !== null) {
+                $this->Nmttotecnico->setFormValue(Post("Nmttotecnico"));
+                $this->Nmttotecnico->setOldValue($this->Nmttotecnico->FormValue);
+            } else {
+                $loaded = false; // Unable to load key
+            }
+
+            // Load record
+            if ($loaded) {
+                $loaded = $this->loadRow();
+            }
+            if (!$loaded) {
+                $this->setFailureMessage($Language->phrase("NoRecord")); // Set no record message
+                $this->terminate();
+                return;
+            }
+            $this->CurrentAction = "update"; // Update record directly
+            $this->OldKey = $this->getKey(true); // Get from CurrentValue
+            $postBack = true;
+        } else {
+            if (Post("action", "") !== "") {
+                $this->CurrentAction = Post("action"); // Get action code
+                if (!$this->isShow()) { // Not reload record, handle as postback
+                    $postBack = true;
+                }
+
+                // Get key from Form
+                $this->setKey(Post($this->OldKeyName), $this->isShow());
+            } else {
+                $this->CurrentAction = "show"; // Default action is display
+
+                // Load key from QueryString
+                $loadByQuery = false;
+                if (($keyValue = Get("Nmttotecnico") ?? Route("Nmttotecnico")) !== null) {
+                    $this->Nmttotecnico->setQueryStringValue($keyValue);
+                    $loadByQuery = true;
+                } else {
+                    $this->Nmttotecnico->CurrentValue = null;
+                }
+                if (!$loadByQuery || Get(Config("TABLE_START_REC")) !== null || Get(Config("TABLE_PAGE_NUMBER")) !== null) {
+                    $loadByPosition = true;
+                }
+            }
+
+            // Load result set
+            if ($this->isShow()) {
+                if (!$this->IsModal) { // Normal edit page
+                    $this->StartRecord = 1; // Initialize start position
+                    $this->Recordset = $this->loadRecordset(); // Load records
+                    if ($this->TotalRecords <= 0) { // No record found
+                        if ($this->getSuccessMessage() == "" && $this->getFailureMessage() == "") {
+                            $this->setFailureMessage($Language->phrase("NoRecord")); // Set no record message
+                        }
+                        $this->terminate("ScoMttotecnicoList"); // Return to list page
+                        return;
+                    } elseif ($loadByPosition) { // Load record by position
+                        $this->setupStartRecord(); // Set up start record position
+                        // Point to current record
+                        if ($this->StartRecord <= $this->TotalRecords) {
+                            $this->fetch($this->StartRecord);
+                            // Redirect to correct record
+                            $this->loadRowValues($this->CurrentRow);
+                            $url = $this->getCurrentUrl(Config("TABLE_SHOW_DETAIL") . "=" . $this->getCurrentDetailTable());
+                            $this->terminate($url);
+                            return;
+                        }
+                    } else { // Match key values
+                        if ($this->Nmttotecnico->CurrentValue != null) {
+                            while ($this->fetch()) {
+                                if (SameString($this->Nmttotecnico->CurrentValue, $this->CurrentRow['Nmttotecnico'])) {
+                                    $this->setStartRecordNumber($this->StartRecord); // Save record position
+                                    $loaded = true;
+                                    break;
+                                } else {
+                                    $this->StartRecord++;
+                                }
+                            }
+                        }
+                    }
+
+                    // Load current row values
+                    if ($loaded) {
+                        $this->loadRowValues($this->CurrentRow);
+                    }
+                } else {
+                    // Load current record
+                    $loaded = $this->loadRow();
+                } // End modal checking
+                $this->OldKey = $loaded ? $this->getKey(true) : ""; // Get from CurrentValue
+            }
+        }
+
+        // Process form if post back
+        if ($postBack) {
+            $this->loadFormValues(); // Get form values
+
+            // Set up detail parameters
+            $this->setupDetailParms();
+        }
+
+        // Validate form if post back
+        if ($postBack) {
+            if (!$this->validateForm()) {
+                $this->EventCancelled = true; // Event cancelled
+                $this->restoreFormValues();
+                if (IsApi()) {
+                    $this->terminate();
+                    return;
+                } else {
+                    $this->CurrentAction = ""; // Form error, reset action
+                }
+            }
+        }
+
+        // Perform current action
+        switch ($this->CurrentAction) {
+            case "show": // Get a record to display
+                if (!$this->IsModal) { // Normal edit page
+                    if (!$loaded) {
+                        if ($this->getSuccessMessage() == "" && $this->getFailureMessage() == "") {
+                            $this->setFailureMessage($Language->phrase("NoRecord")); // Set no record message
+                        }
+                        $this->terminate("ScoMttotecnicoList"); // Return to list page
+                        return;
+                    } else {
+                    }
+                } else { // Modal edit page
+                    if (!$loaded) { // Load record based on key
+                        if ($this->getFailureMessage() == "") {
+                            $this->setFailureMessage($Language->phrase("NoRecord")); // No record found
+                        }
+                        $this->terminate("ScoMttotecnicoList"); // No matching record, return to list
+                        return;
+                    }
+                } // End modal checking
+
+                // Set up detail parameters
+                $this->setupDetailParms();
+                break;
+            case "update": // Update
+                if ($this->getCurrentDetailTable() != "") { // Master/detail edit
+                    $returnUrl = $this->getViewUrl(Config("TABLE_SHOW_DETAIL") . "=" . $this->getCurrentDetailTable()); // Master/Detail view page
+                } else {
+                    $returnUrl = $this->getReturnUrl();
+                }
+                if (GetPageName($returnUrl) == "ScoMttotecnicoList") {
+                    $returnUrl = $this->addMasterUrl($returnUrl); // List page, return to List page with correct master key if necessary
+                }
+                $this->SendEmail = true; // Send email on update success
+                if ($this->editRow()) { // Update record based on key
+                    if ($this->getSuccessMessage() == "") {
+                        $this->setSuccessMessage($Language->phrase("UpdateSuccess")); // Update success
+                    }
+
+                    // Handle UseAjaxActions with return page
+                    if ($this->IsModal && $this->UseAjaxActions) {
+                        $this->IsModal = false;
+                        if (GetPageName($returnUrl) != "ScoMttotecnicoList") {
+                            Container("app.flash")->addMessage("Return-Url", $returnUrl); // Save return URL
+                            $returnUrl = "ScoMttotecnicoList"; // Return list page content
+                        }
+                    }
+                    if (IsJsonResponse()) {
+                        $this->terminate(true);
+                        return;
+                    } else {
+                        $this->terminate($returnUrl); // Return to caller
+                        return;
+                    }
+                } elseif (IsApi()) { // API request, return
+                    $this->terminate();
+                    return;
+                } elseif ($this->IsModal && $this->UseAjaxActions) { // Return JSON error message
+                    WriteJson(["success" => false, "validation" => $this->getValidationErrors(), "error" => $this->getFailureMessage()]);
+                    $this->clearFailureMessage();
+                    $this->terminate();
+                    return;
+                } elseif ($this->getFailureMessage() == $Language->phrase("NoRecord")) {
+                    $this->terminate($returnUrl); // Return to caller
+                    return;
+                } else {
+                    $this->EventCancelled = true; // Event cancelled
+                    $this->restoreFormValues(); // Restore form values if update failed
+
+                    // Set up detail parameters
+                    $this->setupDetailParms();
+                }
+        }
+
+        // Set up Breadcrumb
+        $this->setupBreadcrumb();
+
+        // Render the record
+        $this->RowType = RowType::EDIT; // Render as Edit
+        $this->resetAttributes();
+        $this->renderRow();
+        if (!$this->IsModal) { // Normal view page
+            $this->Pager = new PrevNextPager($this, $this->StartRecord, $this->DisplayRecords, $this->TotalRecords, "", $this->RecordRange, $this->AutoHidePager, false, false);
+            $this->Pager->PageNumberName = Config("TABLE_PAGE_NUMBER");
+            $this->Pager->PagePhraseId = "Record"; // Show as record
+        }
+
+        // Set LoginStatus / Page_Rendering / Page_Render
+        if (!IsApi() && !$this->isTerminated()) {
+            // Setup login status
+            SetupLoginStatus();
+
+            // Pass login status to client side
+            SetClientVar("login", LoginStatus());
+
+            // Global Page Rendering event (in userfn*.php)
+            DispatchEvent(new PageRenderingEvent($this), PageRenderingEvent::NAME);
+
+            // Page Render event
+            if (method_exists($this, "pageRender")) {
+                $this->pageRender();
+            }
+
+            // Render search option
+            if (method_exists($this, "renderSearchOptions")) {
+                $this->renderSearchOptions();
+            }
+        }
+    }
+
+    // Get upload files
+    protected function getUploadFiles()
+    {
+        global $CurrentForm, $Language;
+    }
+
+    // Load form values
+    protected function loadFormValues()
+    {
+        // Load from form
+        global $CurrentForm;
+        $validate = !Config("SERVER_VALIDATE");
+
+        // Check field name 'Nmttotecnico' first before field var 'x_Nmttotecnico'
+        $val = $CurrentForm->hasValue("Nmttotecnico") ? $CurrentForm->getValue("Nmttotecnico") : $CurrentForm->getValue("x_Nmttotecnico");
+        if (!$this->Nmttotecnico->IsDetailKey) {
+            $this->Nmttotecnico->setFormValue($val);
+        }
+
+        // Check field name 'tipo_solicitud' first before field var 'x_tipo_solicitud'
+        $val = $CurrentForm->hasValue("tipo_solicitud") ? $CurrentForm->getValue("tipo_solicitud") : $CurrentForm->getValue("x_tipo_solicitud");
+        if (!$this->tipo_solicitud->IsDetailKey) {
+            if (IsApi() && $val === null) {
+                $this->tipo_solicitud->Visible = false; // Disable update for API request
+            } else {
+                $this->tipo_solicitud->setFormValue($val);
+            }
+        }
+
+        // Check field name 'unidad_solicitante' first before field var 'x_unidad_solicitante'
+        $val = $CurrentForm->hasValue("unidad_solicitante") ? $CurrentForm->getValue("unidad_solicitante") : $CurrentForm->getValue("x_unidad_solicitante");
+        if (!$this->unidad_solicitante->IsDetailKey) {
+            if (IsApi() && $val === null) {
+                $this->unidad_solicitante->Visible = false; // Disable update for API request
+            } else {
+                $this->unidad_solicitante->setFormValue($val);
+            }
+        }
+
+        // Check field name 'area_falla' first before field var 'x_area_falla'
+        $val = $CurrentForm->hasValue("area_falla") ? $CurrentForm->getValue("area_falla") : $CurrentForm->getValue("x_area_falla");
+        if (!$this->area_falla->IsDetailKey) {
+            if (IsApi() && $val === null) {
+                $this->area_falla->Visible = false; // Disable update for API request
+            } else {
+                $this->area_falla->setFormValue($val);
+            }
+        }
+
+        // Check field name 'comentario' first before field var 'x_comentario'
+        $val = $CurrentForm->hasValue("comentario") ? $CurrentForm->getValue("comentario") : $CurrentForm->getValue("x_comentario");
+        if (!$this->comentario->IsDetailKey) {
+            if (IsApi() && $val === null) {
+                $this->comentario->Visible = false; // Disable update for API request
+            } else {
+                $this->comentario->setFormValue($val);
+            }
+        }
+
+        // Check field name 'prioridad' first before field var 'x_prioridad'
+        $val = $CurrentForm->hasValue("prioridad") ? $CurrentForm->getValue("prioridad") : $CurrentForm->getValue("x_prioridad");
+        if (!$this->prioridad->IsDetailKey) {
+            if (IsApi() && $val === null) {
+                $this->prioridad->Visible = false; // Disable update for API request
+            } else {
+                $this->prioridad->setFormValue($val);
+            }
+        }
+
+        // Check field name 'estatus' first before field var 'x_estatus'
+        $val = $CurrentForm->hasValue("estatus") ? $CurrentForm->getValue("estatus") : $CurrentForm->getValue("x_estatus");
+        if (!$this->estatus->IsDetailKey) {
+            if (IsApi() && $val === null) {
+                $this->estatus->Visible = false; // Disable update for API request
+            } else {
+                $this->estatus->setFormValue($val);
+            }
+        }
+
+        // Check field name 'falla_atendida_por' first before field var 'x_falla_atendida_por'
+        $val = $CurrentForm->hasValue("falla_atendida_por") ? $CurrentForm->getValue("falla_atendida_por") : $CurrentForm->getValue("x_falla_atendida_por");
+        if (!$this->falla_atendida_por->IsDetailKey) {
+            if (IsApi() && $val === null) {
+                $this->falla_atendida_por->Visible = false; // Disable update for API request
+            } else {
+                $this->falla_atendida_por->setFormValue($val);
+            }
+        }
+
+        // Check field name 'diagnostico' first before field var 'x_diagnostico'
+        $val = $CurrentForm->hasValue("diagnostico") ? $CurrentForm->getValue("diagnostico") : $CurrentForm->getValue("x_diagnostico");
+        if (!$this->diagnostico->IsDetailKey) {
+            if (IsApi() && $val === null) {
+                $this->diagnostico->Visible = false; // Disable update for API request
+            } else {
+                $this->diagnostico->setFormValue($val);
+            }
+        }
+
+        // Check field name 'solucion' first before field var 'x_solucion'
+        $val = $CurrentForm->hasValue("solucion") ? $CurrentForm->getValue("solucion") : $CurrentForm->getValue("x_solucion");
+        if (!$this->solucion->IsDetailKey) {
+            if (IsApi() && $val === null) {
+                $this->solucion->Visible = false; // Disable update for API request
+            } else {
+                $this->solucion->setFormValue($val);
+            }
+        }
+
+        // Check field name 'requiere_materiales' first before field var 'x_requiere_materiales'
+        $val = $CurrentForm->hasValue("requiere_materiales") ? $CurrentForm->getValue("requiere_materiales") : $CurrentForm->getValue("x_requiere_materiales");
+        if (!$this->requiere_materiales->IsDetailKey) {
+            if (IsApi() && $val === null) {
+                $this->requiere_materiales->Visible = false; // Disable update for API request
+            } else {
+                $this->requiere_materiales->setFormValue($val);
+            }
+        }
+
+        // Check field name 'fecha_solucion' first before field var 'x_fecha_solucion'
+        $val = $CurrentForm->hasValue("fecha_solucion") ? $CurrentForm->getValue("fecha_solucion") : $CurrentForm->getValue("x_fecha_solucion");
+        if (!$this->fecha_solucion->IsDetailKey) {
+            if (IsApi() && $val === null) {
+                $this->fecha_solucion->Visible = false; // Disable update for API request
+            } else {
+                $this->fecha_solucion->setFormValue($val, true, $validate);
+            }
+            $this->fecha_solucion->CurrentValue = UnFormatDateTime($this->fecha_solucion->CurrentValue, $this->fecha_solucion->formatPattern());
+        }
+    }
+
+    // Restore form values
+    public function restoreFormValues()
+    {
+        global $CurrentForm;
+        $this->Nmttotecnico->CurrentValue = $this->Nmttotecnico->FormValue;
+        $this->tipo_solicitud->CurrentValue = $this->tipo_solicitud->FormValue;
+        $this->unidad_solicitante->CurrentValue = $this->unidad_solicitante->FormValue;
+        $this->area_falla->CurrentValue = $this->area_falla->FormValue;
+        $this->comentario->CurrentValue = $this->comentario->FormValue;
+        $this->prioridad->CurrentValue = $this->prioridad->FormValue;
+        $this->estatus->CurrentValue = $this->estatus->FormValue;
+        $this->falla_atendida_por->CurrentValue = $this->falla_atendida_por->FormValue;
+        $this->diagnostico->CurrentValue = $this->diagnostico->FormValue;
+        $this->solucion->CurrentValue = $this->solucion->FormValue;
+        $this->requiere_materiales->CurrentValue = $this->requiere_materiales->FormValue;
+        $this->fecha_solucion->CurrentValue = $this->fecha_solucion->FormValue;
+        $this->fecha_solucion->CurrentValue = UnFormatDateTime($this->fecha_solucion->CurrentValue, $this->fecha_solucion->formatPattern());
+    }
+
+    /**
+     * Load result set
+     *
+     * @param int $offset Offset
+     * @param int $rowcnt Maximum number of rows
+     * @return Doctrine\DBAL\Result Result
+     */
+    public function loadRecordset($offset = -1, $rowcnt = -1)
+    {
+        // Load List page SQL (QueryBuilder)
+        $sql = $this->getListSql();
+
+        // Load result set
+        if ($offset > -1) {
+            $sql->setFirstResult($offset);
+        }
+        if ($rowcnt > 0) {
+            $sql->setMaxResults($rowcnt);
+        }
+        $result = $sql->executeQuery();
+        if (property_exists($this, "TotalRecords") && $rowcnt < 0) {
+            $this->TotalRecords = $result->rowCount();
+            if ($this->TotalRecords <= 0) { // Handle database drivers that does not return rowCount()
+                $this->TotalRecords = $this->getRecordCount($this->getListSql());
+            }
+        }
+
+        // Call Recordset Selected event
+        $this->recordsetSelected($result);
+        return $result;
+    }
+
+    /**
+     * Load records as associative array
+     *
+     * @param int $offset Offset
+     * @param int $rowcnt Maximum number of rows
+     * @return void
+     */
+    public function loadRows($offset = -1, $rowcnt = -1)
+    {
+        // Load List page SQL (QueryBuilder)
+        $sql = $this->getListSql();
+
+        // Load result set
+        if ($offset > -1) {
+            $sql->setFirstResult($offset);
+        }
+        if ($rowcnt > 0) {
+            $sql->setMaxResults($rowcnt);
+        }
+        $result = $sql->executeQuery();
+        return $result->fetchAllAssociative();
+    }
+
+    /**
+     * Load row based on key values
+     *
+     * @return void
+     */
+    public function loadRow()
+    {
+        global $Security, $Language;
+        $filter = $this->getRecordFilter();
+
+        // Call Row Selecting event
+        $this->rowSelecting($filter);
+
+        // Load SQL based on filter
+        $this->CurrentFilter = $filter;
+        $sql = $this->getCurrentSql();
+        $conn = $this->getConnection();
+        $res = false;
+        $row = $conn->fetchAssociative($sql);
+        if ($row) {
+            $res = true;
+            $this->loadRowValues($row); // Load row values
+        }
+        return $res;
+    }
+
+    /**
+     * Load row values from result set or record
+     *
+     * @param array $row Record
+     * @return void
+     */
+    public function loadRowValues($row = null)
+    {
+        $row = is_array($row) ? $row : $this->newRow();
+
+        // Call Row Selected event
+        $this->rowSelected($row);
+        $this->Nmttotecnico->setDbValue($row['Nmttotecnico']);
+        $this->fecha_registro->setDbValue($row['fecha_registro']);
+        $this->user_solicita->setDbValue($row['user_solicita']);
+        $this->tipo_solicitud->setDbValue($row['tipo_solicitud']);
+        $this->unidad_solicitante->setDbValue($row['unidad_solicitante']);
+        $this->area_falla->setDbValue($row['area_falla']);
+        $this->comentario->setDbValue($row['comentario']);
+        $this->prioridad->setDbValue($row['prioridad']);
+        $this->estatus->setDbValue($row['estatus']);
+        $this->falla_atendida_por->setDbValue($row['falla_atendida_por']);
+        $this->diagnostico->setDbValue($row['diagnostico']);
+        $this->solucion->setDbValue($row['solucion']);
+        $this->user_diagnostico->setDbValue($row['user_diagnostico']);
+        $this->requiere_materiales->setDbValue($row['requiere_materiales']);
+        $this->fecha_solucion->setDbValue($row['fecha_solucion']);
+        $this->materiales->setDbValue($row['materiales']);
+    }
+
+    // Return a row with default values
+    protected function newRow()
+    {
+        $row = [];
+        $row['Nmttotecnico'] = $this->Nmttotecnico->DefaultValue;
+        $row['fecha_registro'] = $this->fecha_registro->DefaultValue;
+        $row['user_solicita'] = $this->user_solicita->DefaultValue;
+        $row['tipo_solicitud'] = $this->tipo_solicitud->DefaultValue;
+        $row['unidad_solicitante'] = $this->unidad_solicitante->DefaultValue;
+        $row['area_falla'] = $this->area_falla->DefaultValue;
+        $row['comentario'] = $this->comentario->DefaultValue;
+        $row['prioridad'] = $this->prioridad->DefaultValue;
+        $row['estatus'] = $this->estatus->DefaultValue;
+        $row['falla_atendida_por'] = $this->falla_atendida_por->DefaultValue;
+        $row['diagnostico'] = $this->diagnostico->DefaultValue;
+        $row['solucion'] = $this->solucion->DefaultValue;
+        $row['user_diagnostico'] = $this->user_diagnostico->DefaultValue;
+        $row['requiere_materiales'] = $this->requiere_materiales->DefaultValue;
+        $row['fecha_solucion'] = $this->fecha_solucion->DefaultValue;
+        $row['materiales'] = $this->materiales->DefaultValue;
+        return $row;
+    }
+
+    // Load old record
+    protected function loadOldRecord()
+    {
+        // Load old record
+        if ($this->OldKey != "") {
+            $this->setKey($this->OldKey);
+            $this->CurrentFilter = $this->getRecordFilter();
+            $sql = $this->getCurrentSql();
+            $conn = $this->getConnection();
+            $rs = ExecuteQuery($sql, $conn);
+            if ($row = $rs->fetch()) {
+                $this->loadRowValues($row); // Load row values
+                return $row;
+            }
+        }
+        $this->loadRowValues(); // Load default row values
+        return null;
+    }
+
+    // Render row values based on field settings
+    public function renderRow()
+    {
+        global $Security, $Language, $CurrentLanguage;
+
+        // Initialize URLs
+
+        // Call Row_Rendering event
+        $this->rowRendering();
+
+        // Common render codes for all row types
+
+        // Nmttotecnico
+        $this->Nmttotecnico->RowCssClass = "row";
+
+        // fecha_registro
+        $this->fecha_registro->RowCssClass = "row";
+
+        // user_solicita
+        $this->user_solicita->RowCssClass = "row";
+
+        // tipo_solicitud
+        $this->tipo_solicitud->RowCssClass = "row";
+
+        // unidad_solicitante
+        $this->unidad_solicitante->RowCssClass = "row";
+
+        // area_falla
+        $this->area_falla->RowCssClass = "row";
+
+        // comentario
+        $this->comentario->RowCssClass = "row";
+
+        // prioridad
+        $this->prioridad->RowCssClass = "row";
+
+        // estatus
+        $this->estatus->RowCssClass = "row";
+
+        // falla_atendida_por
+        $this->falla_atendida_por->RowCssClass = "row";
+
+        // diagnostico
+        $this->diagnostico->RowCssClass = "row";
+
+        // solucion
+        $this->solucion->RowCssClass = "row";
+
+        // user_diagnostico
+        $this->user_diagnostico->RowCssClass = "row";
+
+        // requiere_materiales
+        $this->requiere_materiales->RowCssClass = "row";
+
+        // fecha_solucion
+        $this->fecha_solucion->RowCssClass = "row";
+
+        // materiales
+        $this->materiales->RowCssClass = "row";
+
+        // View row
+        if ($this->RowType == RowType::VIEW) {
+            // Nmttotecnico
+            $this->Nmttotecnico->ViewValue = $this->Nmttotecnico->CurrentValue;
+
+            // fecha_registro
+            $this->fecha_registro->ViewValue = $this->fecha_registro->CurrentValue;
+            $this->fecha_registro->ViewValue = FormatDateTime($this->fecha_registro->ViewValue, $this->fecha_registro->formatPattern());
+
+            // user_solicita
+            $this->user_solicita->ViewValue = $this->user_solicita->CurrentValue;
+            $curVal = strval($this->user_solicita->CurrentValue);
+            if ($curVal != "") {
+                $this->user_solicita->ViewValue = $this->user_solicita->lookupCacheOption($curVal);
+                if ($this->user_solicita->ViewValue === null) { // Lookup from database
+                    $filterWrk = SearchFilter($this->user_solicita->Lookup->getTable()->Fields["username"]->searchExpression(), "=", $curVal, $this->user_solicita->Lookup->getTable()->Fields["username"]->searchDataType(), "");
+                    $sqlWrk = $this->user_solicita->Lookup->getSql(false, $filterWrk, '', $this, true, true);
+                    $conn = Conn();
+                    $config = $conn->getConfiguration();
+                    $config->setResultCache($this->Cache);
+                    $rswrk = $conn->executeCacheQuery($sqlWrk, [], [], $this->CacheProfile)->fetchAll();
+                    $ari = count($rswrk);
+                    if ($ari > 0) { // Lookup values found
+                        $arwrk = $this->user_solicita->Lookup->renderViewRow($rswrk[0]);
+                        $this->user_solicita->ViewValue = $this->user_solicita->displayValue($arwrk);
+                    } else {
+                        $this->user_solicita->ViewValue = $this->user_solicita->CurrentValue;
+                    }
+                }
+            } else {
+                $this->user_solicita->ViewValue = null;
+            }
+
+            // tipo_solicitud
+            $curVal = strval($this->tipo_solicitud->CurrentValue);
+            if ($curVal != "") {
+                $this->tipo_solicitud->ViewValue = $this->tipo_solicitud->lookupCacheOption($curVal);
+                if ($this->tipo_solicitud->ViewValue === null) { // Lookup from database
+                    $filterWrk = SearchFilter($this->tipo_solicitud->Lookup->getTable()->Fields["campo_descripcion"]->searchExpression(), "=", $curVal, $this->tipo_solicitud->Lookup->getTable()->Fields["campo_descripcion"]->searchDataType(), "");
+                    $lookupFilter = $this->tipo_solicitud->getSelectFilter($this); // PHP
+                    $sqlWrk = $this->tipo_solicitud->Lookup->getSql(false, $filterWrk, $lookupFilter, $this, true, true);
+                    $conn = Conn();
+                    $config = $conn->getConfiguration();
+                    $config->setResultCache($this->Cache);
+                    $rswrk = $conn->executeCacheQuery($sqlWrk, [], [], $this->CacheProfile)->fetchAll();
+                    $ari = count($rswrk);
+                    if ($ari > 0) { // Lookup values found
+                        $arwrk = $this->tipo_solicitud->Lookup->renderViewRow($rswrk[0]);
+                        $this->tipo_solicitud->ViewValue = $this->tipo_solicitud->displayValue($arwrk);
+                    } else {
+                        $this->tipo_solicitud->ViewValue = $this->tipo_solicitud->CurrentValue;
+                    }
+                }
+            } else {
+                $this->tipo_solicitud->ViewValue = null;
+            }
+
+            // unidad_solicitante
+            $curVal = strval($this->unidad_solicitante->CurrentValue);
+            if ($curVal != "") {
+                $this->unidad_solicitante->ViewValue = $this->unidad_solicitante->lookupCacheOption($curVal);
+                if ($this->unidad_solicitante->ViewValue === null) { // Lookup from database
+                    $filterWrk = SearchFilter($this->unidad_solicitante->Lookup->getTable()->Fields["campo_descripcion"]->searchExpression(), "=", $curVal, $this->unidad_solicitante->Lookup->getTable()->Fields["campo_descripcion"]->searchDataType(), "");
+                    $lookupFilter = $this->unidad_solicitante->getSelectFilter($this); // PHP
+                    $sqlWrk = $this->unidad_solicitante->Lookup->getSql(false, $filterWrk, $lookupFilter, $this, true, true);
+                    $conn = Conn();
+                    $config = $conn->getConfiguration();
+                    $config->setResultCache($this->Cache);
+                    $rswrk = $conn->executeCacheQuery($sqlWrk, [], [], $this->CacheProfile)->fetchAll();
+                    $ari = count($rswrk);
+                    if ($ari > 0) { // Lookup values found
+                        $arwrk = $this->unidad_solicitante->Lookup->renderViewRow($rswrk[0]);
+                        $this->unidad_solicitante->ViewValue = $this->unidad_solicitante->displayValue($arwrk);
+                    } else {
+                        $this->unidad_solicitante->ViewValue = $this->unidad_solicitante->CurrentValue;
+                    }
+                }
+            } else {
+                $this->unidad_solicitante->ViewValue = null;
+            }
+
+            // area_falla
+            $curVal = strval($this->area_falla->CurrentValue);
+            if ($curVal != "") {
+                $this->area_falla->ViewValue = $this->area_falla->lookupCacheOption($curVal);
+                if ($this->area_falla->ViewValue === null) { // Lookup from database
+                    $filterWrk = SearchFilter($this->area_falla->Lookup->getTable()->Fields["campo_descripcion"]->searchExpression(), "=", $curVal, $this->area_falla->Lookup->getTable()->Fields["campo_descripcion"]->searchDataType(), "");
+                    $lookupFilter = $this->area_falla->getSelectFilter($this); // PHP
+                    $sqlWrk = $this->area_falla->Lookup->getSql(false, $filterWrk, $lookupFilter, $this, true, true);
+                    $conn = Conn();
+                    $config = $conn->getConfiguration();
+                    $config->setResultCache($this->Cache);
+                    $rswrk = $conn->executeCacheQuery($sqlWrk, [], [], $this->CacheProfile)->fetchAll();
+                    $ari = count($rswrk);
+                    if ($ari > 0) { // Lookup values found
+                        $arwrk = $this->area_falla->Lookup->renderViewRow($rswrk[0]);
+                        $this->area_falla->ViewValue = $this->area_falla->displayValue($arwrk);
+                    } else {
+                        $this->area_falla->ViewValue = $this->area_falla->CurrentValue;
+                    }
+                }
+            } else {
+                $this->area_falla->ViewValue = null;
+            }
+
+            // comentario
+            $this->comentario->ViewValue = $this->comentario->CurrentValue;
+
+            // prioridad
+            if (strval($this->prioridad->CurrentValue) != "") {
+                $this->prioridad->ViewValue = $this->prioridad->optionCaption($this->prioridad->CurrentValue);
+            } else {
+                $this->prioridad->ViewValue = null;
+            }
+
+            // estatus
+            if (strval($this->estatus->CurrentValue) != "") {
+                $this->estatus->ViewValue = $this->estatus->optionCaption($this->estatus->CurrentValue);
+            } else {
+                $this->estatus->ViewValue = null;
+            }
+
+            // falla_atendida_por
+            $curVal = strval($this->falla_atendida_por->CurrentValue);
+            if ($curVal != "") {
+                $this->falla_atendida_por->ViewValue = $this->falla_atendida_por->lookupCacheOption($curVal);
+                if ($this->falla_atendida_por->ViewValue === null) { // Lookup from database
+                    $filterWrk = SearchFilter($this->falla_atendida_por->Lookup->getTable()->Fields["campo_descripcion"]->searchExpression(), "=", $curVal, $this->falla_atendida_por->Lookup->getTable()->Fields["campo_descripcion"]->searchDataType(), "");
+                    $lookupFilter = $this->falla_atendida_por->getSelectFilter($this); // PHP
+                    $sqlWrk = $this->falla_atendida_por->Lookup->getSql(false, $filterWrk, $lookupFilter, $this, true, true);
+                    $conn = Conn();
+                    $config = $conn->getConfiguration();
+                    $config->setResultCache($this->Cache);
+                    $rswrk = $conn->executeCacheQuery($sqlWrk, [], [], $this->CacheProfile)->fetchAll();
+                    $ari = count($rswrk);
+                    if ($ari > 0) { // Lookup values found
+                        $arwrk = $this->falla_atendida_por->Lookup->renderViewRow($rswrk[0]);
+                        $this->falla_atendida_por->ViewValue = $this->falla_atendida_por->displayValue($arwrk);
+                    } else {
+                        $this->falla_atendida_por->ViewValue = $this->falla_atendida_por->CurrentValue;
+                    }
+                }
+            } else {
+                $this->falla_atendida_por->ViewValue = null;
+            }
+
+            // diagnostico
+            $this->diagnostico->ViewValue = $this->diagnostico->CurrentValue;
+
+            // solucion
+            $this->solucion->ViewValue = $this->solucion->CurrentValue;
+
+            // user_diagnostico
+            $this->user_diagnostico->ViewValue = $this->user_diagnostico->CurrentValue;
+
+            // requiere_materiales
+            if (strval($this->requiere_materiales->CurrentValue) != "") {
+                $this->requiere_materiales->ViewValue = $this->requiere_materiales->optionCaption($this->requiere_materiales->CurrentValue);
+            } else {
+                $this->requiere_materiales->ViewValue = null;
+            }
+
+            // fecha_solucion
+            $this->fecha_solucion->ViewValue = $this->fecha_solucion->CurrentValue;
+            $this->fecha_solucion->ViewValue = FormatDateTime($this->fecha_solucion->ViewValue, $this->fecha_solucion->formatPattern());
+
+            // materiales
+            $this->materiales->ViewValue = $this->materiales->CurrentValue;
+
+            // Nmttotecnico
+            $this->Nmttotecnico->HrefValue = "";
+
+            // tipo_solicitud
+            $this->tipo_solicitud->HrefValue = "";
+            $this->tipo_solicitud->TooltipValue = "";
+
+            // unidad_solicitante
+            $this->unidad_solicitante->HrefValue = "";
+            $this->unidad_solicitante->TooltipValue = "";
+
+            // area_falla
+            $this->area_falla->HrefValue = "";
+            $this->area_falla->TooltipValue = "";
+
+            // comentario
+            $this->comentario->HrefValue = "";
+            $this->comentario->TooltipValue = "";
+
+            // prioridad
+            $this->prioridad->HrefValue = "";
+            $this->prioridad->TooltipValue = "";
+
+            // estatus
+            $this->estatus->HrefValue = "";
+
+            // falla_atendida_por
+            $this->falla_atendida_por->HrefValue = "";
+
+            // diagnostico
+            $this->diagnostico->HrefValue = "";
+
+            // solucion
+            $this->solucion->HrefValue = "";
+
+            // requiere_materiales
+            $this->requiere_materiales->HrefValue = "";
+
+            // fecha_solucion
+            $this->fecha_solucion->HrefValue = "";
+        } elseif ($this->RowType == RowType::EDIT) {
+            // Nmttotecnico
+            $this->Nmttotecnico->setupEditAttributes();
+            $this->Nmttotecnico->EditValue = $this->Nmttotecnico->CurrentValue;
+
+            // tipo_solicitud
+            $this->tipo_solicitud->setupEditAttributes();
+            $curVal = strval($this->tipo_solicitud->CurrentValue);
+            if ($curVal != "") {
+                $this->tipo_solicitud->EditValue = $this->tipo_solicitud->lookupCacheOption($curVal);
+                if ($this->tipo_solicitud->EditValue === null) { // Lookup from database
+                    $filterWrk = SearchFilter($this->tipo_solicitud->Lookup->getTable()->Fields["campo_descripcion"]->searchExpression(), "=", $curVal, $this->tipo_solicitud->Lookup->getTable()->Fields["campo_descripcion"]->searchDataType(), "");
+                    $lookupFilter = $this->tipo_solicitud->getSelectFilter($this); // PHP
+                    $sqlWrk = $this->tipo_solicitud->Lookup->getSql(false, $filterWrk, $lookupFilter, $this, true, true);
+                    $conn = Conn();
+                    $config = $conn->getConfiguration();
+                    $config->setResultCache($this->Cache);
+                    $rswrk = $conn->executeCacheQuery($sqlWrk, [], [], $this->CacheProfile)->fetchAll();
+                    $ari = count($rswrk);
+                    if ($ari > 0) { // Lookup values found
+                        $arwrk = $this->tipo_solicitud->Lookup->renderViewRow($rswrk[0]);
+                        $this->tipo_solicitud->EditValue = $this->tipo_solicitud->displayValue($arwrk);
+                    } else {
+                        $this->tipo_solicitud->EditValue = $this->tipo_solicitud->CurrentValue;
+                    }
+                }
+            } else {
+                $this->tipo_solicitud->EditValue = null;
+            }
+
+            // unidad_solicitante
+            $this->unidad_solicitante->setupEditAttributes();
+            $curVal = strval($this->unidad_solicitante->CurrentValue);
+            if ($curVal != "") {
+                $this->unidad_solicitante->EditValue = $this->unidad_solicitante->lookupCacheOption($curVal);
+                if ($this->unidad_solicitante->EditValue === null) { // Lookup from database
+                    $filterWrk = SearchFilter($this->unidad_solicitante->Lookup->getTable()->Fields["campo_descripcion"]->searchExpression(), "=", $curVal, $this->unidad_solicitante->Lookup->getTable()->Fields["campo_descripcion"]->searchDataType(), "");
+                    $lookupFilter = $this->unidad_solicitante->getSelectFilter($this); // PHP
+                    $sqlWrk = $this->unidad_solicitante->Lookup->getSql(false, $filterWrk, $lookupFilter, $this, true, true);
+                    $conn = Conn();
+                    $config = $conn->getConfiguration();
+                    $config->setResultCache($this->Cache);
+                    $rswrk = $conn->executeCacheQuery($sqlWrk, [], [], $this->CacheProfile)->fetchAll();
+                    $ari = count($rswrk);
+                    if ($ari > 0) { // Lookup values found
+                        $arwrk = $this->unidad_solicitante->Lookup->renderViewRow($rswrk[0]);
+                        $this->unidad_solicitante->EditValue = $this->unidad_solicitante->displayValue($arwrk);
+                    } else {
+                        $this->unidad_solicitante->EditValue = $this->unidad_solicitante->CurrentValue;
+                    }
+                }
+            } else {
+                $this->unidad_solicitante->EditValue = null;
+            }
+
+            // area_falla
+            $this->area_falla->setupEditAttributes();
+            $curVal = strval($this->area_falla->CurrentValue);
+            if ($curVal != "") {
+                $this->area_falla->EditValue = $this->area_falla->lookupCacheOption($curVal);
+                if ($this->area_falla->EditValue === null) { // Lookup from database
+                    $filterWrk = SearchFilter($this->area_falla->Lookup->getTable()->Fields["campo_descripcion"]->searchExpression(), "=", $curVal, $this->area_falla->Lookup->getTable()->Fields["campo_descripcion"]->searchDataType(), "");
+                    $lookupFilter = $this->area_falla->getSelectFilter($this); // PHP
+                    $sqlWrk = $this->area_falla->Lookup->getSql(false, $filterWrk, $lookupFilter, $this, true, true);
+                    $conn = Conn();
+                    $config = $conn->getConfiguration();
+                    $config->setResultCache($this->Cache);
+                    $rswrk = $conn->executeCacheQuery($sqlWrk, [], [], $this->CacheProfile)->fetchAll();
+                    $ari = count($rswrk);
+                    if ($ari > 0) { // Lookup values found
+                        $arwrk = $this->area_falla->Lookup->renderViewRow($rswrk[0]);
+                        $this->area_falla->EditValue = $this->area_falla->displayValue($arwrk);
+                    } else {
+                        $this->area_falla->EditValue = $this->area_falla->CurrentValue;
+                    }
+                }
+            } else {
+                $this->area_falla->EditValue = null;
+            }
+
+            // comentario
+            $this->comentario->setupEditAttributes();
+            $this->comentario->EditValue = $this->comentario->CurrentValue;
+
+            // prioridad
+            $this->prioridad->setupEditAttributes();
+            if (strval($this->prioridad->CurrentValue) != "") {
+                $this->prioridad->EditValue = $this->prioridad->optionCaption($this->prioridad->CurrentValue);
+            } else {
+                $this->prioridad->EditValue = null;
+            }
+
+            // estatus
+            $this->estatus->setupEditAttributes();
+            $this->estatus->EditValue = $this->estatus->options(true);
+            $this->estatus->PlaceHolder = RemoveHtml($this->estatus->caption());
+
+            // falla_atendida_por
+            $this->falla_atendida_por->setupEditAttributes();
+            $curVal = trim(strval($this->falla_atendida_por->CurrentValue));
+            if ($curVal != "") {
+                $this->falla_atendida_por->ViewValue = $this->falla_atendida_por->lookupCacheOption($curVal);
+            } else {
+                $this->falla_atendida_por->ViewValue = $this->falla_atendida_por->Lookup !== null && is_array($this->falla_atendida_por->lookupOptions()) && count($this->falla_atendida_por->lookupOptions()) > 0 ? $curVal : null;
+            }
+            if ($this->falla_atendida_por->ViewValue !== null) { // Load from cache
+                $this->falla_atendida_por->EditValue = array_values($this->falla_atendida_por->lookupOptions());
+            } else { // Lookup from database
+                if ($curVal == "") {
+                    $filterWrk = "0=1";
+                } else {
+                    $filterWrk = SearchFilter($this->falla_atendida_por->Lookup->getTable()->Fields["campo_descripcion"]->searchExpression(), "=", $this->falla_atendida_por->CurrentValue, $this->falla_atendida_por->Lookup->getTable()->Fields["campo_descripcion"]->searchDataType(), "");
+                }
+                $lookupFilter = $this->falla_atendida_por->getSelectFilter($this); // PHP
+                $sqlWrk = $this->falla_atendida_por->Lookup->getSql(true, $filterWrk, $lookupFilter, $this, false, true);
+                $conn = Conn();
+                $config = $conn->getConfiguration();
+                $config->setResultCache($this->Cache);
+                $rswrk = $conn->executeCacheQuery($sqlWrk, [], [], $this->CacheProfile)->fetchAll();
+                $ari = count($rswrk);
+                $arwrk = $rswrk;
+                $this->falla_atendida_por->EditValue = $arwrk;
+            }
+            $this->falla_atendida_por->PlaceHolder = RemoveHtml($this->falla_atendida_por->caption());
+
+            // diagnostico
+            $this->diagnostico->setupEditAttributes();
+            $this->diagnostico->EditValue = HtmlEncode($this->diagnostico->CurrentValue);
+            $this->diagnostico->PlaceHolder = RemoveHtml($this->diagnostico->caption());
+
+            // solucion
+            $this->solucion->setupEditAttributes();
+            $this->solucion->EditValue = HtmlEncode($this->solucion->CurrentValue);
+            $this->solucion->PlaceHolder = RemoveHtml($this->solucion->caption());
+
+            // requiere_materiales
+            $this->requiere_materiales->setupEditAttributes();
+            $this->requiere_materiales->EditValue = $this->requiere_materiales->options(true);
+            $this->requiere_materiales->PlaceHolder = RemoveHtml($this->requiere_materiales->caption());
+
+            // fecha_solucion
+            $this->fecha_solucion->setupEditAttributes();
+            $this->fecha_solucion->EditValue = HtmlEncode(FormatDateTime($this->fecha_solucion->CurrentValue, $this->fecha_solucion->formatPattern()));
+            $this->fecha_solucion->PlaceHolder = RemoveHtml($this->fecha_solucion->caption());
+
+            // Edit refer script
+
+            // Nmttotecnico
+            $this->Nmttotecnico->HrefValue = "";
+
+            // tipo_solicitud
+            $this->tipo_solicitud->HrefValue = "";
+            $this->tipo_solicitud->TooltipValue = "";
+
+            // unidad_solicitante
+            $this->unidad_solicitante->HrefValue = "";
+            $this->unidad_solicitante->TooltipValue = "";
+
+            // area_falla
+            $this->area_falla->HrefValue = "";
+            $this->area_falla->TooltipValue = "";
+
+            // comentario
+            $this->comentario->HrefValue = "";
+            $this->comentario->TooltipValue = "";
+
+            // prioridad
+            $this->prioridad->HrefValue = "";
+            $this->prioridad->TooltipValue = "";
+
+            // estatus
+            $this->estatus->HrefValue = "";
+
+            // falla_atendida_por
+            $this->falla_atendida_por->HrefValue = "";
+
+            // diagnostico
+            $this->diagnostico->HrefValue = "";
+
+            // solucion
+            $this->solucion->HrefValue = "";
+
+            // requiere_materiales
+            $this->requiere_materiales->HrefValue = "";
+
+            // fecha_solucion
+            $this->fecha_solucion->HrefValue = "";
+        }
+        if ($this->RowType == RowType::ADD || $this->RowType == RowType::EDIT || $this->RowType == RowType::SEARCH) { // Add/Edit/Search row
+            $this->setupFieldTitles();
+        }
+
+        // Call Row Rendered event
+        if ($this->RowType != RowType::AGGREGATEINIT) {
+            $this->rowRendered();
+        }
+    }
+
+    // Validate form
+    protected function validateForm()
+    {
+        global $Language, $Security;
+
+        // Check if validation required
+        if (!Config("SERVER_VALIDATE")) {
+            return true;
+        }
+        $validateForm = true;
+            if ($this->Nmttotecnico->Visible && $this->Nmttotecnico->Required) {
+                if (!$this->Nmttotecnico->IsDetailKey && EmptyValue($this->Nmttotecnico->FormValue)) {
+                    $this->Nmttotecnico->addErrorMessage(str_replace("%s", $this->Nmttotecnico->caption(), $this->Nmttotecnico->RequiredErrorMessage));
+                }
+            }
+            if ($this->tipo_solicitud->Visible && $this->tipo_solicitud->Required) {
+                if (!$this->tipo_solicitud->IsDetailKey && EmptyValue($this->tipo_solicitud->FormValue)) {
+                    $this->tipo_solicitud->addErrorMessage(str_replace("%s", $this->tipo_solicitud->caption(), $this->tipo_solicitud->RequiredErrorMessage));
+                }
+            }
+            if ($this->unidad_solicitante->Visible && $this->unidad_solicitante->Required) {
+                if (!$this->unidad_solicitante->IsDetailKey && EmptyValue($this->unidad_solicitante->FormValue)) {
+                    $this->unidad_solicitante->addErrorMessage(str_replace("%s", $this->unidad_solicitante->caption(), $this->unidad_solicitante->RequiredErrorMessage));
+                }
+            }
+            if ($this->area_falla->Visible && $this->area_falla->Required) {
+                if (!$this->area_falla->IsDetailKey && EmptyValue($this->area_falla->FormValue)) {
+                    $this->area_falla->addErrorMessage(str_replace("%s", $this->area_falla->caption(), $this->area_falla->RequiredErrorMessage));
+                }
+            }
+            if ($this->comentario->Visible && $this->comentario->Required) {
+                if (!$this->comentario->IsDetailKey && EmptyValue($this->comentario->FormValue)) {
+                    $this->comentario->addErrorMessage(str_replace("%s", $this->comentario->caption(), $this->comentario->RequiredErrorMessage));
+                }
+            }
+            if ($this->prioridad->Visible && $this->prioridad->Required) {
+                if (!$this->prioridad->IsDetailKey && EmptyValue($this->prioridad->FormValue)) {
+                    $this->prioridad->addErrorMessage(str_replace("%s", $this->prioridad->caption(), $this->prioridad->RequiredErrorMessage));
+                }
+            }
+            if ($this->estatus->Visible && $this->estatus->Required) {
+                if (!$this->estatus->IsDetailKey && EmptyValue($this->estatus->FormValue)) {
+                    $this->estatus->addErrorMessage(str_replace("%s", $this->estatus->caption(), $this->estatus->RequiredErrorMessage));
+                }
+            }
+            if ($this->falla_atendida_por->Visible && $this->falla_atendida_por->Required) {
+                if (!$this->falla_atendida_por->IsDetailKey && EmptyValue($this->falla_atendida_por->FormValue)) {
+                    $this->falla_atendida_por->addErrorMessage(str_replace("%s", $this->falla_atendida_por->caption(), $this->falla_atendida_por->RequiredErrorMessage));
+                }
+            }
+            if ($this->diagnostico->Visible && $this->diagnostico->Required) {
+                if (!$this->diagnostico->IsDetailKey && EmptyValue($this->diagnostico->FormValue)) {
+                    $this->diagnostico->addErrorMessage(str_replace("%s", $this->diagnostico->caption(), $this->diagnostico->RequiredErrorMessage));
+                }
+            }
+            if ($this->solucion->Visible && $this->solucion->Required) {
+                if (!$this->solucion->IsDetailKey && EmptyValue($this->solucion->FormValue)) {
+                    $this->solucion->addErrorMessage(str_replace("%s", $this->solucion->caption(), $this->solucion->RequiredErrorMessage));
+                }
+            }
+            if ($this->requiere_materiales->Visible && $this->requiere_materiales->Required) {
+                if (!$this->requiere_materiales->IsDetailKey && EmptyValue($this->requiere_materiales->FormValue)) {
+                    $this->requiere_materiales->addErrorMessage(str_replace("%s", $this->requiere_materiales->caption(), $this->requiere_materiales->RequiredErrorMessage));
+                }
+            }
+            if ($this->fecha_solucion->Visible && $this->fecha_solucion->Required) {
+                if (!$this->fecha_solucion->IsDetailKey && EmptyValue($this->fecha_solucion->FormValue)) {
+                    $this->fecha_solucion->addErrorMessage(str_replace("%s", $this->fecha_solucion->caption(), $this->fecha_solucion->RequiredErrorMessage));
+                }
+            }
+            if (!CheckDate($this->fecha_solucion->FormValue, $this->fecha_solucion->formatPattern())) {
+                $this->fecha_solucion->addErrorMessage($this->fecha_solucion->getErrorMessage(false));
+            }
+
+        // Validate detail grid
+        $detailTblVar = explode(",", $this->getCurrentDetailTable());
+        $detailPage = Container("ScoMttotecnicoAdjuntoGrid");
+        if (in_array("sco_mttotecnico_adjunto", $detailTblVar) && $detailPage->DetailEdit) {
+            $detailPage->run();
+            $validateForm = $validateForm && $detailPage->validateGridForm();
+        }
+        $detailPage = Container("ScoMttotecnicoNotasGrid");
+        if (in_array("sco_mttotecnico_notas", $detailTblVar) && $detailPage->DetailEdit) {
+            $detailPage->run();
+            $validateForm = $validateForm && $detailPage->validateGridForm();
+        }
+
+        // Return validate result
+        $validateForm = $validateForm && !$this->hasInvalidFields();
+
+        // Call Form_CustomValidate event
+        $formCustomError = "";
+        $validateForm = $validateForm && $this->formCustomValidate($formCustomError);
+        if ($formCustomError != "") {
+            $this->setFailureMessage($formCustomError);
+        }
+        return $validateForm;
+    }
+
+    // Update record based on key values
+    protected function editRow()
+    {
+        global $Security, $Language;
+        $oldKeyFilter = $this->getRecordFilter();
+        $filter = $this->applyUserIDFilters($oldKeyFilter);
+        $conn = $this->getConnection();
+
+        // Load old row
+        $this->CurrentFilter = $filter;
+        $sql = $this->getCurrentSql();
+        $rsold = $conn->fetchAssociative($sql);
+        if (!$rsold) {
+            $this->setFailureMessage($Language->phrase("NoRecord")); // Set no record message
+            return false; // Update Failed
+        } else {
+            // Load old values
+            $this->loadDbValues($rsold);
+        }
+
+        // Get new row
+        $rsnew = $this->getEditRow($rsold);
+
+        // Update current values
+        $this->setCurrentValues($rsnew);
+
+        // Begin transaction
+        if ($this->getCurrentDetailTable() != "" && $this->UseTransaction) {
+            $conn->beginTransaction();
+        }
+
+        // Call Row Updating event
+        $updateRow = $this->rowUpdating($rsold, $rsnew);
+        if ($updateRow) {
+            if (count($rsnew) > 0) {
+                $this->CurrentFilter = $filter; // Set up current filter
+                $editRow = $this->update($rsnew, "", $rsold);
+                if (!$editRow && !EmptyValue($this->DbErrorMessage)) { // Show database error
+                    $this->setFailureMessage($this->DbErrorMessage);
+                }
+            } else {
+                $editRow = true; // No field to update
+            }
+            if ($editRow) {
+            }
+
+            // Update detail records
+            $detailTblVar = explode(",", $this->getCurrentDetailTable());
+            $detailPage = Container("ScoMttotecnicoAdjuntoGrid");
+            if (in_array("sco_mttotecnico_adjunto", $detailTblVar) && $detailPage->DetailEdit && $editRow) {
+                $Security->loadCurrentUserLevel($this->ProjectID . "sco_mttotecnico_adjunto"); // Load user level of detail table
+                $editRow = $detailPage->gridUpdate();
+                $Security->loadCurrentUserLevel($this->ProjectID . $this->TableName); // Restore user level of master table
+            }
+            $detailPage = Container("ScoMttotecnicoNotasGrid");
+            if (in_array("sco_mttotecnico_notas", $detailTblVar) && $detailPage->DetailEdit && $editRow) {
+                $Security->loadCurrentUserLevel($this->ProjectID . "sco_mttotecnico_notas"); // Load user level of detail table
+                $editRow = $detailPage->gridUpdate();
+                $Security->loadCurrentUserLevel($this->ProjectID . $this->TableName); // Restore user level of master table
+            }
+
+            // Commit/Rollback transaction
+            if ($this->getCurrentDetailTable() != "") {
+                if ($editRow) {
+                    if ($this->UseTransaction) { // Commit transaction
+                        if ($conn->isTransactionActive()) {
+                            $conn->commit();
+                        }
+                    }
+                } else {
+                    if ($this->UseTransaction) { // Rollback transaction
+                        if ($conn->isTransactionActive()) {
+                            $conn->rollback();
+                        }
+                    }
+                }
+            }
+        } else {
+            if ($this->getSuccessMessage() != "" || $this->getFailureMessage() != "") {
+                // Use the message, do nothing
+            } elseif ($this->CancelMessage != "") {
+                $this->setFailureMessage($this->CancelMessage);
+                $this->CancelMessage = "";
+            } else {
+                $this->setFailureMessage($Language->phrase("UpdateCancelled"));
+            }
+            $editRow = false;
+        }
+
+        // Call Row_Updated event
+        if ($editRow) {
+            $this->rowUpdated($rsold, $rsnew);
+        }
+
+        // Write JSON response
+        if (IsJsonResponse() && $editRow) {
+            $row = $this->getRecordsFromRecordset([$rsnew], true);
+            $table = $this->TableVar;
+            WriteJson(["success" => true, "action" => Config("API_EDIT_ACTION"), $table => $row]);
+        }
+        return $editRow;
+    }
+
+    /**
+     * Get edit row
+     *
+     * @return array
+     */
+    protected function getEditRow($rsold)
+    {
+        global $Security;
+        $rsnew = [];
+
+        // estatus
+        $this->estatus->setDbValueDef($rsnew, $this->estatus->CurrentValue, $this->estatus->ReadOnly);
+
+        // falla_atendida_por
+        $this->falla_atendida_por->setDbValueDef($rsnew, $this->falla_atendida_por->CurrentValue, $this->falla_atendida_por->ReadOnly);
+
+        // diagnostico
+        $this->diagnostico->setDbValueDef($rsnew, $this->diagnostico->CurrentValue, $this->diagnostico->ReadOnly);
+
+        // solucion
+        $this->solucion->setDbValueDef($rsnew, $this->solucion->CurrentValue, $this->solucion->ReadOnly);
+
+        // requiere_materiales
+        $this->requiere_materiales->setDbValueDef($rsnew, $this->requiere_materiales->CurrentValue, $this->requiere_materiales->ReadOnly);
+
+        // fecha_solucion
+        $this->fecha_solucion->setDbValueDef($rsnew, UnFormatDateTime($this->fecha_solucion->CurrentValue, $this->fecha_solucion->formatPattern()), $this->fecha_solucion->ReadOnly);
+        return $rsnew;
+    }
+
+    /**
+     * Restore edit form from row
+     * @param array $row Row
+     */
+    protected function restoreEditFormFromRow($row)
+    {
+        if (isset($row['estatus'])) { // estatus
+            $this->estatus->CurrentValue = $row['estatus'];
+        }
+        if (isset($row['falla_atendida_por'])) { // falla_atendida_por
+            $this->falla_atendida_por->CurrentValue = $row['falla_atendida_por'];
+        }
+        if (isset($row['diagnostico'])) { // diagnostico
+            $this->diagnostico->CurrentValue = $row['diagnostico'];
+        }
+        if (isset($row['solucion'])) { // solucion
+            $this->solucion->CurrentValue = $row['solucion'];
+        }
+        if (isset($row['requiere_materiales'])) { // requiere_materiales
+            $this->requiere_materiales->CurrentValue = $row['requiere_materiales'];
+        }
+        if (isset($row['fecha_solucion'])) { // fecha_solucion
+            $this->fecha_solucion->CurrentValue = $row['fecha_solucion'];
+        }
+    }
+
+    // Set up detail parms based on QueryString
+    protected function setupDetailParms()
+    {
+        // Get the keys for master table
+        $detailTblVar = Get(Config("TABLE_SHOW_DETAIL"));
+        if ($detailTblVar !== null) {
+            $this->setCurrentDetailTable($detailTblVar);
+        } else {
+            $detailTblVar = $this->getCurrentDetailTable();
+        }
+        if ($detailTblVar != "") {
+            $detailTblVar = explode(",", $detailTblVar);
+            if (in_array("sco_mttotecnico_adjunto", $detailTblVar)) {
+                $detailPageObj = Container("ScoMttotecnicoAdjuntoGrid");
+                if ($detailPageObj->DetailEdit) {
+                    $detailPageObj->EventCancelled = $this->EventCancelled;
+                    $detailPageObj->CurrentMode = "edit";
+                    $detailPageObj->CurrentAction = "gridedit";
+
+                    // Save current master table to detail table
+                    $detailPageObj->setCurrentMasterTable($this->TableVar);
+                    $detailPageObj->setStartRecordNumber(1);
+                    $detailPageObj->mttotecnico->IsDetailKey = true;
+                    $detailPageObj->mttotecnico->CurrentValue = $this->Nmttotecnico->CurrentValue;
+                    $detailPageObj->mttotecnico->setSessionValue($detailPageObj->mttotecnico->CurrentValue);
+                }
+            }
+            if (in_array("sco_mttotecnico_notas", $detailTblVar)) {
+                $detailPageObj = Container("ScoMttotecnicoNotasGrid");
+                if ($detailPageObj->DetailEdit) {
+                    $detailPageObj->EventCancelled = $this->EventCancelled;
+                    $detailPageObj->CurrentMode = "edit";
+                    $detailPageObj->CurrentAction = "gridedit";
+
+                    // Save current master table to detail table
+                    $detailPageObj->setCurrentMasterTable($this->TableVar);
+                    $detailPageObj->setStartRecordNumber(1);
+                    $detailPageObj->mttotecnico->IsDetailKey = true;
+                    $detailPageObj->mttotecnico->CurrentValue = $this->Nmttotecnico->CurrentValue;
+                    $detailPageObj->mttotecnico->setSessionValue($detailPageObj->mttotecnico->CurrentValue);
+                }
+            }
+        }
+    }
+
+    // Set up Breadcrumb
+    protected function setupBreadcrumb()
+    {
+        global $Breadcrumb, $Language;
+        $Breadcrumb = new Breadcrumb("Home");
+        $url = CurrentUrl();
+        $Breadcrumb->add("list", $this->TableVar, $this->addMasterUrl("ScoMttotecnicoList"), "", $this->TableVar, true);
+        $pageId = "edit";
+        $Breadcrumb->add("edit", $pageId, $url);
+    }
+
+    // Setup lookup options
+    public function setupLookupOptions($fld)
+    {
+        if ($fld->Lookup && $fld->Lookup->Options === null) {
+            // Get default connection and filter
+            $conn = $this->getConnection();
+            $lookupFilter = "";
+
+            // No need to check any more
+            $fld->Lookup->Options = [];
+
+            // Set up lookup SQL and connection
+            switch ($fld->FieldVar) {
+                case "x_user_solicita":
+                    break;
+                case "x_tipo_solicitud":
+                    $lookupFilter = $fld->getSelectFilter(); // PHP
+                    break;
+                case "x_unidad_solicitante":
+                    $lookupFilter = $fld->getSelectFilter(); // PHP
+                    break;
+                case "x_area_falla":
+                    $lookupFilter = $fld->getSelectFilter(); // PHP
+                    break;
+                case "x_prioridad":
+                    break;
+                case "x_estatus":
+                    break;
+                case "x_falla_atendida_por":
+                    $lookupFilter = $fld->getSelectFilter(); // PHP
+                    break;
+                case "x_requiere_materiales":
+                    break;
+                default:
+                    $lookupFilter = "";
+                    break;
+            }
+
+            // Always call to Lookup->getSql so that user can setup Lookup->Options in Lookup_Selecting server event
+            $sql = $fld->Lookup->getSql(false, "", $lookupFilter, $this);
+
+            // Set up lookup cache
+            if (!$fld->hasLookupOptions() && $fld->UseLookupCache && $sql != "" && count($fld->Lookup->Options) == 0 && count($fld->Lookup->FilterFields) == 0) {
+                $totalCnt = $this->getRecordCount($sql, $conn);
+                if ($totalCnt > $fld->LookupCacheCount) { // Total count > cache count, do not cache
+                    return;
+                }
+                $rows = $conn->executeQuery($sql)->fetchAll();
+                $ar = [];
+                foreach ($rows as $row) {
+                    $row = $fld->Lookup->renderViewRow($row, Container($fld->Lookup->LinkTable));
+                    $key = $row["lf"];
+                    if (IsFloatType($fld->Type)) { // Handle float field
+                        $key = (float)$key;
+                    }
+                    $ar[strval($key)] = $row;
+                }
+                $fld->Lookup->Options = $ar;
+            }
+        }
+    }
+
+    // Set up starting record parameters
+    public function setupStartRecord()
+    {
+        if ($this->DisplayRecords == 0) {
+            return;
+        }
+        $pageNo = Get(Config("TABLE_PAGE_NUMBER"));
+        $startRec = Get(Config("TABLE_START_REC"));
+        $infiniteScroll = false;
+        $recordNo = $pageNo ?? $startRec; // Record number = page number or start record
+        if ($recordNo !== null && is_numeric($recordNo)) {
+            $this->StartRecord = $recordNo;
+        } else {
+            $this->StartRecord = $this->getStartRecordNumber();
+        }
+
+        // Check if correct start record counter
+        if (!is_numeric($this->StartRecord) || intval($this->StartRecord) <= 0) { // Avoid invalid start record counter
+            $this->StartRecord = 1; // Reset start record counter
+        } elseif ($this->StartRecord > $this->TotalRecords) { // Avoid starting record > total records
+            $this->StartRecord = (int)(($this->TotalRecords - 1) / $this->DisplayRecords) * $this->DisplayRecords + 1; // Point to last page first record
+        } elseif (($this->StartRecord - 1) % $this->DisplayRecords != 0) {
+            $this->StartRecord = (int)(($this->StartRecord - 1) / $this->DisplayRecords) * $this->DisplayRecords + 1; // Point to page boundary
+        }
+        if (!$infiniteScroll) {
+            $this->setStartRecordNumber($this->StartRecord);
+        }
+    }
+
+    // Get page count
+    public function pageCount() {
+        return ceil($this->TotalRecords / $this->DisplayRecords);
+    }
+
+    // Page Load event
+    public function pageLoad()
+    {
+        //Log("Page Load");
+    }
+
+    // Page Unload event
+    public function pageUnload()
+    {
+        //Log("Page Unload");
+    }
+
+    // Page Redirecting event
+    public function pageRedirecting(&$url)
+    {
+        // Example:
+        //$url = "your URL";
+    }
+
+    // Message Showing event
+    // $type = ''|'success'|'failure'|'warning'
+    public function messageShowing(&$msg, $type)
+    {
+        if ($type == "success") {
+            //$msg = "your success message";
+        } elseif ($type == "failure") {
+            //$msg = "your failure message";
+        } elseif ($type == "warning") {
+            //$msg = "your warning message";
+        } else {
+            //$msg = "your message";
+        }
+    }
+
+    // Page Render event
+    public function pageRender()
+    {
+        //Log("Page Render");
+    }
+
+    // Page Data Rendering event
+    public function pageDataRendering(&$header)
+    {
+        // Example:
+        //$header = "your header";
+    }
+
+    // Page Data Rendered event
+    public function pageDataRendered(&$footer)
+    {
+        // Example:
+        //$footer = "your footer";
+    }
+
+    // Page Breaking event
+    public function pageBreaking(&$break, &$content)
+    {
+        // Example:
+        //$break = false; // Skip page break, or
+        //$content = "<div style=\"break-after:page;\"></div>"; // Modify page break content
+    }
+
+    // Form Custom Validate event
+    public function formCustomValidate(&$customError)
+    {
+        // Return error message in $customError
+        return true;
+    }
+}

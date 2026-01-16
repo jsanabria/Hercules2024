@@ -1,0 +1,251 @@
+<?php
+
+namespace PHPMaker2024\hercules;
+
+// Page object
+$ScoModeloEdit = &$Page;
+?>
+<?php $Page->showPageHeader(); ?>
+<?php
+$Page->showMessage();
+?>
+<main class="edit">
+<?php if (!$Page->IsModal) { ?>
+<?= $Page->Pager->render() ?>
+<?php } ?>
+<form name="fsco_modeloedit" id="fsco_modeloedit" class="<?= $Page->FormClassName ?>" action="<?= CurrentPageUrl(false) ?>" method="post" novalidate autocomplete="off">
+<script>
+var currentTable = <?= JsonEncode($Page->toClientVar()) ?>;
+ew.deepAssign(ew.vars, { tables: { sco_modelo: currentTable } });
+var currentPageID = ew.PAGE_ID = "edit";
+var currentForm;
+var fsco_modeloedit;
+loadjs.ready(["wrapper", "head"], function () {
+    let $ = jQuery;
+    let fields = currentTable.fields;
+
+    // Form object
+    let form = new ew.FormBuilder()
+        .setId("fsco_modeloedit")
+        .setPageId("edit")
+
+        // Add fields
+        .setFields([
+            ["tipo", [fields.tipo.visible && fields.tipo.required ? ew.Validators.required(fields.tipo.caption) : null], fields.tipo.isInvalid],
+            ["marca", [fields.marca.visible && fields.marca.required ? ew.Validators.required(fields.marca.caption) : null], fields.marca.isInvalid],
+            ["nombre", [fields.nombre.visible && fields.nombre.required ? ew.Validators.required(fields.nombre.caption) : null], fields.nombre.isInvalid],
+            ["activo", [fields.activo.visible && fields.activo.required ? ew.Validators.required(fields.activo.caption) : null], fields.activo.isInvalid]
+        ])
+
+        // Form_CustomValidate
+        .setCustomValidate(
+            function (fobj) { // DO NOT CHANGE THIS LINE! (except for adding "async" keyword)!
+                    // Your custom validation code in JAVASCRIPT here, return false if invalid.
+                    return true;
+                }
+        )
+
+        // Use JavaScript validation or not
+        .setValidateRequired(ew.CLIENT_VALIDATE)
+
+        // Dynamic selection lists
+        .setLists({
+            "tipo": <?= $Page->tipo->toClientList($Page) ?>,
+            "marca": <?= $Page->marca->toClientList($Page) ?>,
+            "activo": <?= $Page->activo->toClientList($Page) ?>,
+        })
+        .build();
+    window[form.id] = form;
+    currentForm = form;
+    loadjs.done(form.id);
+});
+</script>
+<script>
+loadjs.ready("head", function () {
+    // Write your table-specific client script here, no need to add script tags.
+});
+</script>
+<?php if (Config("CHECK_TOKEN")) { ?>
+<input type="hidden" name="<?= $TokenNameKey ?>" value="<?= $TokenName ?>"><!-- CSRF token name -->
+<input type="hidden" name="<?= $TokenValueKey ?>" value="<?= $TokenValue ?>"><!-- CSRF token value -->
+<?php } ?>
+<input type="hidden" name="t" value="sco_modelo">
+<input type="hidden" name="action" id="action" value="update">
+<input type="hidden" name="modal" value="<?= (int)$Page->IsModal ?>">
+<?php if (IsJsonResponse()) { ?>
+<input type="hidden" name="json" value="1">
+<?php } ?>
+<input type="hidden" name="<?= $Page->OldKeyName ?>" value="<?= $Page->OldKey ?>">
+<div class="ew-edit-div"><!-- page* -->
+<?php if ($Page->tipo->Visible) { // tipo ?>
+    <div id="r_tipo"<?= $Page->tipo->rowAttributes() ?>>
+        <label id="elh_sco_modelo_tipo" for="x_tipo" class="<?= $Page->LeftColumnClass ?>"><?= $Page->tipo->caption() ?><?= $Page->tipo->Required ? $Language->phrase("FieldRequiredIndicator") : "" ?></label>
+        <div class="<?= $Page->RightColumnClass ?>"><div<?= $Page->tipo->cellAttributes() ?>>
+<span id="el_sco_modelo_tipo">
+    <select
+        id="x_tipo"
+        name="x_tipo"
+        class="form-select ew-select<?= $Page->tipo->isInvalidClass() ?>"
+        <?php if (!$Page->tipo->IsNativeSelect) { ?>
+        data-select2-id="fsco_modeloedit_x_tipo"
+        <?php } ?>
+        data-table="sco_modelo"
+        data-field="x_tipo"
+        data-value-separator="<?= $Page->tipo->displayValueSeparatorAttribute() ?>"
+        data-placeholder="<?= HtmlEncode($Page->tipo->getPlaceHolder()) ?>"
+        <?= $Page->tipo->editAttributes() ?>>
+        <?= $Page->tipo->selectOptionListHtml("x_tipo") ?>
+    </select>
+    <?= $Page->tipo->getCustomMessage() ?>
+    <div class="invalid-feedback"><?= $Page->tipo->getErrorMessage() ?></div>
+<?php if (!$Page->tipo->IsNativeSelect) { ?>
+<script>
+loadjs.ready("fsco_modeloedit", function() {
+    var options = { name: "x_tipo", selectId: "fsco_modeloedit_x_tipo" },
+        el = document.querySelector("select[data-select2-id='" + options.selectId + "']");
+    if (!el)
+        return;
+    options.closeOnSelect = !options.multiple;
+    options.dropdownParent = el.closest("#ew-modal-dialog, #ew-add-opt-dialog");
+    if (fsco_modeloedit.lists.tipo?.lookupOptions.length) {
+        options.data = { id: "x_tipo", form: "fsco_modeloedit" };
+    } else {
+        options.ajax = { id: "x_tipo", form: "fsco_modeloedit", limit: ew.LOOKUP_PAGE_SIZE };
+    }
+    options.minimumResultsForSearch = Infinity;
+    options = Object.assign({}, ew.selectOptions, options, ew.vars.tables.sco_modelo.fields.tipo.selectOptions);
+    ew.createSelect(options);
+});
+</script>
+<?php } ?>
+</span>
+</div></div>
+    </div>
+<?php } ?>
+<?php if ($Page->marca->Visible) { // marca ?>
+    <div id="r_marca"<?= $Page->marca->rowAttributes() ?>>
+        <label id="elh_sco_modelo_marca" for="x_marca" class="<?= $Page->LeftColumnClass ?>"><?= $Page->marca->caption() ?><?= $Page->marca->Required ? $Language->phrase("FieldRequiredIndicator") : "" ?></label>
+        <div class="<?= $Page->RightColumnClass ?>"><div<?= $Page->marca->cellAttributes() ?>>
+<span id="el_sco_modelo_marca">
+    <select
+        id="x_marca"
+        name="x_marca"
+        class="form-control ew-select<?= $Page->marca->isInvalidClass() ?>"
+        data-select2-id="fsco_modeloedit_x_marca"
+        data-table="sco_modelo"
+        data-field="x_marca"
+        data-caption="<?= HtmlEncode(RemoveHtml($Page->marca->caption())) ?>"
+        data-modal-lookup="true"
+        data-value-separator="<?= $Page->marca->displayValueSeparatorAttribute() ?>"
+        data-placeholder="<?= HtmlEncode($Page->marca->getPlaceHolder()) ?>"
+        <?= $Page->marca->editAttributes() ?>>
+        <?= $Page->marca->selectOptionListHtml("x_marca") ?>
+    </select>
+    <?= $Page->marca->getCustomMessage() ?>
+    <div class="invalid-feedback"><?= $Page->marca->getErrorMessage() ?></div>
+<?= $Page->marca->Lookup->getParamTag($Page, "p_x_marca") ?>
+<script>
+loadjs.ready("fsco_modeloedit", function() {
+    var options = { name: "x_marca", selectId: "fsco_modeloedit_x_marca" };
+    if (fsco_modeloedit.lists.marca?.lookupOptions.length) {
+        options.data = { id: "x_marca", form: "fsco_modeloedit" };
+    } else {
+        options.ajax = { id: "x_marca", form: "fsco_modeloedit", limit: ew.LOOKUP_PAGE_SIZE };
+    }
+    options = Object.assign({}, ew.modalLookupOptions, options, ew.vars.tables.sco_modelo.fields.marca.modalLookupOptions);
+    ew.createModalLookup(options);
+});
+</script>
+</span>
+</div></div>
+    </div>
+<?php } ?>
+<?php if ($Page->nombre->Visible) { // nombre ?>
+    <div id="r_nombre"<?= $Page->nombre->rowAttributes() ?>>
+        <label id="elh_sco_modelo_nombre" for="x_nombre" class="<?= $Page->LeftColumnClass ?>"><?= $Page->nombre->caption() ?><?= $Page->nombre->Required ? $Language->phrase("FieldRequiredIndicator") : "" ?></label>
+        <div class="<?= $Page->RightColumnClass ?>"><div<?= $Page->nombre->cellAttributes() ?>>
+<span id="el_sco_modelo_nombre">
+<input type="<?= $Page->nombre->getInputTextType() ?>" name="x_nombre" id="x_nombre" data-table="sco_modelo" data-field="x_nombre" value="<?= $Page->nombre->EditValue ?>" size="30" maxlength="50" placeholder="<?= HtmlEncode($Page->nombre->getPlaceHolder()) ?>" data-format-pattern="<?= HtmlEncode($Page->nombre->formatPattern()) ?>"<?= $Page->nombre->editAttributes() ?> aria-describedby="x_nombre_help">
+<?= $Page->nombre->getCustomMessage() ?>
+<div class="invalid-feedback"><?= $Page->nombre->getErrorMessage() ?></div>
+</span>
+</div></div>
+    </div>
+<?php } ?>
+<?php if ($Page->activo->Visible) { // activo ?>
+    <div id="r_activo"<?= $Page->activo->rowAttributes() ?>>
+        <label id="elh_sco_modelo_activo" for="x_activo" class="<?= $Page->LeftColumnClass ?>"><?= $Page->activo->caption() ?><?= $Page->activo->Required ? $Language->phrase("FieldRequiredIndicator") : "" ?></label>
+        <div class="<?= $Page->RightColumnClass ?>"><div<?= $Page->activo->cellAttributes() ?>>
+<span id="el_sco_modelo_activo">
+    <select
+        id="x_activo"
+        name="x_activo"
+        class="form-select ew-select<?= $Page->activo->isInvalidClass() ?>"
+        <?php if (!$Page->activo->IsNativeSelect) { ?>
+        data-select2-id="fsco_modeloedit_x_activo"
+        <?php } ?>
+        data-table="sco_modelo"
+        data-field="x_activo"
+        data-value-separator="<?= $Page->activo->displayValueSeparatorAttribute() ?>"
+        data-placeholder="<?= HtmlEncode($Page->activo->getPlaceHolder()) ?>"
+        <?= $Page->activo->editAttributes() ?>>
+        <?= $Page->activo->selectOptionListHtml("x_activo") ?>
+    </select>
+    <?= $Page->activo->getCustomMessage() ?>
+    <div class="invalid-feedback"><?= $Page->activo->getErrorMessage() ?></div>
+<?php if (!$Page->activo->IsNativeSelect) { ?>
+<script>
+loadjs.ready("fsco_modeloedit", function() {
+    var options = { name: "x_activo", selectId: "fsco_modeloedit_x_activo" },
+        el = document.querySelector("select[data-select2-id='" + options.selectId + "']");
+    if (!el)
+        return;
+    options.closeOnSelect = !options.multiple;
+    options.dropdownParent = el.closest("#ew-modal-dialog, #ew-add-opt-dialog");
+    if (fsco_modeloedit.lists.activo?.lookupOptions.length) {
+        options.data = { id: "x_activo", form: "fsco_modeloedit" };
+    } else {
+        options.ajax = { id: "x_activo", form: "fsco_modeloedit", limit: ew.LOOKUP_PAGE_SIZE };
+    }
+    options.minimumResultsForSearch = Infinity;
+    options = Object.assign({}, ew.selectOptions, options, ew.vars.tables.sco_modelo.fields.activo.selectOptions);
+    ew.createSelect(options);
+});
+</script>
+<?php } ?>
+</span>
+</div></div>
+    </div>
+<?php } ?>
+</div><!-- /page* -->
+    <input type="hidden" data-table="sco_modelo" data-field="x_Nmodelo" data-hidden="1" name="x_Nmodelo" id="x_Nmodelo" value="<?= HtmlEncode($Page->Nmodelo->CurrentValue) ?>">
+<?= $Page->IsModal ? '<template class="ew-modal-buttons">' : '<div class="row ew-buttons">' ?><!-- buttons .row -->
+    <div class="<?= $Page->OffsetColumnClass ?>"><!-- buttons offset -->
+<button class="btn btn-primary ew-btn" name="btn-action" id="btn-action" type="submit" form="fsco_modeloedit"><?= $Language->phrase("SaveBtn") ?></button>
+<?php if (IsJsonResponse()) { ?>
+<button class="btn btn-default ew-btn" name="btn-cancel" id="btn-cancel" type="button" data-bs-dismiss="modal"><?= $Language->phrase("CancelBtn") ?></button>
+<?php } else { ?>
+<button class="btn btn-default ew-btn" name="btn-cancel" id="btn-cancel" type="button" form="fsco_modeloedit" data-href="<?= HtmlEncode(GetUrl($Page->getReturnUrl())) ?>"><?= $Language->phrase("CancelBtn") ?></button>
+<?php } ?>
+    </div><!-- /buttons offset -->
+<?= $Page->IsModal ? "</template>" : "</div>" ?><!-- /buttons .row -->
+</form>
+<?php if (!$Page->IsModal) { ?>
+<?= $Page->Pager->render() ?>
+<?php } ?>
+</main>
+<?php
+$Page->showPageFooter();
+echo GetDebugMessage();
+?>
+<script>
+// Field event handlers
+loadjs.ready("head", function() {
+    ew.addEventHandlers("sco_modelo");
+});
+</script>
+<script>
+loadjs.ready("load", function () {
+    // Write your table-specific startup script here, no need to add script tags.
+});
+</script>
