@@ -1,6 +1,6 @@
 ##############################
 # PHPMaker 2024 – .gitignore #
-# Proyecto: Gym
+# Proyecto: Hercules
 ##############################
 
 # --- Dependencias que se regeneran ---
@@ -14,6 +14,7 @@
 /cache/
 /storage/
 /runtime/
+/error_log
 /logs/
 /log/
 *.log
