@@ -1,41 +1,103 @@
-# Dependencias PHP/Node
+##############################
+# PHPMaker 2024 – .gitignore #
+# Proyecto: Gym
+##############################
+
+# --- Dependencias que se regeneran ---
 /vendor/
 /node_modules/
 /composer.phar
 
-# Builds/Cache/Logs/Temp
-/storage/
-/logs/
+# --- Cachés / temporales / logs ---
 /tmp/
 /temp/
 /cache/
-/coverage/
+/storage/
+/runtime/
+/logs/
+/log/
+*.log
 
-# Subidas/Respaldos/Grandes
-/uploads/
-/media/
-/public/uploads/
-/carpetacarga/
-/backups/
-/*.sql
+# --- Subidas y artefactos pesados de salida ---
+# (ajusta si "files" contiene assets versionables)
+# Sugerencia: versiona solo íconos/svgs y excluye originales/pesados
+/files/
+/reporte/*.pdf
+/reporte/*.xlsx
+/reporte/*.csv
+/reporte/tmp/
+/reporte/cache/
+
+# --- Respaldos / dumps / binarios grandes ---
 *.sql
+*.sql.gz
+*.dump
+*.bak
+*.backup
+*.7z
 *.zip
 *.rar
-*.7z
-*.bak
 *.tar
 *.gz
+*.xz
 
-# Config local/secretos
+# --- Config local / secretos ---
 .env
 .env.*
 config.local.php
+config.local.json
+config.local.yml
 
-# SO/IDE
+# --- PHPMaker / Maker ---
+# Mantén el .pmp y tus templates personalizados, pero ignora temporales
+/maker/tmp/
+/maker/temp/
+/maker/cache/
+/maker/backup/
+/maker/backups/
+# Asegura que el proyecto se versiona
+!maker/*.pmp
+!maker/*.xml
+!maker/templates/**
+
+# --- Frontend builds (si aplican) ---
+/dist/
+/build/
+/public/build/
+/public/assets/build/
+/assets/.cache
+/assets/cache/
+
+# --- Swagger: normalmente sí se versiona el YAML/JSON ---
+# (no ignores swagger/, salvo que generes PDFs o zips ahí)
+# /swagger/*.pdf
+
+# --- APIs, fuentes y vistas: se versionan ---
+#   api/, controllers/, models/, src/, views/, include/, js/, css/,
+#   adminlte3/, bootstrap5/, ckeditor/, colorbox/, font/, fullcalendar/,
+#   html/, images/, jquery/, lang/, laravel/, locale/, plugins/, swagger/, txt/
+# (no ignores estas carpetas)
+
+# --- DB: ignora dumps pero permite migraciones/semillas si las usas ---
+/db/**/*.sql
+/db/**/*.dump
+/db/backup/
+/db/backups/
+/db/dumps/
+!db/migrations/**
+!db/seeds/**
+!db/schema/**
+
+# --- SO/IDE ---
 .DS_Store
 Thumbs.db
 .idea/
 .vscode/
+*.suo
+*.user
+*.userossc
+*.sln.docstates
 
-# Artefactos varios
-*.log
+# --- Windows/IIS artefactos (ajusta según tu necesidad) ---
+# web.config normalmente sí se versiona para IIS
+# !web.config
