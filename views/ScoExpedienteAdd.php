@@ -87,7 +87,20 @@ loadjs.ready(["wrapper", "head"], function () {
 </script>
 <script>
 loadjs.ready("head", function () {
+    // Client script
     // Write your table-specific client script here, no need to add script tags.
+    window.limpiarParcela = function() {
+        // 1. Limpiar valores
+        $("#x_seccion, #x_modulo, #x_subseccion, #y_parcela, #x_contrato_parcela, #x_nombre_contacto, #x_parcela").val("");
+
+        // 2. Bloquear campos dependientes
+        $("#x_modulo, #x_subseccion, #y_parcela").prop('disabled', true);
+
+        // 3. Quitar clases de error si las hubiera y dar foco
+        $("#x_seccion").prop('disabled', false).focus();
+        $("#loading-parcela").hide();
+        console.log("Campos de parcela reiniciados"); // Para verificar en consola
+    };
 });
 </script>
 <?php $Page->showPageHeader(); ?>
@@ -1020,19 +1033,19 @@ loadjs.ready("load", function () {
     		$("#x_cedula_fallecido").val($("#x_cedula_fallecido").val().substring(0,1) + "-" + $("#x_cedula_fallecido").val().substring(1,$("#x_cedula_fallecido").val().length).trim());
     	$("#x_cedula_fallecido").val($("#x_cedula_fallecido").val().toUpperCase());
     	if($("#x_cedula_fallecido").val()==""){
-    		alert("Este campo no puede estar vacio");
+    		ew.alert("Este campo no puede estar vacio");
     		xBad = false;
     	}else if($("#x_cedula_fallecido").val().length < 7) {
-    		alert("Este campo debe ser mayor a 6 caracteres");
+    		ew.alert("Este campo debe ser mayor a 6 caracteres");
     		xBad = false;
     	}else if($("#x_cedula_fallecido").val().length > 12) {
-    		alert("Este campo debe ser menor a 12 caracteres");
+    		ew.alert("Este campo debe ser menor a 12 caracteres");
     		xBad = false;
     	}else if($("#x_cedula_fallecido").val().substring(0,2) != "V-" && $("#x_cedula_fallecido").val().substring(0,2) != "E-" && $("#x_cedula_fallecido").val().substring(0,2) != "M-") {
-    		alert("La CI debe comenzar con (V-) Venezolano o con (E-) Extranjero o con (M-) Menor de edad sin poseer CI.");
+    		ew.alert("La CI debe comenzar con (V-) Venezolano o con (E-) Extranjero o con (M-) Menor de edad sin poseer CI.");
     		xBad = false;
     	}else if(isNaN($("#x_cedula_fallecido").val().substring(2,$("#x_cedula_fallecido").val().length))) {
-    		alert("La CI debe ser un valor entero");
+    		ew.alert("La CI debe ser un valor entero");
     		xBad = false;
     	}
     	if(xBad == false) {
@@ -1058,91 +1071,79 @@ loadjs.ready("load", function () {
     });
     */
 
-    // Nueva rutina para la búsqueda de parcelas
-    //$("#r_parcela").hide();
-    $('#x_parcela').prop('readonly', true);
-    $("#x_modulo").prop('disabled', true);
-    $("#x_subseccion").prop('disabled', true);
-    $("#y_parcela").prop('disabled', true);
-    $("#y_contrato_parcela").prop('disabled', true);
-    $("#y_parcela").prop('disabled', true);
-    if($("#x_modulo").val() != "") $("#x_modulo").prop('disabled', false);
-    if($("#x_subseccion").val() != "") $("#x_subseccion").prop('disabled', false);
-    if($("#y_parcela").val() != "") $("#y_parcela").prop('disabled', false);
-    if($("#x_contrato_parcela").val() != "") $("#x_contrato_parcela").prop('disabled', false);
-    $("#x_seccion").change(function(){
-    	if($("#x_seccion").val() != "") $("#x_modulo").prop('disabled', false);
-    	document.getElementById("x_modulo").focus();
-    	$("#x_modulo").val("");
-    	$("#x_subseccion").val("");
-    	$("#y_parcela").val("");
-    })
-    $("#x_modulo").change(function(){
-    	if($("#x_modulo").val() != "") $("#x_subseccion").prop('disabled', false);
-    	document.getElementById("x_subseccion").focus();
-    	$("#x_subseccion").val("");
-    	$("#y_parcela").val("");
-    })
-    $("#x_subseccion").change(function(){
-    	if($("#x_subseccion").val() != "") $("#y_parcela").prop('disabled', false);
-    	document.getElementById("y_parcela").focus();
-    	$("#y_parcela").val("");
-    })
-    $("#y_parcela").change(function(){
-    	if($("#y_parcela").val() != "") {
-            var seccion = $("#x_seccion").val();
-            var modulo = $("#x_modulo").val();
-            var subseccion = $("#x_subseccion").val();
-            var parcela = $("#y_parcela").val();
-            var buscar = "contrato";
-            $.ajax({
-            url : "BuscarParcelaVc",
-            type: "GET",
-            data : {seccion: seccion, modulo: modulo, subseccion: subseccion, parcela: parcela, buscar: buscar},
-            beforeSend: function(){
-                //$("#result").html("Espere. . . ");
-            }
-            })
-            .done(function(data) {
-                var content = $(data).find('#outtext').text();
-                // alert(content);
+    // Bloqueo inicial
+    $("#x_modulo, #x_subseccion, #y_parcela").prop('disabled', true);
 
-    			//console.log(content);
-    			var rsl = content.split("|");
-    			if(rsl[0]!="itemnotfound") {
-    				//alert("Data: " + rsl[0] + " - " + rsl[1] + "\nStatus: " + status);
-    				$("#x_contrato_parcela").val(rsl[0]);
-    				$("#x_nombre_contacto").val(rsl[1]);
-    				$("#x_parcela").val($("#x_seccion").val().trim() + "-" + $("#x_modulo").val().trim() + "-" + $("#x_subseccion").val().trim() + "-" + $("#y_parcela").val().trim());
-    				document.getElementById("x_seguro").focus();
-    				$("#x_contrato_parcela").prop('disabled', false);
-    				$("#y_parcela").prop('disabled', false);
-    			}
-    			else {
-    				alert("Parcela no encontrada, !!! Verifique !!!.");
-    				$("#x_seccion").val("");
-    				$("#x_modulo").val("");
-    				$("#x_subseccion").val("");
-    				$("#y_parcela").val("");
-    				$("#x_modulo").prop('disabled', true);
-    				$("#x_subseccion").prop('disabled', true);
-    				$("#y_parcela").prop('disabled', true);
-    				$("#x_contrato_parcela").val("");
-    				$("#x_parcela").val("");
-    				$("#x_nombre_contacto").val("");
-    				$("#x_contrato_parcela").prop('disabled', true);
-    				$("#y_parcela").prop('disabled', true);
-    				document.getElementById("x_seccion").focus();
-    			}
-            })
-            .fail(function(data) {
-                alert( "error" + data );
-            })
-            .always(function(data) {
-                //alert( "complete" );
-                //$("#result").html("Espere. . . ");
-            }); 
+    // Flujo de navegación entre campos
+    $("#x_seccion").change(function() {
+        if ($(this).val()) {
+            $("#x_modulo").prop('disabled', false).focus();
+            $("#x_modulo, #x_subseccion, #y_parcela").val("");
         }
-    })
+    });
+    $("#x_modulo").change(function() {
+        if ($(this).val()) {
+            $("#x_subseccion").prop('disabled', false).focus();
+            $("#x_subseccion, #y_parcela").val("");
+        }
+    });
+    $("#x_subseccion").change(function() {
+        if ($(this).val()) {
+            $("#y_parcela").prop('disabled', false).focus();
+            $("#y_parcela").val("");
+        }
+    });
+
+    // Lógica de búsqueda AJAX
+    $("#y_parcela").change(function() {
+        const params = {
+            seccion: $("#x_seccion").val(),
+            modulo: $("#x_modulo").val(),
+            subseccion: $("#x_subseccion").val(),
+            parcela: $("#y_parcela").val(),
+            buscar: "contrato"
+        };
+        if (params.parcela) {
+            $.ajax({
+                url: "BuscarParcelaVc",
+                type: "GET",
+                data: params,
+                dataType: "json",
+                beforeSend: function() {
+                    // Resetear a azul y mostrar
+                    $("#loading-parcela")
+                        .removeClass("text-success text-danger")
+                        .addClass("text-primary")
+                        .show();
+                }
+            })
+            .done(function(res) {
+                if (res.status === "success") {
+                    // ÉXITO: Cambiar a Verde
+                    $("#loading-parcela").removeClass("text-primary").addClass("text-success");
+                    $("#x_contrato_parcela").val(res.item1);
+                    $("#x_nombre_contacto").val(res.item2);
+                    let fullPath = `${params.seccion}-${params.modulo}-${params.subseccion}-${params.parcela}`;
+                    $("#x_parcela").val(fullPath.toUpperCase());
+
+                    // Pequeña pausa para que se vea el verde antes de saltar al siguiente campo
+                    setTimeout(() => {
+                        $("#loading-parcela").hide();
+                        document.getElementById("x_seguro").focus();
+                    }, 800);
+                } else {
+                    // ERROR: Cambiar a Rojo
+                    $("#loading-parcela").removeClass("text-primary").addClass("text-danger");
+                    setTimeout(() => {
+                        ew.alert("Parcela no encontrada. Verifique los datos.");
+                        limpiarParcela();
+                    }, 500);
+                }
+            })
+            .fail(function() {
+                $("#loading-parcela").removeClass("text-primary").addClass("text-danger");
+            });
+        }
+    });
 });
 </script>

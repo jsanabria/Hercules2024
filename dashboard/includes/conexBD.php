@@ -9,6 +9,7 @@ $servername = "localhost:3306";
 $username = "cemenlsk_hercules";
 $password = "S![%IeeBY.nW";
 $dbname = "cemenlsk_hercules";
+*/
 
 $link = new mysqli($servername, $username, $password, $dbname);
 

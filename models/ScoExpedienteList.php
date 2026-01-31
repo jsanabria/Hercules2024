@@ -6285,24 +6285,33 @@ class ScoExpedienteList extends ScoExpediente
     	// Example:
     	//$footer = "your footer";
     	echo legenda();
-    	$footer = '<table width="800" border="0">
-                    <tr>
-                        <td bgcolor="#fe4848">&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                        <td>En la columna Exp. # indica que no se ha asignado ning&uacute;n servicio</td>
-                    </tr>
-                    <tr>
-                        <td bgcolor="#CC99CC">&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                        <td>En la columna Exp. # indica que el servicio de capilla est&aacute; asociado a otro expediente</td>
-                    </tr>
-                    <tr>
-                        <td bgcolor="#ffff00">&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                        <td>En la columna Exp. # indica que tiene velaci&oacute;n en 2 o m&aacute;s capillas</td>
-                    </tr>
-                    <tr>
-                        <td bgcolor="#009900">&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                        <td>En la columna costo indica que est&aacute; facturado</td>
-                    </tr>
-                </table>';
+    	$footer = '
+            <table width="800" border="0" style="font-family: sans-serif; font-size: 13px; color: #444; border-collapse: separate; border-spacing: 0 8px;">
+                <tr>
+                    <td width="30" style="background-color: #fe4848; border-radius: 4px; border: 1px solid rgba(0,0,0,0.1);">&nbsp;</td>
+                    <td style="padding-left: 15px;">
+                        <strong>Exp. #</strong> : Indica que <strong>no se ha asignado</strong> ningún servicio.
+                    </td>
+                </tr>
+                <tr>
+                    <td width="30" style="background-color: #CC99CC; border-radius: 4px; border: 1px solid rgba(0,0,0,0.1);">&nbsp;</td>
+                    <td style="padding-left: 15px;">
+                        <strong>Exp. #</strong> : El servicio de capilla está <strong>asociado a otro expediente</strong>.
+                    </td>
+                </tr>
+                <tr>
+                    <td width="30" style="background-color: #ffff00; border-radius: 4px; border: 1px solid rgba(0,0,0,0.1);">&nbsp;</td>
+                    <td style="padding-left: 15px;">
+                        <strong>Exp. #</strong> : Indica velación en <strong>2 o más capillas</strong>.
+                    </td>
+                </tr>
+                <tr>
+                    <td width="30" style="background-color: #009900; border-radius: 4px; border: 1px solid rgba(0,0,0,0.1);">&nbsp;</td>
+                    <td style="padding-left: 15px;">
+                        <strong>Columna Costo</strong> : Indica que el servicio ya está <strong>facturado</strong>.
+                    </td>
+                </tr>
+            </table>';
     }
 
     // Page Breaking event

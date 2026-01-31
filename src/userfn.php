@@ -255,9 +255,16 @@ function actualizar_monto_incidencia($xincidencia) {
 
 function legenda()
 {
-	$sql = "select count(*) as total from sco_estatus where activo = 'S';";
-	$total = ExecuteScalar($sql);
-	$xAncho = round(100/$total,0)- 1;
+    $sql = "select count(*) as total from sco_estatus where activo = 'S';";
+    $total = ExecuteScalar($sql);
+
+    // Validamos que $total no sea 0, nulo o falso
+    if ($total > 0) {
+        $xAncho = round(100 / $total, 0) - 1;
+    } else {
+        // Definimos un valor por defecto si no hay registros
+        $xAncho = 0; 
+    }
 	$table = '<table align="left" cellpadding="3" cellspacing="3" width="80%">
 				<tr height="30">';
 					for($i=0; $i<$total; $i++)

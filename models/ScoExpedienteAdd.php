@@ -3512,19 +3512,52 @@ class ScoExpedienteAdd extends ScoExpediente
         //Log("Page Render");
     }
 
-    // Page Data Rendering event
     public function pageDataRendering(&$header) {
-    	// Example:
-    	//$header = "your header";
-    	$header = '<div id="parcela"></div>';
-    	$header .= user_show();
-    	$header .= '<br>';
-    	$header .= '<strong><i>Ubicaci&oacute;n Parcela</i> Secci&oacute;n:</strong> <input type="text" name="x_seccion" id="x_seccion" size="6" maxlength="3" placeholder="Secci&oacute;n" value="" class="form-control">&nbsp;&nbsp;';
-    	$header .= '<strong>M&oacute;dulo:</strong> <input type="text" name="x_modulo" id="x_modulo" size="6" maxlength="3" placeholder="M&oacute;dulo" value="" class="form-control">&nbsp;&nbsp;';
-    	$header .= '<strong>Sub Secci&oacute;n:</strong> <input type="text" name="x_subseccion" id="x_subseccion" size="6" maxlength="3" placeholder="Sub Secci&oacute;n" value="" class="form-control">&nbsp;&nbsp;';
-    	$header .= '<strong>Parcela:</strong> <input type="text" name="y_parcela" id="y_parcela" size="6" maxlength="1" placeholder="Parcela" value="" class="form-control">';
-    	$header .= '<br><br>';
-    } 
+        $header = '<div id="parcela"></div>';
+        $header .= user_show();
+        $header .= '
+        <div class="card shadow-sm mb-3">
+            <div class="card-body bg-light">
+                <div class="row mb-3">
+                    <div class="col-12">
+                        <h5 class="text-primary m-0">
+                            <i class="fas fa-map-marker-alt mr-2"></i> Ubicación Parcela
+                        </h5>
+                    </div>
+                </div>
+                <div class="row align-items-end">
+                    <div class="col-md-10">
+                        <div class="d-flex flex-wrap" style="gap: 20px;">
+                            <div class="d-flex flex-column">
+                                <label class="font-weight-bold small mb-1 text-muted">Sección:</label>
+                                <input type="text" name="x_seccion" id="x_seccion" size="8" maxlength="3" placeholder="..." class="form-control">
+                            </div>
+                            <div class="d-flex flex-column">
+                                <label class="font-weight-bold small mb-1 text-muted">Módulo:</label>
+                                <input type="text" name="x_modulo" id="x_modulo" size="8" maxlength="3" placeholder="..." class="form-control">
+                            </div>
+                            <div class="d-flex flex-column">
+                                <label class="font-weight-bold small mb-1 text-muted">Sub Sección:</label>
+                                <input type="text" name="x_subseccion" id="x_subseccion" size="8" maxlength="3" placeholder="..." class="form-control">
+                            </div>
+                            <div class="d-flex flex-column">
+                                <label class="font-weight-bold small mb-1 text-muted">Parcela:</label>
+                                <div class="d-flex align-items-center">
+                                    <input type="text" name="y_parcela" id="y_parcela" size="8" maxlength="1" placeholder="..." class="form-control">
+                                    <i id="loading-parcela" class="fas fa-spinner fa-spin text-primary" style="display:none; margin-left: -22px; position: relative; z-index: 10;"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 text-right">
+                        <button type="button" class="btn btn-outline-secondary btn-sm px-3 mb-1" onclick="limpiarParcela()">
+                            <i class="fas fa-eraser mr-1"></i> Limpiar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>';
+    }
 
     // Page Data Rendered event
     public function pageDataRendered(&$footer)

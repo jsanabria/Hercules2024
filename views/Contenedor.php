@@ -11,9 +11,10 @@ $Page->showMessage();
 <?php
 $Nexpediente = floatval($_GET["Nexpediente"] ?? 0);
 $Norden = floatval($_GET["Norden"] ?? 0);
+$username = CurrentUserName();
 
 if($Nexpediente != 0) {
-    header("Location: dashboard/servicios/app.php?exp=$Nexpediente");
+    header("Location: dashboard/servicios/app.php?exp=$Nexpediente&username=$username");
 } 
 else {
     echo '<div class="alert alert-danger" role="alert">
