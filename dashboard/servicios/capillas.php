@@ -145,6 +145,8 @@ if ($exp > 0) {
   const $horas = $('#sel-horas');
   const $grid = $('#grid-container');
 
+  const currentUsername = "<?= htmlspecialchars($username) ?>";
+
   let currentLocalidad = null;
   let currentCapillas = [];
   let selectedCell = null;
@@ -439,7 +441,8 @@ if ($exp > 0) {
           capilla:    capilla,
           fecha:      fecha,
           time:       time,
-          horas:      horasInt
+          horas:      horasInt,
+          usuario:    currentUsername
         }
       });
 
@@ -513,7 +516,8 @@ if ($exp > 0) {
         fecha: $('#sel-fecha').val(),
         time,
         horas: hrs,
-        motivo: motivo || ''
+        motivo: motivo || '',
+        usuario: currentUsername
       }
     }); 
     
@@ -579,7 +583,7 @@ if ($exp > 0) {
       url: 'api/quitar_reserva.php',
       method: 'POST',
       dataType: 'json',
-      data: { norden: norden, hard: 1 } // 0 = anular (recomendado). 1 = DELETE real.
+      data: { norden: norden, hard: 1, usuario: currentUsername } // 0 = anular (recomendado). 1 = DELETE real.
     });
 
     if (res.ok) { alert(res.msg); loadGrid(); }

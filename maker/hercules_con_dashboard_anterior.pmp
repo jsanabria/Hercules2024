@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project Product="PHPMaker" Version="24.16.0" ProjID="{8204ED0A-01F4-49C6-8E13-D0A9484A17DD}" ProjName="hercules" DefaultLanguageFile="en-US" LanguageFiles="en-US" CodePage="65001" Cache="0" CharSet="utf-8" OutputNameType="Suffix" BodyTitle="HERCULES - Sistema de Control" BodyFont="Verdana" BodySize="0,875" ApplicationTheme="Red" HeaderLogo="C:\laragon\www\Hercules\maker\hercules_logo.png" FooterText="&amp;copy;2025. Cementerio del Este. Todos los derechos reservados." TblAltColor="0" Template="C:\Users\Junior\AppData\Roaming\phpmaker2024\node_modules\@phpmaker\php2024" Destination="C:\laragon\www\hercules\" SecType="Both" SecLoginID="admin" SecPasswd="dongato" SecTbl="sco_user" SecLoginIDFld="username" SecPasswdFld="password" SecEmailFld="correo" SecChangePwdPage="1" SecRegisterConfirm="1" SecRegisterCaptcha="1" SecLogInOutAuditTrail="1" SecForgotPwdCaptcha="1" SecChangePwdCaptcha="1" SecRegisterActivate="1" SecRegisterActivateFld="activo" SecRegisterEmail="1" SecSenderEmail="info@cementeriodeleste.com.ve" SmtpServer="cementeriodeleste.com.ve" SmtpServerPort="587" SmtpSecureOption="TLS" TestWebServer="1" SetLocale="1" Locale="{&quot;decimal_point&quot;:&quot;,&quot;,&quot;thousands_sep&quot;:&quot;.&quot;,&quot;int_curr_symbol&quot;:&quot;$&quot;,&quot;currency_symbol&quot;:&quot;Bs.&quot;,&quot;mon_decimal_point&quot;:&quot;,&quot;,&quot;mon_thousands_sep&quot;:&quot;.&quot;,&quot;positive_sign&quot;:null,&quot;negative_sign&quot;:&quot;-&quot;,&quot;int_frac_digits&quot;:2,&quot;frac_digits&quot;:2,&quot;p_cs_precedes&quot;:true,&quot;p_sep_by_space&quot;:false,&quot;n_cs_precedes&quot;:true,&quot;n_sep_by_space&quot;:false,&quot;p_sign_posn&quot;:3,&quot;n_sign_posn&quot;:3}" StartPage="Home" UploadPath="carpetacarga/" UploadAllowedFileExt="gif,jpg,jpeg,bmp,png,pdf,mp3,wav,mp4,avi,cdr" UseCss="0" CssStyles="/*BEGIN_USER_STYLES*/&#xD;&#xA;.convertuppercase {text-transform:uppercase}&#xD;&#xA;&#xD;&#xA;/* your CSS styles here */&#xD;&#xA;&#xD;&#xA;[id^=&quot;x&quot;][id$=&quot;_tipo_insumo&quot;] ~ .select2-container {&#xD;&#xA;    width: 150px !important;  /* el tamaño que quieras */&#xD;&#xA;    min-width: 150px !important;&#xD;&#xA;    max-width: 150px !important;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;[id^=&quot;x&quot;][id$=&quot;_articulo&quot;] ~ .select2-container {&#xD;&#xA;    width: 150px !important;  /* el tamaño que quieras */&#xD;&#xA;    min-width: 150px !important;&#xD;&#xA;    max-width: 150px !important;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;[id^=&quot;x&quot;][id$=&quot;_unidad_medida&quot;] ~ .select2-container {&#xD;&#xA;    width: 90px !important;&#xD;&#xA;    min-width: 90px !important;&#xD;&#xA;    max-width: 90px !important;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;[id^=&quot;x&quot;][id$=&quot;_disponible&quot;] ~ .select2-container {&#xD;&#xA;    width: 80px !important;&#xD;&#xA;    min-width: 80px !important;&#xD;&#xA;    max-width: 80px !important;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;[id^=&quot;x&quot;][id$=&quot;_unidad_medida_recibida&quot;] ~ .select2-container {&#xD;&#xA;    width: 90px !important;&#xD;&#xA;    min-width: 90px !important;&#xD;&#xA;    max-width: 90px !important;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;/* Reducir ancho del control de carga de imagen para todas las filas del grid */&#xD;&#xA;[id^=&quot;fd_x&quot;][id$=&quot;_imagen&quot;] {&#xD;&#xA;    width: 120px !important;   /* tamaño deseado */&#xD;&#xA;    max-width: 120px !important;&#xD;&#xA;    min-width: 120px !important;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;/* También reducir el texto interno */&#xD;&#xA;[id^=&quot;fd_x&quot;][id$=&quot;_imagen&quot;] .ew-file-text {&#xD;&#xA;    font-size: 10px;&#xD;&#xA;    white-space: normal;&#xD;&#xA;    line-height: 1.1;&#xD;&#xA;    padding: 2px;&#xD;&#xA;    text-align: center;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;/*END_USER_STYLES*/&#xD;&#xA;&#xD;&#xA;" OtherGenList="reportcontroller=1,custom=1,custom|class=1,@logo=0,@favicon=0,@ChangePassword.en-US.php=0,@english.en-US.xml=0,@languages.xml=0,@Notify.en-US.php=0,@OneTimePassword.en-US.php=0,@OneTimePasswordSms.en-US.php=0,@Register.en-US.php=0,@ResetPassword.en-US.php=0,@lang_hercules.en-US.xml=1,composer.json=0,userpackagejson=0,src=0,colorbox=0,plugins=0,bootstrap=0,adminlte=0,css=0,@adminltescss=0,projcss=0,tabulatorcss=0,querybuilderscss=0,swagger=0,swaggeryaml=0,js=0,jquery=0,htaccess=0,webconfig=0,apihtaccess=0,constants=0,config=0,configdev=0,configprod=0,logindex=0,uploadindex=0,userlevelsettings=1,layout=1,menu=1,phpfn=0,userfn=0,userglobaljs=0,usereventjs=1,email=0,error=0,personal_data=0,personal_data|class=0,login=0,login|class=1,change_password=0,change_password|class=0,userpriv=0,userpriv|class=0,logout|class=1,apiindex=0,index=0,definitions=1,apiroutes=1,routes=1,controllerbase=1,otherscontroller=1,apicontroller=1,captcha|class=0,phpcaptcha.php=0,captchafont=0,eweditor.js=0,ckeditorskin=0,exportexcel=0,datetimepickerjs=0,datetimepickerscss=0,timepicker=0,timepickerjs=0,timepickerscss=0,previewjs=0" OtherExpanded="1" RecPerPage="50" RecPerPageList="5,10,20,50,ALL" ExportType="ALL" SortType="1" PagerStyle="2" TopPageLink="1" LinkOnLeft="1" InlineDelete="1" DetailViewPaging="1" DetailEditPaging="1" RepeatColumns="5" AppRootFolder="C:\laragon\www\hercules\" RootRelativePath="." EmailComponent="PHP" DeleteUploadedFile="1" LogPath="log/" RecipientEmail="info@cementeriodeleste.com.ve" SMTPServerUsername="info@cementeriodeleste.com.ve" SMTPServerPassword="Windeco2022" FavIcon="C:\laragon\www\Hercules\maker\icono.ico" LoginOption="AUTO" ConcurrentUserSessionCount="30" UserProfileSessionTimeout="5" AuditTrailToDB="1" AuditTrailTable="audittrail" AuditTrailFieldDateTime="datetime" AuditTrailFieldScript="script" AuditTrailFieldUser="user" AuditTrailFieldAction="action" AuditTrailFieldTable="table" AuditTrailFieldField="field" AuditTrailFieldKeyValue="keyvalue" AuditTrailFieldOldValue="oldvalue" AuditTrailFieldNewValue="newvalue">
+<Project Product="PHPMaker" Version="24.16.0" ProjID="{8204ED0A-01F4-49C6-8E13-D0A9484A17DD}" ProjName="hercules" DefaultLanguageFile="en-US" LanguageFiles="en-US" CodePage="65001" Cache="0" CharSet="utf-8" OutputNameType="Suffix" BodyTitle="HERCULES - Sistema de Control" BodyFont="Verdana" BodySize="0,875" ApplicationTheme="Red" HeaderLogo="C:\laragon\www\Hercules\maker\hercules_logo.png" FooterText="&amp;copy;2025. Cementerio del Este. Todos los derechos reservados." TblAltColor="0" Template="C:\Users\Junior\AppData\Roaming\phpmaker2024\node_modules\@phpmaker\php2024" Destination="C:\laragon\www\hercules\" SecType="Both" SecLoginID="admin" SecPasswd="dongato" SecTbl="sco_user" SecLoginIDFld="username" SecPasswdFld="password" SecEmailFld="correo" SecChangePwdPage="1" SecRegisterConfirm="1" SecRegisterCaptcha="1" SecLogInOutAuditTrail="1" SecForgotPwdCaptcha="1" SecChangePwdCaptcha="1" SecRegisterActivate="1" SecRegisterActivateFld="activo" SecRegisterEmail="1" SecSenderEmail="info@cementeriodeleste.com.ve" SmtpServer="cementeriodeleste.com.ve" SmtpServerPort="587" SmtpSecureOption="TLS" TestWebServer="1" SetLocale="1" Locale="{&quot;decimal_point&quot;:&quot;,&quot;,&quot;thousands_sep&quot;:&quot;.&quot;,&quot;int_curr_symbol&quot;:&quot;$&quot;,&quot;currency_symbol&quot;:&quot;Bs.&quot;,&quot;mon_decimal_point&quot;:&quot;,&quot;,&quot;mon_thousands_sep&quot;:&quot;.&quot;,&quot;positive_sign&quot;:null,&quot;negative_sign&quot;:&quot;-&quot;,&quot;int_frac_digits&quot;:2,&quot;frac_digits&quot;:2,&quot;p_cs_precedes&quot;:true,&quot;p_sep_by_space&quot;:false,&quot;n_cs_precedes&quot;:true,&quot;n_sep_by_space&quot;:false,&quot;p_sign_posn&quot;:3,&quot;n_sign_posn&quot;:3}" StartPage="Home" UploadPath="carpetacarga/" UploadAllowedFileExt="gif,jpg,jpeg,bmp,png,pdf,mp3,wav,mp4,avi,cdr" UseCss="0" CssStyles="/*BEGIN_USER_STYLES*/&#xD;&#xA;.convertuppercase {text-transform:uppercase}&#xD;&#xA;&#xD;&#xA;/* your CSS styles here */&#xD;&#xA;&#xD;&#xA;[id^=&quot;x&quot;][id$=&quot;_tipo_insumo&quot;] ~ .select2-container {&#xD;&#xA;    width: 150px !important;  /* el tamaño que quieras */&#xD;&#xA;    min-width: 150px !important;&#xD;&#xA;    max-width: 150px !important;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;[id^=&quot;x&quot;][id$=&quot;_articulo&quot;] ~ .select2-container {&#xD;&#xA;    width: 150px !important;  /* el tamaño que quieras */&#xD;&#xA;    min-width: 150px !important;&#xD;&#xA;    max-width: 150px !important;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;[id^=&quot;x&quot;][id$=&quot;_unidad_medida&quot;] ~ .select2-container {&#xD;&#xA;    width: 90px !important;&#xD;&#xA;    min-width: 90px !important;&#xD;&#xA;    max-width: 90px !important;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;[id^=&quot;x&quot;][id$=&quot;_disponible&quot;] ~ .select2-container {&#xD;&#xA;    width: 80px !important;&#xD;&#xA;    min-width: 80px !important;&#xD;&#xA;    max-width: 80px !important;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;[id^=&quot;x&quot;][id$=&quot;_unidad_medida_recibida&quot;] ~ .select2-container {&#xD;&#xA;    width: 90px !important;&#xD;&#xA;    min-width: 90px !important;&#xD;&#xA;    max-width: 90px !important;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;/* Reducir ancho del control de carga de imagen para todas las filas del grid */&#xD;&#xA;[id^=&quot;fd_x&quot;][id$=&quot;_imagen&quot;] {&#xD;&#xA;    width: 120px !important;   /* tamaño deseado */&#xD;&#xA;    max-width: 120px !important;&#xD;&#xA;    min-width: 120px !important;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;/* También reducir el texto interno */&#xD;&#xA;[id^=&quot;fd_x&quot;][id$=&quot;_imagen&quot;] .ew-file-text {&#xD;&#xA;    font-size: 10px;&#xD;&#xA;    white-space: normal;&#xD;&#xA;    line-height: 1.1;&#xD;&#xA;    padding: 2px;&#xD;&#xA;    text-align: center;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;/*END_USER_STYLES*/&#xD;&#xA;&#xD;&#xA;" OtherGenList="controller=0,info=0,entity=0,list=0,list|class=0,add=0,add|class=0,view=0,view|class=0,edit=0,edit|class=0,delete=0,delete|class=0,@logo=0,@favicon=0,@ChangePassword.en-US.php=0,@english.en-US.xml=0,@languages.xml=0,@Notify.en-US.php=0,@OneTimePassword.en-US.php=0,@OneTimePasswordSms.en-US.php=0,@Register.en-US.php=0,@ResetPassword.en-US.php=0,@lang_hercules.en-US.xml=0,composer.json=0,userpackagejson=0,src=0,colorbox=0,plugins=0,bootstrap=0,adminlte=0,css=0,@adminltescss=0,projcss=0,tabulatorcss=0,querybuilderscss=0,swagger=0,swaggeryaml=0,js=0,jquery=0,htaccess=0,webconfig=0,apihtaccess=0,constants=0,config=0,configdev=0,configprod=0,logindex=0,uploadindex=0,userlevelsettings=0,layout=0,menu=0,phpfn=0,userfn=0,userglobaljs=0,usereventjs=0,email=0,error=0,personal_data=0,personal_data|class=0,login=0,login|class=0,change_password=0,change_password|class=0,userpriv=0,userpriv|class=0,logout|class=0,apiindex=0,index=0,definitions=0,apiroutes=0,routes=0,controllerbase=0,otherscontroller=0,apicontroller=0,captcha|class=0,phpcaptcha.php=0,captchafont=0,eweditor.js=0,ckeditorskin=0,exportexcel=0,datetimepickerjs=0,datetimepickerscss=0,timepicker=0,timepickerjs=0,timepickerscss=0,previewjs=0" OtherExpanded="1" RecPerPage="50" RecPerPageList="5,10,20,50,ALL" ExportType="ALL" SortType="1" PagerStyle="2" TopPageLink="1" LinkOnLeft="1" InlineDelete="1" DetailViewPaging="1" DetailEditPaging="1" RepeatColumns="5" AppRootFolder="C:\laragon\www\hercules\" RootRelativePath="." EmailComponent="PHP" DeleteUploadedFile="1" LogPath="log/" RecipientEmail="info@cementeriodeleste.com.ve" SMTPServerUsername="info@cementeriodeleste.com.ve" SMTPServerPassword="Windeco2022" FavIcon="C:\laragon\www\Hercules\maker\icono.ico" LoginOption="AUTO" ConcurrentUserSessionCount="30" UserProfileSessionTimeout="5" AuditTrailToDB="1" AuditTrailTable="audittrail" AuditTrailFieldDateTime="datetime" AuditTrailFieldScript="script" AuditTrailFieldUser="user" AuditTrailFieldAction="action" AuditTrailFieldTable="table" AuditTrailFieldField="field" AuditTrailFieldKeyValue="keyvalue" AuditTrailFieldOldValue="oldvalue" AuditTrailFieldNewValue="newvalue">
   <Database DBID="DB" DBName="hercules" DBType="MySQL" DBConnectionMethod="DIRECT" DBHost="localhost" DBPort="3306" DBUID="root" DBQuoteS="`" DBQuoteE="`" DBDBMSName="MySQL" DBDBMSVer="80030" MaxUploadSize="10000000" SecUserLevelFld="level" SecDefault="0,&quot;Default&quot;,0" UseDynamicUserLevel="1" UserLevelTbl="userlevels" UserLevelIdFld="userlevelid" UserLevelNameFld="userlevelname" UserLevelPrivTbl="userlevelpermissions" UserLevelPrivTblNameFld="tablename" UserLevelPrivUserLevelFld="userlevelid" UserLevelPrivPrivFld="permission">
     <Table TblName="audittrail" TblType="TABLE" TblGen="1" TblGenList="controller=0,info=0,entity=0,list=0,list|class=0,view=0,view|class=0" TblList="1" TblView="1" TblCaption="Auditoría" TblUpdatable="1" TblSrchType="BASIC" TblBasicSearch="1" TblExtendedBasicSearch="1" TblSecurity="0,&quot;Default&quot;,0" TblLoaded="1" IncludeFiles="0" TblShowEmptyRows="0" TblUseGlobal="1" TblRecPerPage="20" TblRecPerPageList="10,20,50,ALL" TblGrpPerPage="3" TblGrpPerPageList="1,2,3,5,ALL" TblPagerStyle="2" TblBottomPageLink="0" TblInlineDelete="1" TblAuditTrail="1" TblUseButtonsForLinks="1" TblUseDropDownForAction="1" TblUseDropDownForListOptions="1" TblUseDropDownForExport="1">
       <Field FldName="id" FldType="3" FldTypeName="int" NativeDataType="3" FldSupport="1" FldSize="11" FldUniqueIdx="1" FldReq="1" FldIsPrimaryKey="1" FldAutoIncrement="1" FldValidate="INTEGER" FldGenerate="1" FldList="1" FldExport="1" FldView="1" FldEdit="1" FldSearch="1" FldSrchOpr="=" FldCaption="Id" FldViewTag="FORMATTED TEXT" FldHtmlTag="NO" FldTagMaxLength="0" FldSelectType="Values" FldTagAPrefix="None" FldFmtType="None" FldIncLeadDigit="-2" FldUseParen="-2" FldGpDigits="-2" FldOrderBy="1" FldOrder="DESC" FldRepeatColumns="0" FldAjax="0" FldResizeQuality="75" />
@@ -45,7 +45,7 @@
       <Field FldName="fecha_contactado" FldType="135" FldTypeName="datetime" NativeDataType="12" FldSupport="1" FldSize="19" FldAttribute="36" FldValidate="DATE" FldGenerate="1" FldExport="1" FldView="1" FldEdit="1" FldAdd="1" FldAddOpt="1" FldSearch="1" FldSrchOpr="=" FldCaption="Fecha Contactado" FldViewTag="FORMATTED TEXT" FldHtmlTag="TEXT" FldTagMaxLength="0" FldHtmlTagReadOnly="1" FldSelectType="Values" FldTagAPrefix="None" FldFmtType="Date/Time" FldIncLeadDigit="-2" FldUseParen="-2" FldGpDigits="-2" FldQuoteS="'" FldQuoteE="'" FldRepeatColumns="0" FldAjax="0" FldMultiUpdate="1" FldResizeQuality="75" />
       <Field FldName="estatus" FldType="200" FldTypeName="enum" NativeDataType="247" FldSupport="1" FldSize="7" FldAttribute="36" FldGenerate="1" FldList="1" FldExport="1" FldView="1" FldEdit="1" FldAdd="1" FldAddOpt="1" FldSearch="1" FldExtendedBasicSearch="1" FldSrchOpr="=" FldCaption="Estatus" FldViewTag="FORMATTED TEXT" FldHtmlTag="SELECT" FldTagSize="30" FldTagMaxLength="7" FldTagValues="&quot;NUEVO&quot;,&quot;NUEVO&quot;|&quot;CERRADO&quot;,&quot;CERRADO&quot;|" FldSelectType="Values" FldTagAPrefix="None" FldFmtType="None" FldIncLeadDigit="-2" FldUseParen="-2" FldGpDigits="-2" FldQuoteS="'" FldQuoteE="'" FldRepeatColumns="0" FldAjax="0" FldMultiUpdate="1" FldResizeQuality="75" />
     </Table>
-    <Table TblName="buscar_parcela_vc.php" TblType="REPORT" TblGen="1" TblGenList="reportcontroller=0,custom=0,custom|class=0" TblList="1" TblCaption="Parcela Compras/Ventas Buscar" TblSrchType="NONE" TblBasicSearch="1" TblExtendedBasicSearch="1" TblSecurity="0,&quot;Default&quot;,0" TblExpanded="1" TblLoaded="1" TblReportType="custom" TblShowEmptyRows="0" TblUseGlobal="1" TblRecPerPage="20" TblRecPerPageList="10,20,50,ALL" TblGrpPerPage="3" TblGrpPerPageList="1,2,3,5,ALL" TblPagerStyle="2" TblBottomPageLink="0" TblUseButtonsForLinks="1" TblUseDropDownForAction="1" TblUseDropDownForListOptions="1" TblUseDropDownForExport="1" />
+    <Table TblName="buscar_parcela_vc.php" TblType="REPORT" TblGen="1" TblGenList="reportcontroller=0,custom=1,custom|class=0" TblList="1" TblCaption="Parcela Compras/Ventas Buscar" TblSrchType="NONE" TblBasicSearch="1" TblExtendedBasicSearch="1" TblSecurity="0,&quot;Default&quot;,0" TblExpanded="1" TblLoaded="1" TblReportType="custom" TblShowEmptyRows="0" TblUseGlobal="1" TblRecPerPage="20" TblRecPerPageList="10,20,50,ALL" TblGrpPerPage="3" TblGrpPerPageList="1,2,3,5,ALL" TblPagerStyle="2" TblBottomPageLink="0" TblUseButtonsForLinks="1" TblUseDropDownForAction="1" TblUseDropDownForListOptions="1" TblUseDropDownForExport="1" />
     <Table TblName="cemantick_agente" TblType="TABLE" TblGenList="info=0" TblList="1" TblView="1" TblEdit="1" TblAdd="1" TblDelete="1" TblCaption="cemantick agente" TblUpdatable="1" TblSrchType="BASIC" TblBasicSearch="1" TblExtendedBasicSearch="1" TblSecurity="0,&quot;Default&quot;,0" TblLoaded="1" IncludeFiles="0" TblShowEmptyRows="0" TblUseGlobal="1" TblRecPerPage="20" TblRecPerPageList="10,20,50,ALL" TblGrpPerPage="3" TblGrpPerPageList="1,2,3,5,ALL" TblPagerStyle="2" TblBottomPageLink="0" TblInlineDelete="1" TblAuditTrail="1" TblUseButtonsForLinks="1" TblUseDropDownForAction="1" TblUseDropDownForListOptions="1" TblUseDropDownForExport="1">
       <Field FldName="Nagente" FldType="3" FldTypeName="int" NativeDataType="3" FldSupport="1" FldSize="11" FldUniqueIdx="1" FldReq="1" FldIsPrimaryKey="1" FldAutoIncrement="1" FldValidate="INTEGER" FldGenerate="1" FldList="1" FldExport="1" FldView="1" FldEdit="1" FldSearch="1" FldSrchOpr="=" FldCaption="Nagente" FldViewTag="FORMATTED TEXT" FldHtmlTag="NO" FldTagMaxLength="0" FldSelectType="Values" FldTagAPrefix="None" FldFmtType="None" FldIncLeadDigit="-2" FldUseParen="-2" FldGpDigits="-2" FldRepeatColumns="0" FldAjax="0" FldResizeQuality="75" />
       <Field FldName="nombre_agente" FldType="200" FldTypeName="varchar" NativeDataType="253" FldSupport="1" FldSize="50" FldAttribute="36" FldGenerate="1" FldList="1" FldExport="1" FldView="1" FldEdit="1" FldAdd="1" FldAddOpt="1" FldSearch="1" FldBasicSearch="1" FldSrchOpr="LIKE" FldCaption="nombre agente" FldViewTag="FORMATTED TEXT" FldHtmlTag="TEXT" FldTagSize="30" FldTagMaxLength="50" FldSelectType="Values" FldTagAPrefix="None" FldFmtType="None" FldIncLeadDigit="-2" FldUseParen="-2" FldGpDigits="-2" FldQuoteS="'" FldQuoteE="'" FldRepeatColumns="0" FldAjax="0" FldMultiUpdate="1" FldResizeQuality="75" />
@@ -98,7 +98,7 @@
       <Field FldName="hora_pesca" FldType="134" FldTypeName="time" NativeDataType="11" FldSupport="1" FldSize="40" FldAttribute="36" FldValidate="TIME" FldGenerate="1" FldList="1" FldExport="1" FldView="1" FldEdit="1" FldAdd="1" FldAddOpt="1" FldSearch="1" FldSrchOpr="=" FldCaption="hora pesca" FldViewTag="FORMATTED TEXT" FldHtmlTag="TEXT" FldTagSize="30" FldTagMaxLength="0" FldSelectType="Values" FldTagAPrefix="None" FldFmtType="None" FldIncLeadDigit="-2" FldUseParen="-2" FldGpDigits="-2" FldQuoteS="'" FldQuoteE="'" FldRepeatColumns="0" FldAjax="0" FldMultiUpdate="1" FldResizeQuality="75" />
       <Field FldName="agente" FldType="200" FldTypeName="varchar" NativeDataType="253" FldSupport="1" FldSize="50" FldAttribute="36" FldGenerate="1" FldList="1" FldExport="1" FldView="1" FldEdit="1" FldAdd="1" FldAddOpt="1" FldSearch="1" FldBasicSearch="1" FldSrchOpr="LIKE" FldCaption="agente" FldViewTag="FORMATTED TEXT" FldHtmlTag="TEXT" FldTagSize="30" FldTagMaxLength="50" FldSelectType="Values" FldTagAPrefix="None" FldFmtType="None" FldIncLeadDigit="-2" FldUseParen="-2" FldGpDigits="-2" FldQuoteS="'" FldQuoteE="'" FldRepeatColumns="0" FldAjax="0" FldMultiUpdate="1" FldResizeQuality="75" />
     </Table>
-    <Table TblName="contenedor.php" TblType="REPORT" TblGen="1" TblGenList="reportcontroller=0,custom=0,custom|class=0" TblList="1" TblCaption="Contenedor de Servicios" TblSrchType="NONE" TblBasicSearch="1" TblExtendedBasicSearch="1" TblSecurity="0,&quot;Default&quot;,0" TblExpanded="1" TblLoaded="1" TblReportType="custom" TblShowEmptyRows="0" TblUseGlobal="1" TblRecPerPage="20" TblRecPerPageList="10,20,50,ALL" TblGrpPerPage="3" TblGrpPerPageList="1,2,3,5,ALL" TblPagerStyle="2" TblBottomPageLink="0" TblUseButtonsForLinks="1" TblUseDropDownForAction="1" TblUseDropDownForListOptions="1" TblUseDropDownForExport="1" />
+    <Table TblName="contenedor.php" TblType="REPORT" TblGen="1" TblGenList="reportcontroller=0,custom=1,custom|class=0" TblList="1" TblCaption="Contenedor de Servicios" TblSrchType="NONE" TblBasicSearch="1" TblExtendedBasicSearch="1" TblSecurity="0,&quot;Default&quot;,0" TblExpanded="1" TblLoaded="1" TblReportType="custom" TblShowEmptyRows="0" TblUseGlobal="1" TblRecPerPage="20" TblRecPerPageList="10,20,50,ALL" TblGrpPerPage="3" TblGrpPerPageList="1,2,3,5,ALL" TblPagerStyle="2" TblBottomPageLink="0" TblUseButtonsForLinks="1" TblUseDropDownForAction="1" TblUseDropDownForListOptions="1" TblUseDropDownForExport="1" />
     <Table TblName="costos_estructura_list.php" TblType="REPORT" TblGen="1" TblGenList="reportcontroller=0,custom=0,custom|class=0" TblList="1" TblCaption="Estructura de Costo" TblSrchType="NONE" TblBasicSearch="1" TblExtendedBasicSearch="1" TblSecurity="0,&quot;Default&quot;,0" TblLoaded="1" OutputFolder="dashboard" TblReportType="custom" TblShowEmptyRows="0" TblUseGlobal="1" TblRecPerPage="20" TblRecPerPageList="10,20,50,ALL" TblGrpPerPage="3" TblGrpPerPageList="1,2,3,5,ALL" TblPagerStyle="2" TblBottomPageLink="0" TblUseButtonsForLinks="1" TblUseDropDownForAction="1" TblUseDropDownForListOptions="1" TblUseDropDownForExport="1" />
     <Table TblName="crear_grama.php" TblType="REPORT" TblGen="1" TblGenList="reportcontroller=0,custom=0,custom|class=0" TblList="1" TblCaption="Crear Expediente de Grama" TblSrchType="NONE" TblBasicSearch="1" TblExtendedBasicSearch="1" TblSecurity="0,&quot;Default&quot;,0" TblLoaded="1" TblReportType="custom" TblShowEmptyRows="0" TblUseGlobal="1" TblRecPerPage="20" TblRecPerPageList="10,20,50,ALL" TblGrpPerPage="3" TblGrpPerPageList="1,2,3,5,ALL" TblPagerStyle="2" TblBottomPageLink="0" TblUseButtonsForLinks="1" TblUseDropDownForAction="1" TblUseDropDownForListOptions="1" TblUseDropDownForExport="1" />
     <Table TblName="disponibilidad.php" TblType="REPORT" TblGen="1" TblGenList="reportcontroller=0,custom=0,custom|class=0" TblList="1" TblCaption="Disponibilidad" TblSrchType="NONE" TblBasicSearch="1" TblExtendedBasicSearch="1" TblSecurity="0,&quot;Default&quot;,0" TblLoaded="1" TblReportType="custom" TblShowEmptyRows="0" TblUseGlobal="1" TblRecPerPage="20" TblRecPerPageList="10,20,50,ALL" TblGrpPerPage="3" TblGrpPerPageList="1,2,3,5,ALL" TblPagerStyle="2" TblBottomPageLink="0" TblUseButtonsForLinks="1" TblUseDropDownForAction="1" TblUseDropDownForListOptions="1" TblUseDropDownForExport="1" />
@@ -106,7 +106,7 @@
     <Table TblName="eliminar_servicios_eng.php" TblType="REPORT" TblGen="1" TblGenList="reportcontroller=0,custom=0,custom|class=0" TblList="1" TblCaption="Apagar Servicios" TblSrchType="NONE" TblBasicSearch="1" TblExtendedBasicSearch="1" TblSecurity="0,&quot;Default&quot;,0" TblLoaded="1" TblReportType="custom" TblShowEmptyRows="0" TblUseGlobal="1" TblRecPerPage="20" TblRecPerPageList="10,20,50,ALL" TblGrpPerPage="3" TblGrpPerPageList="1,2,3,5,ALL" TblPagerStyle="2" TblUseButtonsForLinks="1" TblUseDropDownForAction="1" TblUseDropDownForListOptions="1" TblUseDropDownForExport="1" />
     <Table TblName="enviar_notificacion_cpf.php" TblType="REPORT" TblGen="1" TblGenList="reportcontroller=0,custom=0,custom|class=0" TblList="1" TblCaption="Enviar Notificaciòn CPF" TblSrchType="NONE" TblBasicSearch="1" TblExtendedBasicSearch="1" TblSecurity="0,&quot;Default&quot;,0" TblLoaded="1" OutputFolder="dashboard" TblReportType="custom" TblShowEmptyRows="0" TblUseGlobal="1" TblRecPerPage="20" TblRecPerPageList="10,20,50,ALL" TblGrpPerPage="3" TblGrpPerPageList="1,2,3,5,ALL" TblPagerStyle="2" TblBottomPageLink="0" TblUseButtonsForLinks="1" TblUseDropDownForAction="1" TblUseDropDownForListOptions="1" TblUseDropDownForExport="1" />
     <Table TblName="establece_cantidad_servicios.php" TblType="REPORT" TblGen="1" TblGenList="reportcontroller=0,custom=0,custom|class=0" TblList="1" TblCaption="Cantidad de Servicios por Bloque Horario" TblSrchType="NONE" TblBasicSearch="1" TblExtendedBasicSearch="1" TblSecurity="0,&quot;Default&quot;,0" TblLoaded="1" OutputFolder="dashboard" TblReportType="custom" TblShowEmptyRows="0" TblUseGlobal="1" TblRecPerPage="20" TblRecPerPageList="10,20,50,ALL" TblGrpPerPage="3" TblGrpPerPageList="1,2,3,5,ALL" TblPagerStyle="2" TblBottomPageLink="0" TblUseButtonsForLinks="1" TblUseDropDownForAction="1" TblUseDropDownForListOptions="1" TblUseDropDownForExport="1" />
-    <Table TblName="home.php" TblType="REPORT" TblGen="1" TblGenList="reportcontroller=0,custom=1,custom|class=0" TblList="1" TblCaption="HERCULES" TblSrchType="NONE" TblBasicSearch="1" TblExtendedBasicSearch="1" TblSecurity="0,&quot;Default&quot;,0" TblExpanded="1" TblLoaded="1" TblReportType="custom" TblShowEmptyRows="0" TblUseGlobal="1" TblRecPerPage="20" TblRecPerPageList="10,20,50,ALL" TblGrpPerPage="3" TblGrpPerPageList="1,2,3,5,ALL" TblPagerStyle="2" TblBottomPageLink="0" TblUseButtonsForLinks="1" TblUseDropDownForAction="1" TblUseDropDownForListOptions="1" TblUseDropDownForExport="1" />
+    <Table TblName="home.php" TblType="REPORT" TblGen="1" TblGenList="reportcontroller=0,custom=0,custom|class=0" TblList="1" TblCaption="HERCULES" TblSrchType="NONE" TblBasicSearch="1" TblExtendedBasicSearch="1" TblSecurity="0,&quot;Default&quot;,0" TblLoaded="1" TblReportType="custom" TblShowEmptyRows="0" TblUseGlobal="1" TblRecPerPage="20" TblRecPerPageList="10,20,50,ALL" TblGrpPerPage="3" TblGrpPerPageList="1,2,3,5,ALL" TblPagerStyle="2" TblBottomPageLink="0" TblUseButtonsForLinks="1" TblUseDropDownForAction="1" TblUseDropDownForListOptions="1" TblUseDropDownForExport="1" />
     <Table TblName="importar_est_cost.php" TblType="REPORT" TblGen="1" TblGenList="reportcontroller=0,custom=0,custom|class=0" TblList="1" TblCaption="Importar Estructura de Costo" TblSrchType="NONE" TblBasicSearch="1" TblExtendedBasicSearch="1" TblSecurity="0,&quot;Default&quot;,0" TblLoaded="1" OutputFolder="dashboard" TblReportType="custom" TblShowEmptyRows="0" TblUseGlobal="1" TblRecPerPage="20" TblRecPerPageList="10,20,50,ALL" TblGrpPerPage="3" TblGrpPerPageList="1,2,3,5,ALL" TblPagerStyle="2" TblBottomPageLink="0" TblUseButtonsForLinks="1" TblUseDropDownForAction="1" TblUseDropDownForListOptions="1" TblUseDropDownForExport="1" />
     <Table TblName="importar_inbox.php" TblType="REPORT" TblGen="1" TblGenList="reportcontroller=0,custom=0,custom|class=0" TblList="1" TblCaption="Importar sms Bandeja de Entrada" TblSrchType="NONE" TblBasicSearch="1" TblExtendedBasicSearch="1" TblSecurity="0,&quot;Default&quot;,0" TblLoaded="1" OutputFolder="dashboard" TblReportType="custom" TblShowEmptyRows="0" TblUseGlobal="1" TblRecPerPage="20" TblRecPerPageList="10,20,50,ALL" TblGrpPerPage="3" TblGrpPerPageList="1,2,3,5,ALL" TblPagerStyle="2" TblBottomPageLink="0" TblUseButtonsForLinks="1" TblUseDropDownForAction="1" TblUseDropDownForListOptions="1" TblUseDropDownForExport="1" />
     <Table TblName="importar_parcelas.php" TblType="REPORT" TblGen="1" TblGenList="reportcontroller=0,custom=0,custom|class=0" TblList="1" TblCaption="Importar Parcelas" TblSrchType="NONE" TblBasicSearch="1" TblExtendedBasicSearch="1" TblSecurity="0,&quot;Default&quot;,0" TblLoaded="1" OutputFolder="dashboard" TblReportType="custom" TblShowEmptyRows="0" TblUseGlobal="1" TblRecPerPage="20" TblRecPerPageList="10,20,50,ALL" TblGrpPerPage="3" TblGrpPerPageList="1,2,3,5,ALL" TblPagerStyle="2" TblBottomPageLink="0" TblUseButtonsForLinks="1" TblUseDropDownForAction="1" TblUseDropDownForListOptions="1" TblUseDropDownForExport="1" />
@@ -131,9 +131,9 @@
     <Table TblName="indicadores_201.php" TblType="REPORT" TblGen="1" TblGenList="reportcontroller=0,custom=0,custom|class=0" TblList="1" TblCaption="Indicadores Compras" TblSrchType="NONE" TblBasicSearch="1" TblExtendedBasicSearch="1" TblSecurity="0,&quot;Default&quot;,0" TblLoaded="1" OutputFolder="dashboard" TblReportType="custom" TblShowEmptyRows="0" TblUseGlobal="1" TblRecPerPage="20" TblRecPerPageList="10,20,50,ALL" TblGrpPerPage="3" TblGrpPerPageList="1,2,3,5,ALL" TblPagerStyle="2" TblBottomPageLink="0" TblUseButtonsForLinks="1" TblUseDropDownForAction="1" TblUseDropDownForListOptions="1" TblUseDropDownForExport="1" />
     <Table TblName="indicadores_202.php" TblType="REPORT" TblGen="1" TblGenList="reportcontroller=0,custom=0,custom|class=0" TblList="1" TblCaption="Indicadores Compras" TblSrchType="NONE" TblBasicSearch="1" TblExtendedBasicSearch="1" TblSecurity="0,&quot;Default&quot;,0" TblLoaded="1" OutputFolder="dashboard" TblReportType="custom" TblShowEmptyRows="0" TblUseGlobal="1" TblRecPerPage="20" TblRecPerPageList="10,20,50,ALL" TblGrpPerPage="3" TblGrpPerPageList="1,2,3,5,ALL" TblPagerStyle="2" TblBottomPageLink="0" TblUseButtonsForLinks="1" TblUseDropDownForAction="1" TblUseDropDownForListOptions="1" TblUseDropDownForExport="1" />
     <Table TblName="listado_master.php" TblType="REPORT" TblGen="1" TblGenList="reportcontroller=0,custom=0,custom|class=0" TblList="1" TblCaption="Listado General" TblSrchType="NONE" TblBasicSearch="1" TblExtendedBasicSearch="1" TblSecurity="0,&quot;Default&quot;,0" TblLoaded="1" OutputFolder="dashboard" TblReportType="custom" TblShowEmptyRows="0" TblUseGlobal="1" TblRecPerPage="20" TblRecPerPageList="10,20,50,ALL" TblGrpPerPage="3" TblGrpPerPageList="1,2,3,5,ALL" TblPagerStyle="2" TblBottomPageLink="0" TblUseButtonsForLinks="1" TblUseDropDownForAction="1" TblUseDropDownForListOptions="1" TblUseDropDownForExport="1" />
-    <Table TblName="listado_master_buscar.php" TblType="REPORT" TblGen="1" TblGenList="reportcontroller=0,custom=2,custom|class=2" TblList="1" TblSrchType="NONE" TblBasicSearch="1" TblExtendedBasicSearch="1" TblSecurity="0,&quot;Default&quot;,0" TblLoaded="1" OutputFolder="dashboard" TblReportType="custom" TblShowEmptyRows="0" TblUseGlobal="1" TblRecPerPage="20" TblRecPerPageList="10,20,50,ALL" TblGrpPerPage="3" TblGrpPerPageList="1,2,3,5,ALL" TblPagerStyle="2" TblBottomPageLink="0" TblUseButtonsForLinks="1" TblUseDropDownForAction="1" TblUseDropDownForListOptions="1" TblUseDropDownForExport="1" />
-    <Table TblName="listado_master_buscar_excel.php" TblType="REPORT" TblGen="1" TblGenList="reportcontroller=0,custom=0,custom|class=0" TblList="1" TblSrchType="NONE" TblBasicSearch="1" TblExtendedBasicSearch="1" TblSecurity="0,&quot;Default&quot;,0" TblLoaded="1" OutputFolder="dashboard" TblReportType="custom" TblShowEmptyRows="0" TblUseGlobal="1" TblRecPerPage="20" TblRecPerPageList="10,20,50,ALL" TblGrpPerPage="3" TblGrpPerPageList="1,2,3,5,ALL" TblPagerStyle="2" TblBottomPageLink="0" TblUseButtonsForLinks="1" TblUseDropDownForAction="1" TblUseDropDownForListOptions="1" TblUseDropDownForExport="1" />
-    <Table TblName="listar_servicios.php" TblType="REPORT" TblGen="1" TblGenList="reportcontroller=0,custom=0,custom|class=0" TblList="1" TblCaption="Listar Servicios" TblSrchType="NONE" TblBasicSearch="1" TblExtendedBasicSearch="1" TblSecurity="0,&quot;Default&quot;,0" TblExpanded="1" TblLoaded="1" TblReportType="custom" TblShowEmptyRows="0" TblUseGlobal="1" TblRecPerPage="20" TblRecPerPageList="10,20,50,ALL" TblGrpPerPage="3" TblGrpPerPageList="1,2,3,5,ALL" TblPagerStyle="2" TblBottomPageLink="0" TblUseButtonsForLinks="1" TblUseDropDownForAction="1" TblUseDropDownForListOptions="1" TblUseDropDownForExport="1" />
+    <Table TblName="listado_master_buscar.php" TblType="REPORT" TblGen="1" TblGenList="reportcontroller=0,custom=2,custom|class=2" TblList="1" TblSrchType="NONE" TblBasicSearch="1" TblExtendedBasicSearch="1" TblSecurity="0,&quot;Default&quot;,0" TblExpanded="1" TblLoaded="1" OutputFolder="dashboard" TblReportType="custom" TblShowEmptyRows="0" TblUseGlobal="1" TblRecPerPage="20" TblRecPerPageList="10,20,50,ALL" TblGrpPerPage="3" TblGrpPerPageList="1,2,3,5,ALL" TblPagerStyle="2" TblBottomPageLink="0" TblUseButtonsForLinks="1" TblUseDropDownForAction="1" TblUseDropDownForListOptions="1" TblUseDropDownForExport="1" />
+    <Table TblName="listado_master_buscar_excel.php" TblType="REPORT" TblGen="1" TblGenList="reportcontroller=0,custom=0,custom|class=0" TblList="1" TblSrchType="NONE" TblBasicSearch="1" TblExtendedBasicSearch="1" TblSecurity="0,&quot;Default&quot;,0" TblExpanded="1" TblLoaded="1" OutputFolder="dashboard" TblReportType="custom" TblShowEmptyRows="0" TblUseGlobal="1" TblRecPerPage="20" TblRecPerPageList="10,20,50,ALL" TblGrpPerPage="3" TblGrpPerPageList="1,2,3,5,ALL" TblPagerStyle="2" TblBottomPageLink="0" TblUseButtonsForLinks="1" TblUseDropDownForAction="1" TblUseDropDownForListOptions="1" TblUseDropDownForExport="1" />
+    <Table TblName="listar_servicios.php" TblType="REPORT" TblGen="1" TblGenList="reportcontroller=0,custom=0,custom|class=0" TblList="1" TblCaption="Listar Servicios" TblSrchType="NONE" TblBasicSearch="1" TblExtendedBasicSearch="1" TblSecurity="0,&quot;Default&quot;,0" TblLoaded="1" TblReportType="custom" TblShowEmptyRows="0" TblUseGlobal="1" TblRecPerPage="20" TblRecPerPageList="10,20,50,ALL" TblGrpPerPage="3" TblGrpPerPageList="1,2,3,5,ALL" TblPagerStyle="2" TblBottomPageLink="0" TblUseButtonsForLinks="1" TblUseDropDownForAction="1" TblUseDropDownForListOptions="1" TblUseDropDownForExport="1" />
     <Table TblName="monitor.php" TblType="REPORT" TblGen="1" TblGenList="custom=0" TblList="1" TblCaption="Monitoreo de Servicios" TblSrchType="NONE" TblBasicSearch="1" TblExtendedBasicSearch="1" TblSecurity="0,&quot;Default&quot;,0" TblLoaded="1" OutputFolder="dashboard" IncludeFiles="0" TblReportType="custom" TblShowEmptyRows="0" TblUseGlobal="1" TblRecPerPage="20" TblRecPerPageList="10,20,50,ALL" TblGrpPerPage="3" TblGrpPerPageList="1,2,3,5,ALL" TblPagerStyle="2" TblBottomPageLink="0" TblUseButtonsForLinks="1" TblUseDropDownForAction="1" TblUseDropDownForListOptions="1" TblUseDropDownForExport="1" />
     <Table TblName="monitoriar_servicios.php" TblType="REPORT" TblGen="1" TblGenList="reportcontroller=0,custom=0,custom|class=0" TblList="1" TblCaption="Monitorear Servicios" TblSrchType="NONE" TblBasicSearch="1" TblExtendedBasicSearch="1" TblSecurity="0,&quot;Default&quot;,0" TblLoaded="1" TblReportType="custom" TblShowEmptyRows="0" TblUseGlobal="1" TblRecPerPage="20" TblRecPerPageList="10,20,50,ALL" TblGrpPerPage="3" TblGrpPerPageList="1,2,3,5,ALL" TblPagerStyle="2" TblUseButtonsForLinks="1" TblUseDropDownForAction="1" TblUseDropDownForListOptions="1" TblUseDropDownForExport="1" />
     <Table TblName="obituario_preview.php" TblType="REPORT" TblGen="1" TblGenList="reportcontroller=0,custom=0,custom|class=0" TblList="1" TblCaption="Obituario" TblSrchType="NONE" TblBasicSearch="1" TblExtendedBasicSearch="1" TblSecurity="0,&quot;Default&quot;,0" TblLoaded="1" TblReportType="custom" TblShowEmptyRows="0" TblUseGlobal="1" TblRecPerPage="20" TblRecPerPageList="10,20,50,ALL" TblGrpPerPage="3" TblGrpPerPageList="1,2,3,5,ALL" TblPagerStyle="2" TblUseButtonsForLinks="1" TblUseDropDownForAction="1" TblUseDropDownForListOptions="1" TblUseDropDownForExport="1" />
@@ -346,7 +346,7 @@
       <Field FldName="color" FldType="200" FldTypeName="varchar" NativeDataType="253" FldSupport="1" FldSize="10" FldAttribute="36" FldGenerate="1" FldList="1" FldExport="1" FldView="1" FldEdit="1" FldAdd="1" FldAddOpt="1" FldSearch="1" FldBasicSearch="1" FldSrchOpr="LIKE" FldCaption="color" FldViewTag="FORMATTED TEXT" FldHtmlTag="TEXT" FldTagSize="30" FldTagMaxLength="10" FldSelectType="Values" FldTagAPrefix="None" FldFmtType="None" FldIncLeadDigit="-2" FldUseParen="-2" FldGpDigits="-2" FldQuoteS="'" FldQuoteE="'" FldRepeatColumns="0" FldAjax="0" FldMultiUpdate="1" FldResizeQuality="75" />
       <Field FldName="activo" FldType="200" FldTypeName="enum" NativeDataType="247" FldSupport="1" FldSize="1" FldAttribute="36" FldGenerate="1" FldList="1" FldExport="1" FldView="1" FldEdit="1" FldAdd="1" FldAddOpt="1" FldSearch="1" FldExtendedBasicSearch="1" FldSrchOpr="=" FldCaption="activo" FldViewTag="FORMATTED TEXT" FldHtmlTag="RADIO" FldTagSize="30" FldTagMaxLength="1" FldTagValues="&quot;S&quot;,&quot;S&quot;|&quot;N&quot;,&quot;N&quot;|" FldSelectType="Values" FldTagAPrefix="None" FldFmtType="None" FldIncLeadDigit="-2" FldUseParen="-2" FldGpDigits="-2" FldQuoteS="'" FldQuoteE="'" FldRepeatColumns="0" FldAjax="0" FldMultiUpdate="1" FldResizeQuality="75" />
     </Table>
-    <Table TblName="sco_expediente" TblType="TABLE" TblGen="1" TblGenList="controller=0,info=0,entity=0,master=0,list=0,list|class=0,add=0,add|class=0,view=0,view|class=0,edit=0,edit|class=0,delete=0,delete|class=0" TblList="1" TblView="1" TblEdit="1" TblAdd="1" TblIsMaster="1" TblDelete="1" TblCaption="Expedientes" TblUpdatable="1" TblSrchType="BASIC" TblBasicSearch="1" TblExtendedBasicSearch="1" TblSecurity="0,&quot;Default&quot;,0" TblLoaded="1" IncludeFiles="0" TblShowEmptyRows="0" TblUseGlobal="0" TblRecPerPage="50" TblRecPerPageList="5,10,20,50" TblGrpPerPage="3" TblGrpPerPageList="1,2,3,5,ALL" TblPrinterFriendly="1" TblExportType="PAGE" TblSortType="1" TblPagerStyle="2" TblTopPageLink="1" TblViewExport="1" TblListExport="1" TblLinkOnLeft="1" TblDetailViewPaging="1" TblAuditTrail="1" TblDetailView="1" TblMultiPageAdd="1" TblMultiPageEdit="1" TblMultiPageType="Tabs" TblPageCaptions="Contato|Fallecido|Ocurrencia|Servicio">
+    <Table TblName="sco_expediente" TblType="TABLE" TblGen="1" TblGenList="controller=0,info=0,entity=0,master=0,list=0,list|class=0,add=1,add|class=1,view=0,view|class=0,edit=1,edit|class=1,delete=0,delete|class=0" TblList="1" TblView="1" TblEdit="1" TblAdd="1" TblIsMaster="1" TblDelete="1" TblCaption="Expedientes" TblUpdatable="1" TblSrchType="BASIC" TblBasicSearch="1" TblExtendedBasicSearch="1" TblSecurity="0,&quot;Default&quot;,0" TblExpanded="1" TblLoaded="1" IncludeFiles="0" TblShowEmptyRows="0" TblUseGlobal="0" TblRecPerPage="50" TblRecPerPageList="5,10,20,50" TblGrpPerPage="3" TblGrpPerPageList="1,2,3,5,ALL" TblPrinterFriendly="1" TblExportType="PAGE" TblSortType="1" TblPagerStyle="2" TblTopPageLink="1" TblViewExport="1" TblListExport="1" TblLinkOnLeft="1" TblDetailViewPaging="1" TblAuditTrail="1" TblDetailView="1" TblMultiPageAdd="1" TblMultiPageEdit="1" TblMultiPageType="Tabs" TblPageCaptions="Contato|Fallecido|Ocurrencia|Servicio">
       <Field FldName="Nexpediente" FldType="20" FldTypeName="bigint" NativeDataType="8" FldSupport="1" FldSize="20" FldUniqueIdx="1" FldReq="1" FldIsPrimaryKey="1" FldAutoIncrement="1" FldValidate="INTEGER" FldGenerate="1" FldList="1" FldExport="1" FldEdit="1" FldSearch="1" FldExtendedBasicSearch="1" FldSrchOpr="=" FldCaption="Exp. #" FldViewTag="FORMATTED TEXT" FldHtmlTag="NO" FldTagMaxLength="0" FldSelectType="Values" FldFmtType="None" FldIncLeadDigit="-2" FldUseParen="-2" FldGpDigits="-2" FldRepeatColumns="0" FldAjax="0" FldResizeQuality="75" />
       <Field FldName="contrato_parcela" FldType="200" FldTypeName="varchar" NativeDataType="253" FldSupport="1" FldSize="8" FldAttribute="36" FldGenerate="1" FldExport="1" FldEdit="1" FldAdd="1" FldAddOpt="1" FldSearch="1" FldBasicSearch="1" FldSrchOpr="LIKE" FldCaption="#Ctto Parcela" FldViewTag="IMAGE" FldHtmlTag="TEXT" FldTagSize="30" FldTagMaxLength="8" FldSelectType="Table" FldTagAPrefix="None" FldFmtType="None" FldIncLeadDigit="-2" FldUseParen="-2" FldGpDigits="-2" FldQuoteS="'" FldQuoteE="'" FldRepeatColumns="0" FldAjax="0" FldMultiUpdate="1" FldResizeQuality="75" />
       <Field FldName="tipo_contratacion" FldType="200" FldTypeName="varchar" NativeDataType="253" FldSupport="1" FldSize="10" FldReq="1" FldAttribute="4" FldValidate="INTEGER" FldRequired="1" FldGenerate="1" FldExport="1" FldAddOpt="1" FldSearch="1" FldSrchOpr="=" FldCaption="Tipo" FldViewTag="FORMATTED TEXT" FldHtmlTag="SELECT" FldTagSize="30" FldTagMaxLength="10" FldSelectType="Table" FldTagLnkTbl="sco_seguro" FldTagLnkFld="tipo_contratacion" FldTagLnkDisplay="tipo_contratacion" FldTagLnkOrderBy="tipo_contratacion" FldTagLnkDistinct="1" FldTagAPrefix="None" FldFmtType="None" FldIncLeadDigit="-2" FldUseParen="-2" FldGpDigits="-2" FldQuoteS="'" FldQuoteE="'" FldRepeatColumns="0" FldAjax="0" FldMultiUpdate="1" FldResizeQuality="75" />
@@ -1346,7 +1346,7 @@
       <Field FldName="user_registra" FldType="200" FldTypeName="varchar" NativeDataType="253" FldSupport="1" FldSize="25" FldAttribute="36" FldGenerate="1" FldExport="1" FldView="1" FldAddOpt="1" FldSearch="1" FldBasicSearch="1" FldSrchOpr="LIKE" FldCaption="Usuario Registro" FldViewTag="FORMATTED TEXT" FldHtmlTag="TEXT" FldTagSize="30" FldTagMaxLength="25" FldSelectType="Values" FldTagAPrefix="None" FldFmtType="None" FldIncLeadDigit="-2" FldUseParen="-2" FldGpDigits="-2" FldQuoteS="'" FldQuoteE="'" FldRepeatColumns="0" FldAjax="0" FldMultiUpdate="1" FldResizeQuality="75" />
       <Field FldName="fecha_registro" FldType="135" FldTypeName="datetime" NativeDataType="12" FldSupport="1" FldSize="19" FldAttribute="36" FldValidate="DATE" FldGenerate="1" FldExport="1" FldView="1" FldAddOpt="1" FldSearch="1" FldSrchOpr="=" FldCaption="Fecha Registro" FldViewTag="FORMATTED TEXT" FldHtmlTag="TEXT" FldTagMaxLength="0" FldSelectType="Values" FldTagAPrefix="None" FldFmtType="Date/Time" FldIncLeadDigit="-2" FldUseParen="-2" FldGpDigits="-2" FldQuoteS="'" FldQuoteE="'" FldRepeatColumns="0" FldAjax="0" FldMultiUpdate="1" FldResizeQuality="75" />
     </Table>
-    <Table TblName="view_expediente_servicio" TblType="VIEW" TblGen="1" TblGenList="controller=1,info=1,entity=1,list=1,list|class=1" TblList="1" TblCaption="Expedientes" TblUpdatable="1" TblSQL="select `expe`.`Nexpediente` AS `Nexpediente`,`expe`.`nombre_contacto` AS `nombre_contacto`,`expe`.`telefono_contacto1` AS `telefono_contacto1`,`expe`.`telefono_contacto2` AS `telefono_contacto2`,`expe`.`cedula_fallecido` AS `cedula_fallecido`,`expe`.`nombre_fallecido` AS `nombre_fallecido`,`expe`.`apellidos_fallecido` AS `apellidos_fallecido`,`expe`.`fecha_nacimiento` AS `fecha_nacimiento`,`expe`.`edad_fallecido` AS `edad_fallecido`,`expe`.`sexo` AS `sexo`,`expe`.`fecha_ocurrencia` AS `fecha_ocurrencia`,`expe`.`causa_ocurrencia` AS `causa_ocurrencia`,`expe`.`causa_otro` AS `causa_otro`,`expe`.`permiso` AS `permiso`,(select group_concat(`a2`.`nombre` separator ', ') AS `sede` from (`sco_orden` `a1` join `sco_servicio_tipo` `a2` on((`a2`.`Nservicio_tipo` = `a1`.`servicio_tipo`))) where ((`a1`.`expediente` = `expe`.`Nexpediente`) and (`a1`.`paso` = 1))) AS `sede`,(select group_concat(`a2`.`nombre` separator ', ') AS `servicio` from (`sco_orden` `a1` join `sco_servicio` `a2` on((`a2`.`Nservicio` = `a1`.`servicio`))) where ((`a1`.`expediente` = `expe`.`Nexpediente`) and (`a1`.`paso` = 1))) AS `capilla`,(select group_concat(cast(`sco_orden`.`horas` as char(8) charset latin1) separator ', ') AS `horas` from `sco_orden` where ((`sco_orden`.`expediente` = `expe`.`Nexpediente`) and (`sco_orden`.`paso` = 1))) AS `horas`,date_format((select `sco_orden`.`fecha_inicio` AS `fecha_inicio` from `sco_orden` where ((`sco_orden`.`expediente` = `expe`.`Nexpediente`) and (`sco_orden`.`paso` = 1)) limit 0,1),_utf8mb3'%Y-%m-%d') AS `fecha_inicio`,(select `sco_orden`.`hora_inicio` AS `hora_inicio` from `sco_orden` where ((`sco_orden`.`expediente` = `expe`.`Nexpediente`) and (`sco_orden`.`paso` = 1)) limit 0,1) AS `hora_inicio`,date_format((select `sco_orden`.`fecha_fin` AS `fecha_fin` from `sco_orden` where ((`sco_orden`.`expediente` = `expe`.`Nexpediente`) and (`sco_orden`.`paso` = 1)) limit 0,1),_utf8mb3'%Y-%m-%d') AS `fecha_fin`,(select `sco_orden`.`hora_fin` AS `hora_fin` from `sco_orden` where ((`sco_orden`.`expediente` = `expe`.`Nexpediente`) and (`sco_orden`.`paso` = 1)) limit 0,1) AS `hora_fin`,`serv`.`nombre` AS `servicio`,date_format(`ser2`.`fecha_fin`,_utf8mb3'%Y-%m-%d') AS `fecha_serv`,`ser2`.`hora_fin` AS `hora_serv`,`ser2`.`espera_cenizas` AS `espera_cenizas`,(select `sco_orden`.`hora_fin` AS `hora_fin` from `sco_orden` where ((`sco_orden`.`expediente` = `expe`.`Nexpediente`) and (`sco_orden`.`paso` = 1)) limit 0,1) AS `hora_fin_capilla`,`ser2`.`hora_fin` AS `hora_fin_servicio`,`expe`.`estatus` AS `estatus`,`expe`.`fecha_registro` AS `fecha_registro`,(select `b`.`nombre` AS `nombre` from (`sco_orden` `a` join `sco_servicio` `b` on((`b`.`Nservicio` = `a`.`servicio`))) where ((`a`.`expediente` = `expe`.`Nexpediente`) and (`a`.`paso` = 3)) limit 0,1) AS `ataud`,(select sum(`a`.`cantidad`) AS `arreglos` from `sco_orden` `a` where ((`a`.`expediente` = `expe`.`Nexpediente`) and (`a`.`paso` = 4))) AS `arreglo_floral`,(select sum(`a`.`cantidad`) AS `arreglos` from `sco_orden` `a` where ((`a`.`expediente` = `expe`.`Nexpediente`) and (`a`.`paso` = 5) and (`a`.`servicio_tipo` = _utf8mb3'RELI'))) AS `oficio_religioso`,(select sum(`a`.`cantidad`) AS `arreglos` from `sco_orden` `a` where ((`a`.`expediente` = `expe`.`Nexpediente`) and (`a`.`paso` = 5) and (`a`.`servicio_tipo` = _utf8mb3'OFVO'))) AS `ofrenda_voz`,(select `sco_seguro`.`nombre` AS `nombre` from `sco_seguro` where (`sco_seguro`.`Nseguro` = `expe`.`seguro`)) AS `seguro`,`expe`.`factura` AS `factura`,`expe`.`venta` AS `venta`,`expe`.`email` AS `email`,ifnull(`ser2`.`capilla`,1) AS `funeraria`,`ser2`.`servicio` AS `cod_servicio`,(select `sco_user`.`nombre` AS `nombre` from `sco_user` where (`sco_user`.`username` = `expe`.`user_registra`)) AS `coordinador`,`expe`.`parcela` AS `parcela` from ((`sco_expediente` `expe` left join `sco_orden` `ser2` on(((`ser2`.`expediente` = `expe`.`Nexpediente`) and (`ser2`.`paso` = 2)))) left join `sco_servicio` `serv` on((`serv`.`Nservicio` = `ser2`.`servicio`))) where (0 = 0)" TblSrchType="BASIC" TblBasicSearch="1" TblExtendedBasicSearch="1" TblSecurity="0,&quot;Default&quot;,0" TblLoaded="1" IncludeFiles="0" TblShowEmptyRows="0" TblUseGlobal="0" TblRecPerPage="50" TblRecPerPageList="5,10,20,50" TblGrpPerPage="3" TblGrpPerPageList="1,2,3,5,ALL" TblPrinterFriendly="1" TblExportExcel="1" TblExportType="ALL" TblSortType="1" TblPagerStyle="2" TblTopPageLink="1" TblLinkOnLeft="1" TblInlineDelete="1" TblDetailViewPaging="1" TblDetailEditPaging="1" TblUseDropDownForListOptions="1">
+    <Table TblName="view_expediente_servicio" TblType="VIEW" TblGen="1" TblGenList="controller=0,info=0,entity=0,list=0,list|class=0" TblList="1" TblCaption="Expedientes" TblUpdatable="1" TblSQL="select `expe`.`Nexpediente` AS `Nexpediente`,`expe`.`nombre_contacto` AS `nombre_contacto`,`expe`.`telefono_contacto1` AS `telefono_contacto1`,`expe`.`telefono_contacto2` AS `telefono_contacto2`,`expe`.`cedula_fallecido` AS `cedula_fallecido`,`expe`.`nombre_fallecido` AS `nombre_fallecido`,`expe`.`apellidos_fallecido` AS `apellidos_fallecido`,`expe`.`fecha_nacimiento` AS `fecha_nacimiento`,`expe`.`edad_fallecido` AS `edad_fallecido`,`expe`.`sexo` AS `sexo`,`expe`.`fecha_ocurrencia` AS `fecha_ocurrencia`,`expe`.`causa_ocurrencia` AS `causa_ocurrencia`,`expe`.`causa_otro` AS `causa_otro`,`expe`.`permiso` AS `permiso`,(select group_concat(`a2`.`nombre` separator ', ') AS `sede` from (`sco_orden` `a1` join `sco_servicio_tipo` `a2` on((`a2`.`Nservicio_tipo` = `a1`.`servicio_tipo`))) where ((`a1`.`expediente` = `expe`.`Nexpediente`) and (`a1`.`paso` = 1))) AS `sede`,(select group_concat(`a2`.`nombre` separator ', ') AS `servicio` from (`sco_orden` `a1` join `sco_servicio` `a2` on((`a2`.`Nservicio` = `a1`.`servicio`))) where ((`a1`.`expediente` = `expe`.`Nexpediente`) and (`a1`.`paso` = 1))) AS `capilla`,(select group_concat(cast(`sco_orden`.`horas` as char(8) charset latin1) separator ', ') AS `horas` from `sco_orden` where ((`sco_orden`.`expediente` = `expe`.`Nexpediente`) and (`sco_orden`.`paso` = 1))) AS `horas`,date_format((select `sco_orden`.`fecha_inicio` AS `fecha_inicio` from `sco_orden` where ((`sco_orden`.`expediente` = `expe`.`Nexpediente`) and (`sco_orden`.`paso` = 1)) limit 0,1),_utf8mb3'%Y-%m-%d') AS `fecha_inicio`,(select `sco_orden`.`hora_inicio` AS `hora_inicio` from `sco_orden` where ((`sco_orden`.`expediente` = `expe`.`Nexpediente`) and (`sco_orden`.`paso` = 1)) limit 0,1) AS `hora_inicio`,date_format((select `sco_orden`.`fecha_fin` AS `fecha_fin` from `sco_orden` where ((`sco_orden`.`expediente` = `expe`.`Nexpediente`) and (`sco_orden`.`paso` = 1)) limit 0,1),_utf8mb3'%Y-%m-%d') AS `fecha_fin`,(select `sco_orden`.`hora_fin` AS `hora_fin` from `sco_orden` where ((`sco_orden`.`expediente` = `expe`.`Nexpediente`) and (`sco_orden`.`paso` = 1)) limit 0,1) AS `hora_fin`,`serv`.`nombre` AS `servicio`,date_format(`ser2`.`fecha_fin`,_utf8mb3'%Y-%m-%d') AS `fecha_serv`,`ser2`.`hora_fin` AS `hora_serv`,`ser2`.`espera_cenizas` AS `espera_cenizas`,(select `sco_orden`.`hora_fin` AS `hora_fin` from `sco_orden` where ((`sco_orden`.`expediente` = `expe`.`Nexpediente`) and (`sco_orden`.`paso` = 1)) limit 0,1) AS `hora_fin_capilla`,`ser2`.`hora_fin` AS `hora_fin_servicio`,`expe`.`estatus` AS `estatus`,`expe`.`fecha_registro` AS `fecha_registro`,(select `b`.`nombre` AS `nombre` from (`sco_orden` `a` join `sco_servicio` `b` on((`b`.`Nservicio` = `a`.`servicio`))) where ((`a`.`expediente` = `expe`.`Nexpediente`) and (`a`.`paso` = 3)) limit 0,1) AS `ataud`,(select sum(`a`.`cantidad`) AS `arreglos` from `sco_orden` `a` where ((`a`.`expediente` = `expe`.`Nexpediente`) and (`a`.`paso` = 4))) AS `arreglo_floral`,(select sum(`a`.`cantidad`) AS `arreglos` from `sco_orden` `a` where ((`a`.`expediente` = `expe`.`Nexpediente`) and (`a`.`paso` = 5) and (`a`.`servicio_tipo` = _utf8mb3'RELI'))) AS `oficio_religioso`,(select sum(`a`.`cantidad`) AS `arreglos` from `sco_orden` `a` where ((`a`.`expediente` = `expe`.`Nexpediente`) and (`a`.`paso` = 5) and (`a`.`servicio_tipo` = _utf8mb3'OFVO'))) AS `ofrenda_voz`,(select `sco_seguro`.`nombre` AS `nombre` from `sco_seguro` where (`sco_seguro`.`Nseguro` = `expe`.`seguro`)) AS `seguro`,`expe`.`factura` AS `factura`,`expe`.`venta` AS `venta`,`expe`.`email` AS `email`,ifnull(`ser2`.`capilla`,1) AS `funeraria`,`ser2`.`servicio` AS `cod_servicio`,(select `sco_user`.`nombre` AS `nombre` from `sco_user` where (`sco_user`.`username` = `expe`.`user_registra`)) AS `coordinador`,`expe`.`parcela` AS `parcela` from ((`sco_expediente` `expe` left join `sco_orden` `ser2` on(((`ser2`.`expediente` = `expe`.`Nexpediente`) and (`ser2`.`paso` = 2)))) left join `sco_servicio` `serv` on((`serv`.`Nservicio` = `ser2`.`servicio`))) where (0 = 0)" TblSrchType="BASIC" TblBasicSearch="1" TblExtendedBasicSearch="1" TblSecurity="0,&quot;Default&quot;,0" TblLoaded="1" IncludeFiles="0" TblShowEmptyRows="0" TblUseGlobal="0" TblRecPerPage="50" TblRecPerPageList="5,10,20,50" TblGrpPerPage="3" TblGrpPerPageList="1,2,3,5,ALL" TblPrinterFriendly="1" TblExportExcel="1" TblExportType="ALL" TblSortType="1" TblPagerStyle="2" TblTopPageLink="1" TblLinkOnLeft="1" TblInlineDelete="1" TblDetailViewPaging="1" TblDetailEditPaging="1" TblUseDropDownForListOptions="1">
       <Field FldName="Nexpediente" FldType="20" FldTypeName="bigint" NativeDataType="8" FldSupport="1" FldSize="20" FldIsPrimaryKey="1" FldAttribute="36" FldValidate="INTEGER" FldGenerate="1" FldList="1" FldExport="1" FldView="1" FldEdit="1" FldSearch="1" FldExtendedBasicSearch="1" FldSrchOpr="=" FldDefault="0" FldDbDefault="0" FldCaption="Exp. #" FldViewTag="FORMATTED TEXT" FldHtmlTag="TEXT" FldTagMaxLength="0" FldSelectType="Values" FldTagATarget="_blank" FldTagAPrefix="sco_expedienteview.php?showdetail=&amp;Nexpediente=" FldFmtType="None" FldIncLeadDigit="-2" FldUseParen="-2" FldGpDigits="-2" FldHrefFld="Nexpediente" FldRepeatColumns="0" FldAjax="0" FldResizeQuality="75" />
       <Field FldName="seguro" FldType="200" FldTypeName="varchar" NativeDataType="253" FldSupport="1" FldSize="60" FldAttribute="36" FldGenerate="1" FldList="1" FldExport="1" FldView="1" FldEdit="1" FldAdd="1" FldAddOpt="1" FldSearch="1" FldBasicSearch="1" FldSrchOpr="LIKE" FldCaption="Seguro" FldViewTag="FORMATTED TEXT" FldHtmlTag="TEXT" FldTagSize="30" FldTagMaxLength="60" FldSelectType="Values" FldTagAPrefix="None" FldFmtType="None" FldIncLeadDigit="-2" FldUseParen="-2" FldGpDigits="-2" FldQuoteS="'" FldQuoteE="'" FldRepeatColumns="0" FldAjax="0" FldMultiUpdate="1" FldResizeQuality="75" />
       <Field FldName="nombre_contacto" FldType="200" FldTypeName="varchar" NativeDataType="253" FldSupport="1" FldSize="50" FldAttribute="36" FldRequired="1" FldGenerate="1" FldList="1" FldExport="1" FldView="1" FldEdit="1" FldAdd="1" FldAddOpt="1" FldSearch="1" FldBasicSearch="1" FldSrchOpr="LIKE" FldCaption="Contacto" FldViewTag="FORMATTED TEXT" FldHtmlTag="TEXT" FldTagSize="30" FldTagMaxLength="50" FldSelectType="Values" FldTagAPrefix="None" FldFmtType="None" FldIncLeadDigit="-2" FldUseParen="-2" FldGpDigits="-2" FldQuoteS="'" FldQuoteE="'" FldRepeatColumns="0" FldAjax="0" FldMultiUpdate="1" FldResizeQuality="75" />
@@ -1630,7 +1630,6 @@
       <Field FldName="sto_min" FldType="3" FldTypeName="int" NativeDataType="3" FldSupport="1" FldSize="11" FldAttribute="36" FldValidate="INTEGER" FldGenerate="1" FldExport="1" FldAddOpt="1" FldSearch="1" FldSrchOpr="=" FldDefault="0" FldDbDefault="0" FldCaption="sto min" FldViewTag="FORMATTED TEXT" FldHtmlTag="TEXT" FldTagSize="30" FldTagMaxLength="0" FldSelectType="Values" FldTagAPrefix="None" FldFmtType="None" FldIncLeadDigit="-2" FldUseParen="-2" FldGpDigits="-2" FldRepeatColumns="0" FldAjax="0" FldMultiUpdate="1" FldResizeQuality="75" />
       <Field FldName="activo" FldType="200" FldTypeName="enum" NativeDataType="247" FldSupport="1" FldSize="1" FldAttribute="36" FldGenerate="1" FldList="1" FldExport="1" FldView="1" FldEdit="1" FldAdd="1" FldAddOpt="1" FldSearch="1" FldSrchOpr="=" FldDefault="&quot;S&quot;" FldDbDefault="S" FldCaption="Activo" FldViewTag="FORMATTED TEXT" FldHtmlTag="SELECT" FldTagSize="30" FldTagMaxLength="1" FldTagValues="&quot;S&quot;,&quot;SI&quot;|&quot;N&quot;,&quot;NO&quot;|" FldSelectType="Values" FldTagAPrefix="None" FldFmtType="None" FldIncLeadDigit="-2" FldUseParen="-2" FldGpDigits="-2" FldQuoteS="'" FldQuoteE="'" FldRepeatColumns="0" FldAjax="0" FldMultiUpdate="1" FldResizeQuality="75" />
     </Table>
-    <Table TblName="update_activity.php" TblType="REPORT" TblGen="1" TblGenList="reportcontroller=1,custom=1,custom|class=1" TblList="1" TblCaption="Actualizar Actividad del Usaurio" TblSrchType="NONE" TblBasicSearch="1" TblExtendedBasicSearch="1" TblSecurity="0,&quot;Default&quot;,0" TblLoaded="1" TblReportType="custom" TblShowEmptyRows="0" TblUseGlobal="1" TblRecPerPage="20" TblRecPerPageList="10,20,50,ALL" TblGrpPerPage="3" TblGrpPerPageList="1,2,3,5,ALL" TblPagerStyle="2" TblUseButtonsForLinks="1" TblUseDropDownForAction="1" TblUseDropDownForListOptions="1" TblUseDropDownForExport="1" />
   </Database>
   <Extension Name="@phpmaker/captcha" Template="@phpmaker/captcha" XmlFile="captcha.xml" Enabled="1">
     <ExtProject>
@@ -2175,9 +2174,6 @@
         <ExtTable TblName="sco_parcela_ventas_nota">
           <Properties><![CDATA[[{"Id":"PageOrientation","Type":"String","Value":"ORIENTATION_DEFAULT"},{"Id":"PageSize","Type":"String","Value":"PAPERSIZE_A4"}]]]></Properties>
         </ExtTable>
-        <ExtTable TblName="update_activity.php">
-          <Properties><![CDATA[[{"Id":"PageOrientation","Type":"String","Value":"ORIENTATION_DEFAULT"},{"Id":"PageSize","Type":"String","Value":"PAPERSIZE_A4"}]]]></Properties>
-        </ExtTable>
         <Properties><![CDATA[[]]]></Properties>
       </ExtDatabase>
       <Properties><![CDATA[[{"Id":"Format","Type":"String","Value":"Excel5"}]]]></Properties>
@@ -2262,9 +2258,6 @@
           <Properties><![CDATA[[]]]></Properties>
         </ExtTable>
         <ExtTable TblName="sco_parcela_ventas_nota">
-          <Properties><![CDATA[[]]]></Properties>
-        </ExtTable>
-        <ExtTable TblName="update_activity.php">
           <Properties><![CDATA[[]]]></Properties>
         </ExtTable>
         <Properties><![CDATA[[]]]></Properties>
@@ -2914,9 +2907,6 @@
         <ExtTable TblName="sco_parcela_ventas_nota">
           <Properties><![CDATA[[]]]></Properties>
         </ExtTable>
-        <ExtTable TblName="update_activity.php">
-          <Properties><![CDATA[[]]]></Properties>
-        </ExtTable>
         <Properties><![CDATA[[]]]></Properties>
       </ExtDatabase>
       <Properties><![CDATA[[{"Id":"InputGroup","Type":"Boolean","Value":"1"},{"Id":"Options","Type":"String","Value":""}]]]></Properties>
@@ -3441,9 +3431,6 @@
         <ExtTable TblName="sco_parcela_ventas_nota">
           <Properties><![CDATA[[{"Id":"UseDetailPreview","Type":"Boolean","Value":"1"},{"Id":"PreviewType","Type":"String","Value":"row"},{"Id":"PreviewRowColor","Type":"Color","Value":""},{"Id":"SingleRow","Type":"Boolean","Value":"0"},{"Id":"PageSize","Type":"Integer","Value":0},{"Id":"UseModalLinks","Type":"Boolean","Value":"0"}]]]></Properties>
         </ExtTable>
-        <ExtTable TblName="update_activity.php">
-          <Properties><![CDATA[[{"Id":"UseDetailPreview","Type":"Boolean","Value":"1"},{"Id":"PreviewType","Type":"String","Value":"row"},{"Id":"PreviewRowColor","Type":"Color","Value":""},{"Id":"SingleRow","Type":"Boolean","Value":"0"},{"Id":"PageSize","Type":"Integer","Value":0},{"Id":"UseModalLinks","Type":"Boolean","Value":"0"}]]]></Properties>
-        </ExtTable>
         <Properties><![CDATA[[]]]></Properties>
       </ExtDatabase>
       <Properties><![CDATA[[{"Id":"Icon","Type":"String","Value":"fa-solid fa-caret-right fa-fw"},{"Id":"PopoverDelay","Type":"String","Value":"{ show: 100, hide: 500 }"},{"Id":"PopoverPlacement","Type":"String","Value":"default"},{"Id":"Selector","Type":"String","Value":".ew-preview-btn"},{"Id":"PopoverTrigger","Type":"String","Value":"click"},{"Id":"OffcanvasPlacement","Type":"String","Value":"bottom"},{"Id":"OffcanvasWidth","Type":"String","Value":""},{"Id":"OffcanvasHeight","Type":"String","Value":"50vh"},{"Id":"UseNestedPreview","Type":"Boolean","Value":"1"}]]]></Properties>
@@ -3528,9 +3515,6 @@
           <Properties><![CDATA[[]]]></Properties>
         </ExtTable>
         <ExtTable TblName="sco_parcela_ventas_nota">
-          <Properties><![CDATA[[]]]></Properties>
-        </ExtTable>
-        <ExtTable TblName="update_activity.php">
           <Properties><![CDATA[[]]]></Properties>
         </ExtTable>
         <Properties><![CDATA[[]]]></Properties>
@@ -4430,297 +4414,18 @@ $("#y_parcela").change(function() {
                 width: calc((100% - 50px) / 6); /* Para 6 botones por fila, ajusta el 50px según el gap total */
             }
         }
-
-        /* ----- */
-        .btn-custom-panel {
-            background-color: #f0f4f8; /* Fondo gris azulado muy claro */
-            border: 1px solid #d1d9e6; /* Borde sutil */
-            color: #334e68; /* Color de texto profesional */
-            font-weight: 700;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            display: flex;
-            align-items: center;
-            padding: 12px 15px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            box-shadow: 3px 3px 6px #b8b9be, -3px -3px 6px #ffffff; /* Efecto Neumorfismo suave */
-            text-decoration: none;
-            height: 100%;
-        }
-
-        .btn-custom-panel:hover {
-            background-color: #e2e8f0;
-            color: #007bff;
-            transform: translateY(-2px);
-            box-shadow: 2px 2px 4px #b8b9be, -2px -2px 4px #ffffff;
-        }
-
-        .btn-custom-panel i {
-            font-size: 1.2rem;
-            margin-right: 10px;
-            color: #627d98; /* Icono un poco más tenue que el texto */
-        }
-
-        /* Colores de bordes izquierdo para diferenciar como en la imagen */
-        .border-left-primary { border-left: 4px solid #007bff !important; }
-        .border-left-success { border-left: 4px solid #28a745 !important; }
-        .border-left-warning { border-left: 4px solid #ffc107 !important; }
-        .border-left-danger  { border-left: 4px solid #dc3545 !important; }
-        .border-left-info    { border-left: 4px solid #17a2b8 !important; }
-
-        /* Espaciado entre letras para el subtítulo */
-        .tracking-wider {
-            letter-spacing: 1px;
-            font-size: 0.7rem;
-        }
-
-        /* Asegurar que todos los botones de la fila tengan la misma altura */
-        .btn-custom-panel {
-            min-height: 55px; /* Altura mínima uniforme */
-            justify-content: flex-start; /* Alinea contenido a la izquierda */
-        }
-
-        /* Efecto hover más elegante */
-        .btn-custom-panel:hover {
-            background-color: #f8f9fa;
-            border-color: #adb5bd;
-            transform: scale(1.02); /* Crece un poquito en lugar de solo moverse */
-        }
-
-        /* Iconos un poco más grandes para que se vean como en la imagen */
-        .btn-custom-panel i {
-            font-size: 1.3rem;
-        }
-
     </style>
-    
-    <div class="lead-container bg-white p-4 rounded shadow-sm border">
-        <div class="d-flex justify-content-between align-items-center mb-4 pb-3 border-bottom">
-            <div>
-                <h4 class="mb-0 fw-bold text-primary">HERCULES</h4>
-                <span class="text-muted small text-uppercase tracking-wider">Sistema de Control de Operaciones Funerarias</span>
-            </div>
-            
-            <div class="d-flex align-items-center gap-3">
-                <div class="text-end me-2">
-                    <small class="text-muted d-block" style="font-size: 0.65rem; font-weight: bold;">TASA BCV</small>
-                    <span id="tasaBCV" class="badge bg-light text-dark border shadow-sm" style="font-size: 0.75rem;">
-                        <div class="spinner-border spinner-border-sm text-secondary" role="status"></div>
-                    </span>
-                </div>
+    <!--<h1 class="mt-4">HERCULES - Sistema de Control de Operaciones Funerarias</h1>-->
+    <p class="lead">Sistema de Control de Operaciones Funerarias. <b><small>Sistema H&eacute;rcules</small></b> <a href="ScoExpedienteAdd?showdetail=" class="btn btn-primary">Apertura Expediente</a> </p>
 
-                <div style="min-width: 220px;"> 
-                    <a href="ScoExpedienteAdd?showdetail=" class="btn-custom-panel border-left-primary-dark shadow-sm py-2">
-                        <i class="bi bi-plus-circle-fill text-primary"></i>
-                        <span>Apertura Expediente</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="row g-3"> 
-            <div class="col-6 col-md-4 col-lg-2">
-                <a href="Disponibilidad" class="btn-custom-panel border-left-success h-100">
-                    <i class="bi bi-calendar-check"></i>
-                    <span>Disponibilidad</span>
-                </a>
-            </div>
-
-            <div class="col-6 col-md-4 col-lg-2">
-                <a href="dashboard/MonitorServicios.php?username=<?= CurrentUserName() ?>" target="_blank" class="btn-custom-panel border-left-warning h-100">
-                    <i class="bi bi-display"></i>
-                    <span>Monitor</span>
-                </a>
-            </div>
-
-            <div class="col-6 col-md-4 col-lg-2">
-                <a href="dashboard/PizarraServicios.php?username=<?= CurrentUserName() ?>" target="_blank" class="btn-custom-panel border-left-primary h-100">
-                    <i class="bi bi-clipboard-data"></i>
-                    <span>Pizarra</span>
-                </a>
-            </div>
-
-            <div class="col-6 col-md-4 col-lg-2">
-                <a href="dashboard/PizarraCremaciones.php?username=<?= CurrentUserName() ?>" target="_blank" class="btn-custom-panel border-left-danger h-100">
-                    <i class="bi bi-fire"></i>
-                    <span>Cremaciones</span>
-                </a>
-            </div>
-
-            <div class="col-6 col-md-4 col-lg-2">
-                <a href="dashboard/PizarraInhumaciones.php?username=<?= CurrentUserName() ?>" target="_blank" class="btn-custom-panel border-left-info h-100">
-                    <i class="bi bi-archive"></i>
-                    <span>Inhumaciones</span>
-                </a>
-            </div>
-
-            <div class="col-6 col-md-4 col-lg-2">
-                <a href="dashboard/PizarraCremacionMascota.php?username=<?= CurrentUserName() ?>" target="_blank" class="btn-custom-panel border-left-secondary h-100">
-                    <i class="bi bi-heart-pulse"></i>
-                    <span>Mascotas</span>
-                </a>
-            </div>
-        </div>
+    <div class="button-area">
+        <a href="Disponibilidad" class="btn btn-success">Disponibilidad</a>
+        <a href="dashboard/MonitorServicios.php" target="_blank" class="btn btn-warning">Monitor</a>
+        <a href="dashboard/PizarraServicios.php?username=<?= CurrentUserName() ?>" target="_blank" class="btn btn-primary">Pizarra</a>
+        <a href="dashboard/PizarraCremaciones.php?username=<?= CurrentUserName() ?>" target="_blank" class="btn btn-danger">Cremaciones</a>
+        <a href="dashboard/PizarraInhumaciones.php?username=<?= CurrentUserName() ?>" target="_blank" class="btn btn-info">Inhumaciones</a>
+        <a href="dashboard/PizarraCremacionMascota.php?username=<?= CurrentUserName() ?>" target="_blank" class="btn btn-secondary">Mascotas</a>
     </div>
-
-    <div class="row mt-4">
-        <div class="col-4">
-            <div class="card border-success">
-                <div class="card-header bg-success d-flex justify-content-between align-items-center">
-                    <span><i class="bi bi-lightbulb"></i> ACUMULADO POR SERVICIOS</span>
-                    <div class="btn-group btn-group-sm">
-                        <button class="btn btn-outline-light" onclick="cambiarMes(1)"><i class="bi bi-chevron-left"></i></button>
-                        <button class="btn btn-outline-light" id="btnSiguiente" onclick="cambiarMes(-1)"><i class="bi bi-chevron-right"></i></button>
-                    </div>
-                </div>
-                <div class="card-body bg-light">
-                    <div class="row text-center">
-                        <div class="col-12 mb-3">
-                            <a href="ListarServicios" target="_blank" class="text-decoration-none">
-                                <div class="p-3 bg-white border rounded shadow-sm">
-                                    <h1 class="display-4 fw-bold text-success" id="accTotal">0</h1>
-                                    <small class="text-muted text-uppercase">Total Acumulado</small>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="p-2 border rounded bg-white">
-                                <h4 class="text-danger fw-bold" id="accMesAnterior">0</h4>
-                                <small class="text-muted" id="lblMesAnterior">Anterior</small>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="p-2 border rounded bg-white">
-                                <h4 class="text-info fw-bold" id="accPromedio">0</h4>
-                                <small class="text-muted">P. Diario</small>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="p-2 border rounded bg-white">
-                                <h4 class="text-success fw-bold" id="accMesActual">0</h4>
-                                <small class="text-muted" id="lblMesActual">Actual</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-3">
-            <div class="card shadow-sm border-dark h-100">
-                <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
-                    <span><i class="bi bi-person-badge me-2"></i>Usuarios en Línea</span>
-                    <span class="badge bg-success" id="countActivos">0</span>
-                </div>
-                <div class="card-body p-0" style="max-height: 300px; overflow-y: auto;">
-                    <ul class="list-group list-group-flush" id="listaUsuariosActivos">
-                        <li class="list-group-item text-center py-3">
-                            <div class="spinner-border spinner-border-sm text-secondary" role="status"></div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-5">
-            <div class="card shadow-sm border-warning">
-                <div class="card-header bg-warning text-dark d-flex justify-content-between align-items-center">
-                    <span><i class="bi bi-activity me-2"></i>Causas de Fallecimiento (Últimos 7 Días)</span>
-                </div>
-                <div class="card-body p-0" style="max-height: 400px; overflow-y: auto;">
-                    <table class="table table-hover mb-0">
-                        <thead class="table-light">
-                            <tr>
-                                <th>Día / Fecha</th>
-                                <th>Causa</th>
-                                <th class="text-center">Cant.</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tablaCausas">
-                            <tr>
-                                <td colspan="3" class="text-center py-4">
-                                    <div class="spinner-border spinner-border-sm text-warning" role="status"></div>
-                                    Cargando estadísticas...
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-
-<hr>
-
-    <div class="row">
-        <div class="col-lg-3">
-            <div class="card shadow-sm border-primary">
-                <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
-                    <span><i class="bi bi-calendar-check me-2"></i>Expedientes por Día (Últimos 7 días)</span>
-                    <span class="badge bg-light text-primary">Expedientes</span>
-                </div>
-                <div class="card-body p-0"> <ul class="list-group list-group-flush" id="listaExpedientes">
-                        <li class="list-group-item text-center py-4">
-                            <div class="spinner-border spinner-border-sm text-primary" role="status"></div>
-                            Cargando expedientes...
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-3"> 
-            <div class="card shadow-sm border-info">
-                <div class="card-header bg-info text-white d-flex justify-content-between align-items-center">
-                    <span><i class="bi bi-archive me-2"></i>Inhumados Diarios (Últimos 7 días)</span>
-                    <span class="badge bg-light text-info">Inhumaciones</span>
-                </div>
-                <div class="card-body p-0">
-                    <ul class="list-group list-group-flush" id="listaInhumados">
-                        <li class="list-group-item text-center py-4">
-                            <div class="spinner-border spinner-border-sm text-info" role="status"></div>
-                            Cargando datos...
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-3"> 
-            <div class="card shadow-sm border-danger">
-                <div class="card-header bg-danger text-white d-flex justify-content-between align-items-center">
-                    <span><i class="bi bi-fire me-2"></i>Cremados Diarios (Últimos 7 días)</span>
-                    <span class="badge bg-light text-danger">Cremaciones</span>
-                </div>
-                <div class="card-body p-0">
-                    <ul class="list-group list-group-flush" id="listaCremados">
-                        <li class="list-group-item text-center py-4">
-                            <div class="spinner-border spinner-border-sm text-danger" role="status"></div>
-                            Cargando datos...
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-3">
-            <div class="card shadow-sm">
-                <div class="card-header bg-dark text-white">
-                    <i class="bi bi-info-circle me-2"></i>Estatus Operativo de Servicios (Actual)
-                </div>
-                <div class="card-body">
-                    <div id="contenedorEstatus" class="d-flex flex-wrap gap-2 justify-content-center">
-                        <div class="spinner-border text-secondary" role="status"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- 
     <div class="row">
         <div class="col-lg-3 col-md-6">
             <div class="card text-center">
@@ -4769,7 +4474,6 @@ $("#y_parcela").change(function() {
                 </div>
             </div>
         </div>
-
     </div>
 
     <div class="row">
@@ -4799,196 +4503,81 @@ $("#y_parcela").change(function() {
             </div>
         </div>
     </div>
-    -->
-
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
     <script>
-        function cargarDatosDashboard() {
-            fetch('dashboard/includes/data_indicadores.php')
-                .then(response => response.json())
-                .then(data => {
-                    // --- ACTUALIZACIÓN SEGURA DE INDICADORES ---
-                    
-                    // Tasa Conversión (La que pediste activar)
-                    const elTasaConv = document.getElementById("tasaConversion");
-                    if (elTasaConv && data.indicadores) {
-                        elTasaConv.innerText = data.indicadores.tasaConversion;
-                    }
+        document.addEventListener("DOMContentLoaded", function() {
+            // Función para cargar datos desde PHP
+            function cargarDatosDashboard() {
+                fetch('dashboard/includes/data_indicadores.php') // Ruta a tu script PHP que devuelve JSON
+                    .then(response => response.json())
+                    .then(data => {
+                        // Actualizar los indicadores
+                        document.getElementById("ventasMes").innerText = data.indicadores.ventasMes;
+                        document.getElementById("nuevosClientes").innerText = data.indicadores.nuevosClientes;
+                        document.getElementById("tasaConversion").innerText = data.indicadores.tasaConversion;
+                        document.getElementById("tasaBCV").innerText = " Bs. " + data.tasaBCV[0].tasa + " por 1 " + data.tasaBCV[0].moneda;
+                        document.getElementById("fechaBCV").innerText = "Fecha valor: " + data.tasaBCV[0].fecha;
 
-                    // Tasa BCV y Fecha (Solo si existen)
-                    const elTasaBCV = document.getElementById("tasaBCV");
-                    const elFechaBCV = document.getElementById("fechaBCV");
-                    if (elTasaBCV && data.tasaBCV && data.tasaBCV[0]) {
-                        elTasaBCV.innerText = " Bs. " + data.tasaBCV[0].tasa + " por 1 " + data.tasaBCV[0].moneda + " Fecha: " + data.tasaBCV[0].fecha;
-                    }
-                    if (elFechaBCV && data.tasaBCV && data.tasaBCV[0]) {
-                        elFechaBCV.innerText = "Fecha valor: " + data.tasaBCV[0].fecha;
-                    }
-
-                    // --- LISTADOS (EXPEDIENTES, INHUMADOS, CREMADOS) ---
-                    
-                    const actualizarLista = (id, items, colorClass) => {
-                        const lista = document.getElementById(id);
-                        if (!lista) return;
-                        lista.innerHTML = "";
-                        if (items && items.length > 0) {
-                            items.forEach(item => {
-                                const li = document.createElement("li");
-                                li.className = "list-group-item d-flex justify-content-between align-items-center";
-                                li.innerHTML = `<span>${item.etiqueta}</span><span class="badge ${colorClass} rounded-pill">${item.cantidad}</span>`;
-                                lista.appendChild(li);
-                            });
-                        } else {
-                            lista.innerHTML = `<li class="list-group-item text-muted text-center">Sin registros</li>`;
-                        }
-                    };
-
-                    actualizarLista("listaExpedientes", data.expedientesPorDia, "bg-success");
-                    actualizarLista("listaInhumados", data.expedientesInhumados, "bg-info text-dark");
-                    actualizarLista("listaCremados", data.expedientesCremados, "bg-danger");
-
-                    // --- TABLA DE CAUSAS ---
-                    const tablaCausas = document.getElementById("tablaCausas");
-                    if (tablaCausas) {
-                        tablaCausas.innerHTML = "";
-                        if (data.causasFallecimiento && data.causasFallecimiento.length > 0) {
-                            data.causasFallecimiento.forEach(item => {
-                                const tr = document.createElement("tr");
-                                tr.innerHTML = `<td class="small fw-bold">${item.dia}</td><td class="small">${item.causa}</td><td class="text-center"><span class="badge bg-warning text-dark rounded-pill">${item.cantidad}</span></td>`;
-                                tablaCausas.appendChild(tr);
-                            });
-                        } else {
-                            tablaCausas.innerHTML = `<tr><td colspan="3" class="text-center text-muted">No hay datos</td></tr>`;
-                        }
-                    }
-
-                    // --- ESTATUS OPERATIVO ---
-                    const contenedor = document.getElementById("contenedorEstatus");
-                    if (contenedor) {
-                        contenedor.innerHTML = "";
-                        if (data.estatusServicios && data.estatusServicios.length > 0) {
-                            data.estatusServicios.forEach(item => {
-                                const badge = document.createElement("a");
-                                badge.href = `ViewExpedienteServicioList?estatusname=${item.nombre}`;
-                                badge.target = "_blank";
-                                badge.className = "btn btn-sm shadow-sm fw-bold d-flex align-items-center";
-                                badge.style.cssText = `font-size: 0.75rem; background-color: ${item.color}; color: ${item.textColor}; border-radius: 20px; padding: 8px 15px;`;
-                                badge.innerHTML = `${item.nombre} <span class="badge bg-light text-dark ms-2" style="opacity: 0.9">${item.cantidad}</span>`;
-                                contenedor.appendChild(badge);
-                            });
-                        }
-                    }
-
-                    // --- LÓGICA PARA USUARIOS ACTIVOS ---
-                    const listaU = document.getElementById("listaUsuariosActivos");
-                    const countU = document.getElementById("countActivos");
-
-                    if (listaU && data.usuariosActivos) {
-                        listaU.innerHTML = "";
-                        countU.innerText = data.usuariosActivos.length;
-                        
-                        if (data.usuariosActivos.length > 0) {
-                            data.usuariosActivos.forEach(user => {
-                                listaU.innerHTML += `
-                                    <li class="list-group-item d-flex align-items-center py-2">
-                                        <div class="position-relative me-3">
-                                            <i class="bi bi-person-circle fs-4 text-secondary"></i>
-                                            <span class="position-absolute bottom-0 end-0 p-1 bg-success border border-light rounded-circle"></span>
-                                        </div>
-                                        <div class="overflow-hidden">
-                                            <div class="fw-bold small text-truncate">${user.nombre}</div>
-                                            <div class="text-muted" style="font-size: 0.65rem;">
-                                                En: ${user.ubicacion} • hace ${user.hace} min.
-                                            </div>
-                                        </div>
-                                    </li>`;
-                            });
-                        } else {
-                            listaU.innerHTML = `<li class="list-group-item text-muted text-center small py-3">No hay usuarios activos</li>`;
-                        }
-                    }
-
-                    // --- GRÁFICOS (PROTEGIDOS) ---
-                    // Solo se ejecutan si los Canvas existen en el HTML
-                    const canvasVentas = document.getElementById('ventasChart');
-                    if (canvasVentas) {
-                        new Chart(canvasVentas.getContext('2d'), {
+                        // Actualizar los gráficos
+                        // Ventas Anuales
+                        const ventasCtx = document.getElementById('ventasChart').getContext('2d');
+                        new Chart(ventasCtx, {
                             type: 'line',
                             data: {
                                 labels: data.ventasAnuales.labels,
-                                datasets: [{ label: 'Ventas ($)', data: data.ventasAnuales.data, borderColor: 'rgb(75, 192, 192)', tension: 0.1 }]
+                                datasets: [{
+                                    label: 'Ventas ($)',
+                                    data: data.ventasAnuales.data,
+                                    borderColor: 'rgb(75, 192, 192)',
+                                    tension: 0.1
+                                }]
                             },
-                            options: { responsive: true, maintainAspectRatio: false }
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false
+                            }
                         });
-                    }
 
-                    const canvasFuente = document.getElementById('clientesFuenteChart');
-                    if (canvasFuente) {
-                        new Chart(canvasFuente.getContext('2d'), {
+                        // Clientes por Fuente
+                        const clientesCtx = document.getElementById('clientesFuenteChart').getContext('2d');
+                        new Chart(clientesCtx, {
                             type: 'pie',
                             data: {
                                 labels: data.clientesPorFuente.labels,
-                                datasets: [{ data: data.clientesPorFuente.data, backgroundColor: ['#ff6384', '#36a2eb', '#ffcd56', '#4bc0c0'] }]
+                                datasets: [{
+                                    label: 'Clientes',
+                                    data: data.clientesPorFuente.data,
+                                    backgroundColor: [
+                                        'rgb(255, 99, 132)',
+                                        'rgb(54, 162, 235)',
+                                        'rgb(255, 205, 86)',
+                                        'rgb(75, 192, 192)'
+                                    ],
+                                    hoverOffset: 4
+                                }]
                             },
-                            options: { responsive: true, maintainAspectRatio: false }
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false
+                            }
                         });
-                    }
-                })
-                .catch(error => {
-                    console.error('Error al cargar los datos del dashboard:', error);
-                    // Ya no intentamos escribir en IDs fijos aquí para evitar más errores
-                });
-        }
+                    })
+                    .catch(error => {
+                        console.error('Error al cargar los datos del dashboard:', error);
+                        // Manejar el error, por ejemplo, mostrando un mensaje al usuario
+                        document.getElementById("ventasMes").innerText = "Error";
+                        document.getElementById("nuevosClientes").innerText = "Error";
+                        document.getElementById("tasaConversion").innerText = "Error";
+                        document.getElementById("tasaBCV").innerText = "Error";
+                    });
+            }
 
-        let mesOffset = 0;
-
-        function cargarAcumulado(offset) {
-            // 1. Elementos que vamos a manipular
-            const totalElem = document.getElementById("accTotal");
-            const btnSiguiente = document.getElementById("btnSiguiente");
-            
-            // 2. Mostrar indicador de progreso (Spinner de Bootstrap)
-            // Guardamos el contenido original por si acaso, o simplemente ponemos el spinner
-            totalElem.innerHTML = `<div class="spinner-border spinner-border-sm text-success" role="status"></div>`;
-            
-            // Opcional: Deshabilitar botones mientras carga para evitar colisiones
-            btnSiguiente.disabled = true;
-
-            fetch(`dashboard/includes/data_acumulado.php?xmes=${offset}`)
-                .then(response => response.json())
-                .then(data => {
-                    // 3. Renderizar los datos (esto elimina el spinner automáticamente al usar innerText)
-                    totalElem.innerText = data.total;
-                    document.getElementById("accMesAnterior").innerText = data.mesAnteriorCant;
-                    document.getElementById("lblMesAnterior").innerText = data.mesAnteriorNombre;
-                    document.getElementById("accPromedio").innerText = data.promedio;
-                    document.getElementById("accMesActual").innerText = data.mesActualCant;
-                    document.getElementById("lblMesActual").innerText = data.mesActualNombre;
-                    
-                    // 4. Lógica de habilitación del botón
-                    btnSiguiente.disabled = (offset <= 0);
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    totalElem.innerText = "!"; // Indicador de error visual
-                    btnSiguiente.disabled = (offset <= 0);
-                });
-        }
-
-        function cambiarMes(valor) {
-            mesOffset += valor;
-            if (mesOffset < 0) mesOffset = 0;
-            cargarAcumulado(mesOffset);
-        }
-
-        // Llama a la función al cargar la página
-        document.addEventListener("DOMContentLoaded", function() {
-            cargarDatosDashboard(); // Tu función original
-            cargarAcumulado(0);     // La nueva función
+            // Llamar a la función para cargar los datos al cargar la página
+            cargarDatosDashboard();
         });
     </script>]]></CustomScript>
   <CustomScript ScriptType="Server" ScriptCodeType="Table" ScriptName="Row_Deleting" ScriptL1Key="sco_cliente"><![CDATA[// Row Deleting event
@@ -5993,6 +5582,27 @@ function Page_DataRendered(&$footer) {
 function User_LoggedIn($usr) {
 	//echo "User Logged In";
 	Execute("SET time_zone = '-04:00';");
+
+	$sql = "DELETE FROM sco_users_online WHERE username = '".$usr."'";
+	Execute($sql);
+
+	$sql = "INSERT INTO sco_users_online
+				(timestamp, ip, `file`, username, updated, last_activity, unlogin)
+			VALUES (UNIX_TIMESTAMP(now()), '".(get_real_ip())."', '',
+				'".$usr."', NOW(), NOW(), 'N')";
+	Execute($sql);
+
+	$sql = "DELETE FROM sco_users_online WHERE unlogin = 'S'";
+	Execute($sql);
+}
+]]></CustomScript>
+  <CustomScript ScriptType="Server" ScriptCodeType="Other" ScriptName="User_LoggingOut" ScriptCtrlID="logout"><![CDATA[// User Logging Out event
+function User_LoggingOut($usr) {
+	// Enter your code here
+	// To cancel, set return value to FALSE;
+	$sql = "UPDATE sco_users_online SET unlogin = 'S' WHERE username = '".$usr."' ";
+	Execute($sql);
+	return TRUE;
 }
 ]]></CustomScript>
   <CustomScript ScriptType="Server" ScriptCodeType="Table" ScriptName="Row_Inserting" ScriptL1Key="sco_nota"><![CDATA[// Row Inserting event
@@ -8036,17 +7646,23 @@ function Row_Rendering() {
 		$color = ExecuteScalar($sql);
 
 		$style = "background-color: $color"; 	
-        
-        $this->estatus->CellAttrs["style"] = $style;
-        $this->cedula_fallecido->CellAttrs["style"] = $style;
-        $this->sexo->CellAttrs["style"] = $style;
-        $this->nombre_fallecido->CellAttrs["style"] = $style;
-        $this->apellidos_fallecido->CellAttrs["style"] = $style;
-        $this->edad_fallecido->CellAttrs["style"] = $style;
-        $this->fecha_nacimiento->CellAttrs["style"] = $style;
-        $this->fecha_ocurrencia->CellAttrs["style"] = $style;
-        $this->causa_ocurrencia->CellAttrs["style"] = $style;
-         
+		$this->estatus->CellAttrs["style"] = $style;
+		 $this->nacionalidad_fallecido->CellAttrs["style"] = $style;
+		 $this->cedula_fallecido->CellAttrs["style"] = $style;
+		 $this->sexo->CellAttrs["style"] = $style;
+		 $this->nombre_fallecido->CellAttrs["style"] = $style;
+		 $this->apellidos_fallecido->CellAttrs["style"] = $style;
+		 $this->edad_fallecido->CellAttrs["style"] = $style;
+		 $this->lugar_nacimiento_fallecido->CellAttrs["style"] = $style;
+		 $this->lugar_ocurrencia->CellAttrs["style"] = $style;
+		 $this->estado_civil->CellAttrs["style"] = $style;
+		 $this->fecha_nacimiento->CellAttrs["style"] = $style;
+		 $this->direccion_ocurrencia->CellAttrs["style"] = $style;
+		 $this->fecha_ocurrencia->CellAttrs["style"] = $style;
+		 $this->hora_ocurrencia->CellAttrs["style"] = $style;
+		 $this->causa_ocurrencia->CellAttrs["style"] = $style;
+		 $this->descripcion_ocurrencia->CellAttrs["style"] = $style;
+		 $this->causa_otro->CellAttrs["style"] = $style;
 	 }
 }
 ]]></CustomScript>
@@ -10454,91 +10070,64 @@ function Page_DataRendering(&$header) {
 				</div>';
 }
 ]]></CustomScript>
-  <CustomScript ScriptType="Template" ScriptCodeType="Table" ScriptName="Content" ScriptCtrlID="custom" ScriptL1Key="listar_servicios.php"><![CDATA[<div class="container mt-3">
-  <form id="formBuscarServicios" class="row row-cols-lg-auto g-3 align-items-center bg-light p-3 rounded border">
+  <CustomScript ScriptType="Template" ScriptCodeType="Table" ScriptName="Content" ScriptCtrlID="custom" ScriptL1Key="listar_servicios.php"><![CDATA[<h2>Listar Expedientes</h2>
+<div class="container">
+  <form class="row row-cols-lg-auto g-3 align-items-center">
     <div class="col-12">
+      <label for="fecha_desde" class="form-label visually-hidden">Fecha Registro Desde:</label>
       <div class="input-group">
-        <span class="input-group-text bg-primary text-white">Fecha Registro:</span>
+        <span class="input-group-text">Fecha Registro:</span>
         <input type="date" class="form-control form-control-sm" id="fecha_desde" name="fecha_desde">
       </div>
     </div>
 
     <div class="col-12">
+      <label for="fecha_hasta" class="form-label visually-hidden">Fecha Registro Hasta:</label>
       <div class="input-group">
-        <span class="input-group-text">hasta</span>
+        <span class="input-group-text">y</span>
         <input type="date" class="form-control form-control-sm" id="fecha_hasta" name="fecha_hasta">
       </div>
     </div>
 
     <div class="col-12">
-      <button type="button" class="btn btn-primary btn-sm d-flex align-items-center" id="buscar">
-        <i class="bi bi-search me-2"></i> <span id="btnText">Buscar Registros</span>
-        <div id="btnSpinner" class="spinner-border spinner-border-sm ms-2 d-none" role="status"></div>
-      </button>
+      <button type="button" class="btn btn-primary btn-sm" id="buscar" name="buscar">Buscar Registros</button>
     </div>
   </form>
 </div>
 
 <div class="container mt-4">
   <div id="result">
-    </div>
+  </div>
 </div>
 
 <script type="text/javascript">
-  $("#buscar").click(function() {
-    // Referencias a elementos para evitar buscarlos varias veces
-    var btn = $(this);
-    var btnText = $("#btnText");
-    var btnSpinner = $("#btnSpinner");
-    var resultDiv = $("#result");
-    
+  // El código JavaScript no necesita cambios, ya que depende de los IDs de los elementos
+  $("#buscar").click(function(){
     var fecha_desde = $("#fecha_desde").val();
     var fecha_hasta = $("#fecha_hasta").val();
 
-    // Validación básica
-    if (fecha_desde == "" || fecha_hasta == "") {
-      alert("Por favor, seleccione ambas fechas.");
+    if(fecha_desde == "" || fecha_hasta == "") {
+      alert("Fecha no correctas");
       return false;
     }
-
     $.ajax({
-      url: "dashboard/listar_servicios_buscar.php",
+      url : "dashboard/listar_servicios_buscar.php",
       type: "POST",
-      data: { fecha_desde: fecha_desde, fecha_hasta: fecha_hasta },
-      beforeSend: function() {
-        // 1. Efecto visual en el botón
-        btn.prop("disabled", true); // Deshabilitar clic
-        btnText.text("Buscando..."); // Cambiar texto
-        btnSpinner.removeClass("d-none"); // Mostrar spinner
-        
-        // 2. Efecto visual en el contenedor de resultados
-        resultDiv.css("opacity", "0.5");
-        resultDiv.html(`
-          <div class="text-center my-5">
-            <div class="spinner-grow text-primary" role="status"></div>
-            <p class="mt-2 text-muted">Consultando base de datos, por favor espere...</p>
-          </div>
-        `);
+      data : {fecha_desde: fecha_desde, fecha_hasta: fecha_hasta},
+      beforeSend: function(){
+        $("#result").html("Espere. . . ");
       }
     })
     .done(function(data) {
-      resultDiv.html(data);
+      $("#result").html(data);
     })
-    .fail(function(jqXHR, textStatus, errorThrown) {
-      resultDiv.html(`
-        <div class="alert alert-danger">
-          Error en la consulta: ${textStatus} - ${errorThrown}
-        </div>
-      `);
+    .fail(function(data) {
+      alert( "error" + data );
     })
-    .always(function() {
-      // Restaurar estado original
-      btn.prop("disabled", false);
-      btnText.text("Buscar Registros");
-      btnSpinner.addClass("d-none");
-      resultDiv.css("opacity", "1");
+    .always(function(data) {
+      // Código opcional de 'always'
     });
-  });
+  }); 
 </script>]]></CustomScript>
   <CustomScript ScriptType="Server" ScriptCodeType="Table" ScriptName="ListOptions_Load" ScriptCtrlID="list" ScriptL1Key="sco_orden"><![CDATA[// ListOptions Load event
 function ListOptions_Load() {
@@ -22628,33 +22217,55 @@ function Page_Redirecting(&$url)
     $Norden = $this->Norden->CurrentValue;
     $url = "Contenedor?Nexpediente=$Nexpediente&Norden=$Norden";  
 }]]></CustomScript>
-  <CustomScript ScriptType="Client" ScriptCodeType="Global" ScriptName="Client Script"><![CDATA[// Función para avisar que el usuario sigue activo
+  <CustomScript ScriptType="Client" ScriptCodeType="Global" ScriptName="Client Script"><![CDATA[/**
+ * Write your global client script here, no need to add script tags.
+ * Note: JAVASCRIPT ONLY. DO NOT mix PHP and JavaScript.
+ */
 
-function enviarLatidoActividad() {
-    // Si la URL contiene "login" o "logout", NO enviar el latido
-    if (location.href.includes("login") || location.href.includes("logout")) {
-        return;
-    }
-
-    fetch(ew.PATH_BASE + "UpdateActivity")
-        .then(response => response.json())
-        .then(data => {
-            // Silencioso, solo para debug si lo necesitas
-            console.log("Latido OK");
-        })
-        .catch(error => {
-            // Si da error (ej. sesión expirada), paramos el intervalo para no saturar
-            console.log("Sesión finalizada");
-        });
+/*
+function func_convert_uppercase(x) { 
+	x.value = x.value.toUpperCase(); 
 }
 
-loadjs.ready("wrapper", function() {
-    // Solo iniciar si NO es la página de login
-    if (!location.href.includes("login")) {
-        enviarLatidoActividad();
-        setInterval(enviarLatidoActividad, 120000);
-    }
-});]]></CustomScript>
+function mostrarHora() {
+	var f=new Date();
+	var hora=f.getHours();
+	var minutos=f.getMinutes();
+	var segundos=f.getSeconds();
+	var dia = f.getDate();
+	var ampm = "";
+
+	//var mes = ("0" + f.getMonth() + 1).slice(-2);
+	var mes = f.getMonth() + 1;
+	var anho = f.getFullYear();
+	var stringHora="";
+	var horaMostrar=hora;
+	var minutosMostrar=minutos;
+	var segundosMostrar=segundos;
+	if (horaMostrar<10) {
+		horaMostrar="0"+horaMostrar;
+	}
+	if (minutosMostrar<10) {
+		minutosMostrar="0"+minutosMostrar;
+	}
+	if (segundosMostrar<10) {
+		segundosMostrar="0"+segundosMostrar;
+	}
+	if(horaMostrar >=0 && horaMostrar < 13) {
+		ampm = (horaMostrar==12?"PM":"AM");
+		horaMostrar = (horaMostrar==0?12:horaMostrar);
+	}
+	else {
+		ampm = "PM";
+		horaMostrar = horaMostrar - 12;		
+	}
+	stringHora="Fecha: "+dia+"/"+mes+"/"+anho+" "+horaMostrar+":"+minutosMostrar+":"+segundosMostrar+ampm;
+
+	//stringHora=horaMostrar+":"+minutosMostrar+":"+segundosMostrar;
+	$("#Hora").text(stringHora);
+	setTimeout("mostrarHora()",1000);
+}
+*/]]></CustomScript>
   <CustomScript ScriptType="Template" ScriptCodeType="Table" ScriptName="Content" ScriptCtrlID="custom" ScriptL1Key="contenedor.php"><![CDATA[<?php
 $Nexpediente = floatval($_GET["Nexpediente"] ?? 0);
 $Norden = floatval($_GET["Norden"] ?? 0);
@@ -25154,47 +24765,9 @@ window.limpiarParcela = function() {
     
     console.log("Campos de parcela reiniciados"); // Para verificar en consola
 };]]></CustomScript>
-  <CustomScript ScriptType="Server" ScriptCodeType="Other" ScriptName="User_LoggedOut" ScriptCtrlID="logout"><![CDATA[// User Logged Out event
-function User_LoggedOut($usr)
-{
-    //Log("User Logged Out");
-    $sql = "UPDATE sco_users_online SET unlogin = 'S' WHERE username = '".$usr."';";
-    Execute($sql);
-}]]></CustomScript>
-  <CustomScript ScriptType="Template" ScriptCodeType="Table" ScriptName="Content" ScriptCtrlID="custom" ScriptL1Key="update_activity.php"><![CDATA[<?php
-// 1. Esto le dice a PHPMaker: "No registres esta página en el historial de navegación"
-$Page->terminate(false); 
-
-if (IsLoggedIn()) {
-    $username = CurrentUserName();
-    $ip = $_SERVER['REMOTE_ADDR'];
-    $file = $_SERVER['PHP_SELF'];
-    $now = time(); 
-
-    // Limpiamos y registramos actividad
-    Execute("DELETE FROM sco_users_online WHERE username = '" . AdjustSql($username) . "'");
-    $sqlInsert = "INSERT INTO sco_users_online (timestamp, ip, file, username, last_activity, unlogin) 
-                  VALUES ($now, '$ip', '$file', '$username', NOW(), 'N')";
-    Execute($sqlInsert);
-    
-    // 2. Limpiar el buffer para enviar SOLO el JSON
-    ob_clean();
-    header('Content-Type: application/json');
-    echo json_encode(["status" => "success"]);
-    
-    // 3. En lugar de exit, usamos el terminador nativo de PHPMaker
-    die(); 
-} else {
-    ob_clean();
-    header('Content-Type: application/json');
-    echo json_encode(["status" => "not_logged_in"]);
-    die();
-}
-?>]]></CustomScript>
-  <Menu MenuID="1654" MenuText="Actualizar Actividad del Usaurio" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="update_activity.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="100" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="1653" MenuText="Parcela Ventas Notas" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_parcela_ventas_nota" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="200" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="1454" MenuText="Home" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="Home" MenuType="" MenuCustomUrl="1" MenuLevel="0" MenuShow="1" MenuDisplayOrder="300" MenuIconClass="" MenuNavbar="1" />
-  <Menu MenuID="88" MenuText="Expedientes" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="" MenuType="" MenuCustomUrl="1" MenuLevel="0" MenuShow="1" MenuDisplayOrder="400" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="1653" MenuText="Parcela Ventas Notas" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_parcela_ventas_nota" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="100" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="1454" MenuText="Home" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="Home" MenuType="" MenuCustomUrl="1" MenuLevel="0" MenuShow="1" MenuDisplayOrder="200" MenuIconClass="" MenuNavbar="1" />
+  <Menu MenuID="88" MenuText="Expedientes" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="" MenuType="" MenuCustomUrl="1" MenuLevel="0" MenuShow="1" MenuDisplayOrder="300" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="17" MenuText="Expedientes" MenuParentID="88" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_expediente" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="100" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="385" MenuText="Expediente por Funeraria" MenuParentID="88" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="view_expediente_funeraria" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="200" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="173" MenuText="Orden de Preparación" MenuParentID="88" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="view_prepara" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="300" MenuIconClass="" MenuNavbar="0" />
@@ -25210,13 +24783,13 @@ if (IsLoggedIn()) {
   <Menu MenuID="1458" MenuText="Oficio Religioso" MenuParentID="88" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="oficio_religioso.php" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="1300" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="914" MenuText="Oficio Religioso" MenuParentID="88" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="view_oficio_religioso" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="0" MenuDisplayOrder="1400" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="912" MenuText="Facturas" MenuParentID="88" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_expediente_cia" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="0" MenuDisplayOrder="1500" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="1648" MenuText="Tomar Servicio" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="tomar_servicio.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="500" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="368" MenuText="Expedientes de Mascota" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_mascota" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="1" MenuDisplayOrder="600" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="1649" MenuText="Tomar Servicio 2" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="tomar_servicio2.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="700" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="39" MenuText="Proveedores" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="" MenuType="" MenuCustomUrl="1" MenuLevel="0" MenuShow="1" MenuDisplayOrder="800" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="1648" MenuText="Tomar Servicio" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="tomar_servicio.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="400" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="368" MenuText="Expedientes de Mascota" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_mascota" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="1" MenuDisplayOrder="500" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="1649" MenuText="Tomar Servicio 2" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="tomar_servicio2.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="600" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="39" MenuText="Proveedores" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="" MenuType="" MenuCustomUrl="1" MenuLevel="0" MenuShow="1" MenuDisplayOrder="700" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="12" MenuText="Proveedores" MenuParentID="39" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_proveedor" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="100" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="1650" MenuText="Tomar Servicio 3" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="tomar_servicio3.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="900" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="164" MenuText="Producto / Inventario" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="" MenuType="" MenuCustomUrl="1" MenuLevel="0" MenuShow="1" MenuDisplayOrder="1000" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="1650" MenuText="Tomar Servicio 3" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="tomar_servicio3.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="800" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="164" MenuText="Producto / Inventario" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="" MenuType="" MenuCustomUrl="1" MenuLevel="0" MenuShow="1" MenuDisplayOrder="900" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="100" MenuText="Tipos de Servicios" MenuParentID="164" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_servicio_tipo" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="100" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="16" MenuText="Artículos / Servicios" MenuParentID="164" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_servicio" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="200" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="170" MenuText="Capillas" MenuParentID="164" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="view_capillas" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="300" MenuIconClass="" MenuNavbar="0" />
@@ -25224,52 +24797,52 @@ if (IsLoggedIn()) {
   <Menu MenuID="172" MenuText="Insumos Funerarios" MenuParentID="164" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="view_insumos" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="500" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="143" MenuText="Registro de Entradas / Salidas" MenuParentID="164" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_entrada_salida" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="600" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="101" MenuText="Tarifas" MenuParentID="164" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_tarifa" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="700" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="598" MenuText="Compras" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="" MenuType="" MenuCustomUrl="1" MenuLevel="0" MenuShow="1" MenuDisplayOrder="1100" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="598" MenuText="Compras" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="" MenuType="" MenuCustomUrl="1" MenuLevel="0" MenuShow="1" MenuDisplayOrder="1000" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="490" MenuText="Artículos de Compra" MenuParentID="598" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_articulo" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="100" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="496" MenuText="Orden de Compra" MenuParentID="598" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_orden_compra" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="200" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="497" MenuText="Detalle Compra" MenuParentID="598" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_orden_compra_detalle" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="0" MenuDisplayOrder="300" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="1084" MenuText="Orden de Compra Detalle" MenuParentID="598" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="view_orden_compra" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="0" MenuDisplayOrder="400" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="495" MenuText="Notas Orden de Compra" MenuParentID="598" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_nota_orden_compra" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="0" MenuDisplayOrder="500" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="142" MenuText="Flotas" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="" MenuType="" MenuCustomUrl="1" MenuLevel="0" MenuShow="1" MenuDisplayOrder="1200" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="142" MenuText="Flotas" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="" MenuType="" MenuCustomUrl="1" MenuLevel="0" MenuShow="1" MenuDisplayOrder="1100" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="106" MenuText="Marcas Vehículos" MenuParentID="142" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_marca" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="100" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="107" MenuText="Modelos Vehículos" MenuParentID="142" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_modelo" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="200" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="108" MenuText="Tipo de Flota" MenuParentID="142" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_tipo_flota" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="300" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="104" MenuText="Registrar Flotas" MenuParentID="142" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_flota" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="400" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="105" MenuText="Registrar Incidencias Flota" MenuParentID="142" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_flota_incidencia" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="500" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="383" MenuText="Orden de Salida Flota" MenuParentID="142" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_orden_salida" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="600" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="1646" MenuText="Servicios Activos" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="8" MenuSecurity="" MenuUrl="" MenuType="" MenuCustomUrl="1" MenuLevel="0" MenuShow="1" MenuDisplayOrder="1300" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="1646" MenuText="Servicios Activos" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="8" MenuSecurity="" MenuUrl="" MenuType="" MenuCustomUrl="1" MenuLevel="0" MenuShow="1" MenuDisplayOrder="1200" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="178" MenuText="Seleccionar Servicios" MenuParentID="1646" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="seleccionar_servicios.php" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="100" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="1459" MenuText="Monitorear Servicios" MenuParentID="1646" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="monitoriar_servicios.php" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="200" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="1647" MenuText="Obituario" MenuParentID="1646" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="obituario_preview.php" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="300" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="1457" MenuText="sco reserva old" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_reserva_old" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="1400" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="182" MenuText="Reclamos" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_reclamo" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="1" MenuDisplayOrder="1500" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="480" MenuText="Reporte Mtto Técnico" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_mttotecnico" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="1" MenuDisplayOrder="1600" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="335" MenuText="Parcelas" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="" MenuType="" MenuCustomUrl="1" MenuLevel="0" MenuShow="1" MenuDisplayOrder="1700" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="1457" MenuText="sco reserva old" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_reserva_old" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="1300" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="182" MenuText="Reclamos" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_reclamo" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="1" MenuDisplayOrder="1400" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="480" MenuText="Reporte Mtto Técnico" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_mttotecnico" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="1" MenuDisplayOrder="1500" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="335" MenuText="Parcelas" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="" MenuType="" MenuCustomUrl="1" MenuLevel="0" MenuShow="1" MenuDisplayOrder="1600" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="336" MenuText="Importar Parcelas" MenuParentID="335" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="importar_parcelas.php" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="100" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="257" MenuText="Parcelas" MenuParentID="335" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_parcela" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="200" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="731" MenuText="Parcela Compras/Ventas" MenuParentID="335" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_parcela_ventas" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="300" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="733" MenuText="Parcela Ventas" MenuParentID="335" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="view_parcela_ventas" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="400" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="751" MenuText="Tarifa de Parcelas" MenuParentID="335" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_parcela_tarifa" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="500" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="724" MenuText="Lápidas" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="" MenuType="" MenuCustomUrl="1" MenuLevel="0" MenuShow="1" MenuDisplayOrder="1800" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="724" MenuText="Lápidas" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="" MenuType="" MenuCustomUrl="1" MenuLevel="0" MenuShow="1" MenuDisplayOrder="1700" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="727" MenuText="Bandeja Reclamo Lapida" MenuParentID="724" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="view_reclamo_lapida" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="100" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="605" MenuText="Expediente de Lapidas" MenuParentID="724" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_lapidas_registro" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="200" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="600" MenuText="Lapidas" MenuParentID="724" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_lapidas" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="300" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="1259" MenuText="Grama" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="" MenuType="" MenuCustomUrl="1" MenuLevel="0" MenuShow="1" MenuDisplayOrder="1900" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="1259" MenuText="Grama" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="" MenuType="" MenuCustomUrl="1" MenuLevel="0" MenuShow="1" MenuDisplayOrder="1800" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="1087" MenuText="Solicitud Grama" MenuParentID="1259" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="view_fallecidos" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="100" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="1261" MenuText="Servicio de Grama" MenuParentID="1259" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_grama" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="200" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="1267" MenuText="Pagos Servicios de Grama" MenuParentID="1259" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="view_grama_pagos" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="300" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="906" MenuText="Interno" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="https://10.0.1.2/estadisticas/" MenuType="" MenuCustomUrl="1" MenuLevel="0" MenuShow="0" MenuDisplayOrder="2000" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="251" MenuText="Estructura de Costo" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="" MenuType="" MenuCustomUrl="1" MenuLevel="0" MenuShow="0" MenuDisplayOrder="2100" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="337" MenuText="Importar Estructura de Costo" MenuParentID="251" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="importar_est_cost.php" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="0" MenuDisplayOrder="100" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="186" MenuText="Articulos" MenuParentID="251" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_costos_articulos" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="0" MenuDisplayOrder="200" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="189" MenuText="Tipos" MenuParentID="251" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_costos_tipos" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="0" MenuDisplayOrder="300" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="906" MenuText="Interno" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="https://10.0.1.2/estadisticas/" MenuType="" MenuCustomUrl="1" MenuLevel="0" MenuShow="0" MenuDisplayOrder="1900" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="251" MenuText="Estructura de Costo" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="" MenuType="" MenuCustomUrl="1" MenuLevel="0" MenuShow="0" MenuDisplayOrder="2000" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="337" MenuText="Importar Estructura de Costo" MenuParentID="251" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="importar_est_cost.php" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="100" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="186" MenuText="Articulos" MenuParentID="251" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_costos_articulos" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="200" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="189" MenuText="Tipos" MenuParentID="251" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_costos_tipos" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="300" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="185" MenuText="Costos" MenuParentID="251" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_costos" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="0" MenuDisplayOrder="400" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="253" MenuText="Estructura de Costo" MenuParentID="251" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="costos_estructura_list.php" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="500" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="252" MenuText="&amp;_" MenuParentID="251" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="" MenuType="" MenuCustomUrl="1" MenuLevel="1" MenuShow="1" MenuDisplayOrder="600" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="254" MenuText="Tarifario" MenuParentID="251" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="tarifario.php" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="700" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="187" MenuText="Tarifa" MenuParentID="251" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_costos_tarifa" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="800" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="188" MenuText="Calcular Tarifa" MenuParentID="251" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_costos_tarifa_detalle" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="0" MenuDisplayOrder="900" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="28" MenuText="Sistema" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="" MenuType="" MenuCustomUrl="1" MenuLevel="0" MenuShow="1" MenuDisplayOrder="2200" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="28" MenuText="Sistema" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="" MenuType="" MenuCustomUrl="1" MenuLevel="0" MenuShow="1" MenuDisplayOrder="2100" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="18" MenuText="Tablas Varias" MenuParentID="28" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_tabla" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="100" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="102" MenuText="Alertas Banner" MenuParentID="28" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_alertas" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="200" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="21" MenuText="Parámetros del Sistema" MenuParentID="28" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_parametro" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="300" MenuIconClass="" MenuNavbar="0" />
@@ -25294,7 +24867,7 @@ if (IsLoggedIn()) {
   <Menu MenuID="915" MenuText="Autogestion Plantillas" MenuParentID="1079" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="autogestion_plantillas" MenuType="" MenuCustomUrl="0" MenuLevel="2" MenuShow="1" MenuDisplayOrder="100" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="916" MenuText="Autogestion Ticket" MenuParentID="1079" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="autogestion_ticket" MenuType="" MenuCustomUrl="0" MenuLevel="2" MenuShow="1" MenuDisplayOrder="200" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="1080" MenuText="Textos Email" MenuParentID="28" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_email_texto" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="1700" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="20" MenuText="Seguridad" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="" MenuType="" MenuCustomUrl="1" MenuLevel="0" MenuShow="1" MenuDisplayOrder="2300" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="20" MenuText="Seguridad" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="" MenuType="" MenuCustomUrl="1" MenuLevel="0" MenuShow="1" MenuDisplayOrder="2200" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="24" MenuText="Auditoría" MenuParentID="20" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="audittrail" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="100" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="22" MenuText="Permisos" MenuParentID="20" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="userlevelpermissions" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="0" MenuDisplayOrder="200" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="19" MenuText="Usuarios" MenuParentID="20" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_user" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="300" MenuIconClass="" MenuNavbar="0" />
@@ -25302,89 +24875,89 @@ if (IsLoggedIn()) {
   <Menu MenuID="1085" MenuText="Funciones" MenuParentID="20" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_funciones" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="1" MenuDisplayOrder="500" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="92" MenuText="Acceso de Grupos al Chat" MenuParentID="20" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_chat_grupo" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="0" MenuDisplayOrder="600" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="91" MenuText="Histórico Chat" MenuParentID="20" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_chat" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="0" MenuDisplayOrder="700" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="1455" MenuText="sco expediente old" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_expediente_old" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="2400" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="907" MenuText="Externo 1" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="http://hercules.cementeriodeleste.com.ve/estadistica/" MenuType="" MenuCustomUrl="1" MenuLevel="0" MenuShow="0" MenuDisplayOrder="2500" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="1456" MenuText="view exp mascota" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="view_exp_mascota" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="2600" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="908" MenuText="Externo 2" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="http://hercules2.cementeriodeleste.com.ve/estadistica/" MenuType="" MenuCustomUrl="1" MenuLevel="0" MenuShow="0" MenuDisplayOrder="2700" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="1270" MenuText="Apagar Servicios" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="eliminar_servicios_eng.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="2800" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="89" MenuText="HERCULES" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="home.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="2900" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="1269" MenuText="Apagar Servicos" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="eliminar_servicios.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="3000" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="1268" MenuText="readme" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="README" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="3100" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="905" MenuText="Telefonía" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="" MenuType="" MenuCustomUrl="1" MenuLevel="0" MenuShow="0" MenuDisplayOrder="3200" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="94" MenuText="Contenedor de Servicios" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="contenedor.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="3300" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="1265" MenuText="sco orden offall" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_orden_offall" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="3400" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="165" MenuText="Disponibilidad" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="disponibilidad.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="3500" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="1262" MenuText="Adjunto Grama" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_grama_adjunto" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="3600" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="1263" MenuText="Pagos Grama" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_grama_pagos" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="3700" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="1264" MenuText="Nota Grama" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_grama_nota" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="3800" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="1260" MenuText="Crear Expediente de Grama" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="crear_grama.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="3900" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="1086" MenuText="Grupo Funciones" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_grupo_funciones" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="4000" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="1082" MenuText="Embalaje" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_embalaje" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="4100" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="1083" MenuText="Reembolsos" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_reembolso" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="4200" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="910" MenuText="Reporte de Evaluación" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="reporte_evaluacion_all.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="4300" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="909" MenuText="Reporte de Evaluación" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="reporte_evaluacion.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="4400" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="753" MenuText="sco expediente seguros adjunto" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_expediente_seguros_adjunto" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="4500" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="750" MenuText="sco parcela mapa" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_parcela_mapa" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="4600" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="748" MenuText="Indicadores de Parcelas Compra/Venta" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="indicadores_15.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="4700" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="749" MenuText="Indicadores de Parcelas Compra/Venta" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="indicadores_151.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="4800" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="746" MenuText="Indicadores Flotas" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="indicadores_11.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="4900" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="743" MenuText="Indicadores Compras" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="indicadores_20.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="5000" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="744" MenuText="Indicadores Compras" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="indicadores_201.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="5100" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="745" MenuText="Indicadores Compras" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="indicadores_202.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="5200" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="742" MenuText="Indicadores de Parcelas Compra/Venta" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="indicadores_14.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="5300" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="740" MenuText="Indicadores de Flotas" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="indicadores_103.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="5400" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="741" MenuText="Indicadores de Flotas" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="indicadores_104.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="5500" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="738" MenuText="Indicadores Flotas" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="indicadores_101.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="5600" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="739" MenuText="Indicadores Flotas" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="indicadores_102.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="5700" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="737" MenuText="Indicadores Express Lapidas" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="indicadores_13.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="5800" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="735" MenuText="Indicadores Flotas" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="indicadores_10.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="5900" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="736" MenuText="Indicadores Lápidas" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="indicadores_12.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="6000" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="734" MenuText="cemantick grupo tipo solicitud" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="cemantick_grupo_tipo_solicitud" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="6100" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="732" MenuText="Parcela Compras/Ventas Buscar" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="buscar_parcela_vc.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="6200" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="730" MenuText="Indicadores Mtto Tecnico" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="indicadores_06.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="6300" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="729" MenuText="Indicadores Mtto Tecnico" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="indicadores_05.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="6400" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="726" MenuText="Lapidas Adjunto" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_lapidas_adjunto" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="6500" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="725" MenuText="Notas Lapidas" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_lapidas_notas" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="6600" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="601" MenuText="Indicadores Reclamos" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="indicadores_01.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="6700" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="602" MenuText="Indicadores Reclamos" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="indicadores_04.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="6800" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="603" MenuText="Indicadores Reclamos" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="indicadores_02.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="6900" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="604" MenuText="Indicadores Reclamos" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="indicadores_03.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="7000" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="482" MenuText="cemantick agente" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="cemantick_agente" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="7100" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="484" MenuText="cemantick ticket" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="cemantick_ticket" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="7200" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="485" MenuText="cemantick tipo solicitud" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="cemantick_tipo_solicitud" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="7300" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="486" MenuText="cemantick view monitor" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="cemantick_view_monitor" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="7400" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="487" MenuText="Listado General" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="listado_master.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="7500" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="488" MenuText="" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="listado_master_buscar.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="7600" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="489" MenuText="" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="listado_master_buscar_excel.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="7700" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="481" MenuText="Fosas" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="view_parcela" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="7800" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="382" MenuText="Nota Mascotas" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_nota_mascota" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="7900" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="380" MenuText="Estatus Mascota" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_mascota_estatus" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="8000" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="258" MenuText="Adjuntos" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_reclamo_adjunto" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="8100" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="259" MenuText="Notas" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_reclamo_nota" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="8200" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="260" MenuText="sco sepelio estatus" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_sepelio_estatus" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="8300" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="256" MenuText="Estatus Cremación" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_cremacion_estatus" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="8400" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="183" MenuText="Adjuntos Usuarios" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_user_adjunto" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="8500" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="177" MenuText="Expedientes" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="view_expediente_servicio" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="8600" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="174" MenuText="Notas Usuarios" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_user_nota" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="8700" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="169" MenuText="Seguimientos Activos" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="view_seguimiento" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="8800" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="168" MenuText="Incidencia Detalle" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_flota_incidencia_detalle" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="8900" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="166" MenuText="Reservas" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_reserva" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="9000" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="167" MenuText="Monitoreo de Servicios" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="monitor.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="9100" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="144" MenuText="Detalle de Entrada / Salidas" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_entrada_salida_detalle" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="9200" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="103" MenuText="sco estatus" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_estatus" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="9300" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="97" MenuText="Adjuntos" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_adjunto" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="9400" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="98" MenuText="view servicio proveedor" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="view_servicio_proveedor" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="9500" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="99" MenuText="Monitoreo" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_expediente_estatus" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="9600" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="90" MenuText="Usuarios OnLine" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_users_online" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="9700" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="93" MenuText="sco chat proveedor" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_chat_proveedor" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="9800" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="7" MenuText="Nota" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_nota" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="9900" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="8" MenuText="Servicios que Presta" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_ofrece_servicio" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="10000" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="9" MenuText="Servicios" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_orden" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="10100" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="15" MenuText="Seguimiento" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_seguimiento" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="10200" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="56" MenuText="Clientes" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="" MenuType="" MenuCustomUrl="1" MenuLevel="0" MenuShow="0" MenuDisplayOrder="10300" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="1455" MenuText="sco expediente old" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_expediente_old" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="2300" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="907" MenuText="Externo 1" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="http://hercules.cementeriodeleste.com.ve/estadistica/" MenuType="" MenuCustomUrl="1" MenuLevel="0" MenuShow="0" MenuDisplayOrder="2400" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="1456" MenuText="view exp mascota" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="view_exp_mascota" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="2500" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="908" MenuText="Externo 2" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="http://hercules2.cementeriodeleste.com.ve/estadistica/" MenuType="" MenuCustomUrl="1" MenuLevel="0" MenuShow="0" MenuDisplayOrder="2600" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="1270" MenuText="Apagar Servicios" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="eliminar_servicios_eng.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="2700" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="89" MenuText="HERCULES" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="home.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="2800" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="1269" MenuText="Apagar Servicos" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="eliminar_servicios.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="2900" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="1268" MenuText="readme" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="README" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="3000" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="905" MenuText="Telefonía" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="" MenuType="" MenuCustomUrl="1" MenuLevel="0" MenuShow="0" MenuDisplayOrder="3100" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="94" MenuText="Contenedor de Servicios" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="contenedor.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="3200" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="1265" MenuText="sco orden offall" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_orden_offall" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="3300" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="165" MenuText="Disponibilidad" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="disponibilidad.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="3400" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="1262" MenuText="Adjunto Grama" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_grama_adjunto" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="3500" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="1263" MenuText="Pagos Grama" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_grama_pagos" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="3600" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="1264" MenuText="Nota Grama" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_grama_nota" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="3700" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="1260" MenuText="Crear Expediente de Grama" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="crear_grama.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="3800" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="1086" MenuText="Grupo Funciones" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_grupo_funciones" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="3900" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="1082" MenuText="Embalaje" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_embalaje" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="4000" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="1083" MenuText="Reembolsos" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_reembolso" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="4100" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="910" MenuText="Reporte de Evaluación" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="reporte_evaluacion_all.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="4200" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="909" MenuText="Reporte de Evaluación" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="reporte_evaluacion.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="4300" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="753" MenuText="sco expediente seguros adjunto" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_expediente_seguros_adjunto" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="4400" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="750" MenuText="sco parcela mapa" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_parcela_mapa" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="4500" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="748" MenuText="Indicadores de Parcelas Compra/Venta" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="indicadores_15.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="4600" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="749" MenuText="Indicadores de Parcelas Compra/Venta" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="indicadores_151.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="4700" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="746" MenuText="Indicadores Flotas" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="indicadores_11.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="4800" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="743" MenuText="Indicadores Compras" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="indicadores_20.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="4900" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="744" MenuText="Indicadores Compras" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="indicadores_201.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="5000" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="745" MenuText="Indicadores Compras" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="indicadores_202.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="5100" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="742" MenuText="Indicadores de Parcelas Compra/Venta" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="indicadores_14.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="5200" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="740" MenuText="Indicadores de Flotas" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="indicadores_103.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="5300" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="741" MenuText="Indicadores de Flotas" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="indicadores_104.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="5400" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="738" MenuText="Indicadores Flotas" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="indicadores_101.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="5500" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="739" MenuText="Indicadores Flotas" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="indicadores_102.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="5600" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="737" MenuText="Indicadores Express Lapidas" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="indicadores_13.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="5700" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="735" MenuText="Indicadores Flotas" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="indicadores_10.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="5800" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="736" MenuText="Indicadores Lápidas" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="indicadores_12.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="5900" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="734" MenuText="cemantick grupo tipo solicitud" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="cemantick_grupo_tipo_solicitud" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="6000" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="732" MenuText="Parcela Compras/Ventas Buscar" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="buscar_parcela_vc.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="6100" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="730" MenuText="Indicadores Mtto Tecnico" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="indicadores_06.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="6200" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="729" MenuText="Indicadores Mtto Tecnico" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="indicadores_05.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="6300" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="726" MenuText="Lapidas Adjunto" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_lapidas_adjunto" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="6400" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="725" MenuText="Notas Lapidas" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_lapidas_notas" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="6500" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="601" MenuText="Indicadores Reclamos" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="indicadores_01.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="6600" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="602" MenuText="Indicadores Reclamos" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="indicadores_04.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="6700" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="603" MenuText="Indicadores Reclamos" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="indicadores_02.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="6800" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="604" MenuText="Indicadores Reclamos" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="indicadores_03.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="6900" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="482" MenuText="cemantick agente" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="cemantick_agente" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="7000" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="484" MenuText="cemantick ticket" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="cemantick_ticket" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="7100" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="485" MenuText="cemantick tipo solicitud" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="cemantick_tipo_solicitud" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="7200" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="486" MenuText="cemantick view monitor" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="cemantick_view_monitor" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="7300" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="487" MenuText="Listado General" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="listado_master.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="7400" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="488" MenuText="" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="listado_master_buscar.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="7500" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="489" MenuText="" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="listado_master_buscar_excel.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="7600" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="481" MenuText="Fosas" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="view_parcela" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="7700" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="382" MenuText="Nota Mascotas" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_nota_mascota" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="7800" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="380" MenuText="Estatus Mascota" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_mascota_estatus" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="7900" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="258" MenuText="Adjuntos" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_reclamo_adjunto" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="8000" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="259" MenuText="Notas" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_reclamo_nota" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="8100" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="260" MenuText="sco sepelio estatus" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_sepelio_estatus" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="8200" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="256" MenuText="Estatus Cremación" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_cremacion_estatus" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="8300" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="183" MenuText="Adjuntos Usuarios" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_user_adjunto" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="8400" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="177" MenuText="Expedientes" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="view_expediente_servicio" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="8500" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="174" MenuText="Notas Usuarios" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_user_nota" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="8600" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="169" MenuText="Seguimientos Activos" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="view_seguimiento" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="8700" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="168" MenuText="Incidencia Detalle" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_flota_incidencia_detalle" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="8800" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="166" MenuText="Reservas" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_reserva" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="8900" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="167" MenuText="Monitoreo de Servicios" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="monitor.php" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="9000" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="144" MenuText="Detalle de Entrada / Salidas" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_entrada_salida_detalle" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="9100" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="103" MenuText="sco estatus" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_estatus" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="9200" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="97" MenuText="Adjuntos" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_adjunto" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="9300" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="98" MenuText="view servicio proveedor" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="view_servicio_proveedor" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="9400" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="99" MenuText="Monitoreo" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_expediente_estatus" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="9500" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="90" MenuText="Usuarios OnLine" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_users_online" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="9600" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="93" MenuText="sco chat proveedor" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_chat_proveedor" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="9700" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="7" MenuText="Nota" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_nota" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="9800" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="8" MenuText="Servicios que Presta" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_ofrece_servicio" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="9900" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="9" MenuText="Servicios" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_orden" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="10000" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="15" MenuText="Seguimiento" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_seguimiento" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="10100" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="56" MenuText="Clientes" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="" MenuType="" MenuCustomUrl="1" MenuLevel="0" MenuShow="0" MenuDisplayOrder="10200" MenuIconClass="" MenuNavbar="0" />
   <Menu MenuID="4" MenuText="Clientes" MenuParentID="56" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_cliente" MenuType="" MenuCustomUrl="0" MenuLevel="1" MenuShow="0" MenuDisplayOrder="100" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="494" MenuText="Notas Mtto" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_mttotecnico_notas" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="10400" MenuIconClass="" MenuNavbar="0" />
-  <Menu MenuID="493" MenuText="Adjuntos Mtto" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_mttotecnico_adjunto" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="10500" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="494" MenuText="Notas Mtto" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_mttotecnico_notas" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="10300" MenuIconClass="" MenuNavbar="0" />
+  <Menu MenuID="493" MenuText="Adjuntos Mtto" MenuParentID="-1" MenuGroup="0" MenuSource="" MenuExtUrl="" MenuAnonymous="0" MenuSecurity="" MenuUrl="sco_mttotecnico_adjunto" MenuType="" MenuCustomUrl="0" MenuLevel="0" MenuShow="0" MenuDisplayOrder="10400" MenuIconClass="" MenuNavbar="0" />
   <Locale Id="es-VE">
     <Properties><![CDATA[[{"Id":"id","Type":"String","Value":"es-VE"},{"Id":"desc","Type":"String","Value":"español (Venezuela)"},{"Id":"number","Type":"String","Value":"#,##0.###"},{"Id":"currency","Type":"String","Value":"¤#,##0.00;¤-#,##0.00"},{"Id":"currency_code","Type":"String","Value":"VES"},{"Id":"currency_symbol","Type":"String","Value":"Bs."},{"Id":"percent","Type":"String","Value":"#,##0 %"},{"Id":"decimal_separator","Type":"String","Value":","},{"Id":"grouping_separator","Type":"String","Value":"."},{"Id":"numbering_system","Type":"Null","Value":null},{"Id":"date","Type":"String","Value":"d/M/y"},{"Id":"time","Type":"String","Value":"h:mm a"},{"Id":"time_zone","Type":"Null","Value":null}]]]></Properties>
   </Locale>

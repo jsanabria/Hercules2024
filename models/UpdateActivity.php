@@ -15,12 +15,12 @@ use Closure;
 /**
  * Page class
  */
-class Logout
+class UpdateActivity
 {
     use MessagesTrait;
 
     // Page ID
-    public $PageID = "logout";
+    public $PageID = "custom";
 
     // Project ID
     public $ProjectID = PROJECT_ID;
@@ -32,7 +32,7 @@ class Logout
     public $TableVar;
 
     // Page object name
-    public $PageObjName = "Logout";
+    public $PageObjName = "UpdateActivity";
 
     // View file path
     public $View = null;
@@ -44,7 +44,8 @@ class Logout
     public $RenderingView = false;
 
     // CSS class/style
-    public $CurrentPageName = "logout";
+    public $ReportContainerClass = "ew-grid";
+    public $CurrentPageName = "UpdateActivityController";
 
     // Page headings
     public $Heading = "";
@@ -109,6 +110,11 @@ class Logout
 
         // Language object
         $Language = Container("app.language");
+
+        // Table name (for backward compatibility only)
+        if (!defined(PROJECT_NAMESPACE . "TABLE_NAME")) {
+            define(PROJECT_NAMESPACE . "TABLE_NAME", 'update_activity.php');
+        }
 
         // Start timer
         $DebugTimer = Container("debug.timer");
@@ -181,9 +187,6 @@ class Logout
             $this->pageUnload();
         }
         DispatchEvent(new PageUnloadedEvent($this), PageUnloadedEvent::NAME);
-        if (!IsApi() && method_exists($this, "pageRedirecting")) {
-            $this->pageRedirecting($url);
-        }
 
         // Close connection
         CloseConnections();
@@ -234,6 +237,9 @@ class Logout
         if (IsLoggedIn()) {
             Profile()->setUserName(CurrentUserName())->loadFromStorage();
         }
+        if (Get("export") !== null) {
+            $ExportType = Get("export"); // Get export parameter, used in header
+        }
 
         // Global Page Loading event (in userfn*.php)
         DispatchEvent(new PageLoadingEvent($this), PageLoadingEvent::NAME);
@@ -242,78 +248,9 @@ class Logout
         if (method_exists($this, "pageLoad")) {
             $this->pageLoad();
         }
-        $validate = true;
-        $username = $Security->currentUserName();
 
-        // Call User LoggingOut event
-        $validate = $this->userLoggingOut($username);
-        if (!$validate) {
-            $lastUrl = $Security->lastUrl();
-            if ($lastUrl == "") {
-                $lastUrl = "index";
-            }
-            $this->terminate($lastUrl); // Go to last accessed URL
-            return;
-        } else {
-            $params = $_GET;
-            $flash = Container("app.flash");
-
-            // Remove cookie
-            RemoveCookie("LastUrl"); // Clear last URL
-
-            // Clear jwt from AutoLogin Cookie
-            if ($jwt = ReadCookie("AutoLogin")) {
-                WriteCookie(
-                    "AutoLogin",
-                    CreateJwt(["username" => DecodeJwt($jwt)["username"] ?? ""], Config("REMEMBER_ME_EXPIRY_TIME")),
-                    time() + Config("REMEMBER_ME_EXPIRY_TIME")
-                ); // Write cookie without autologin
-            }
-
-            // Password changed (after expired password)
-            $isPasswordChanged = Config("USE_TWO_FACTOR_AUTHENTICATION") && Session(SESSION_STATUS) == "passwordchanged";
-            $this->writeAuditTrailOnLogout();
-
-            // Call User LoggedOut event
-            $this->userLoggedOut($username);
-
-            // Clean upload temp folder
-            CleanUploadTempPaths(session_id());
-
-            // Invalidate Laravel session first
-            LaravelSession()?->invalidate();
-
-            // Unset all of the session variables
-            $_SESSION = [];
-            if ($params["deleted"] ?? false) {
-                $flash->addMessage("heading", $Language->phrase("Notice"));
-                $flash->addMessage("success", $Language->phrase("PersonalDataDeleteSuccess"));
-                $isValidUser = true;
-            }
-
-            // If password changed, show login message
-            if ($isPasswordChanged) {
-                $flash->addMessage("heading", $Language->phrase("Notice"));
-                $flash->addMessage("failure", $Language->phrase("LoginAfterPasswordChanged"));
-            }
-
-            // If session expired, show expired message
-            if ($params["expired"] ?? false) {
-                $flash->addMessage("heading", $Language->phrase("Notice"));
-                $flash->addMessage("failure", $Language->phrase("SessionExpired"));
-            }
-            session_write_close();
-
-            // Delete the session cookie and kill the session
-            RemoveCookie(session_name());
-
-            // Remove user and profile
-            Container(["app.user" => null, "user.profile" => null]);
-
-            // Go to login page
-            $this->terminate("login");
-            return;
-        }
+        // Set up Breadcrumb
+        $this->setupBreadcrumb();
 
         // Set LoginStatus / Page_Rendering / Page_Render
         if (!IsApi() && !$this->isTerminated()) {
@@ -338,11 +275,12 @@ class Logout
         }
     }
 
-    // Write audit trail on logout
-    protected function writeAuditTrailOnLogout()
+    // Set up Breadcrumb
+    protected function setupBreadcrumb()
     {
-        global $Language;
-        WriteAuditLog(CurrentUserIdentifier(), $Language->phrase("AuditTrailLogout"), CurrentUserIP());
+        global $Breadcrumb, $Language;
+        $Breadcrumb = Breadcrumb::create("Home")->add("custom", "update_activity", CurrentUrl(), "", "update_activity", true);
+        $this->Heading = $Language->tablePhrase("update_activity", "TblCaption");
     }
 
     // Page Load event
@@ -357,34 +295,9 @@ class Logout
         //Log("Page Unload");
     }
 
-    // Page Redirecting event
-    public function pageRedirecting(&$url)
+    // Page Render event
+    public function pageRender()
     {
-        // Example:
-        //$url = "your URL";
-    }
-
-    // Message Showing event
-    // $type = ''|'success'|'failure'
-    public function messageShowing(&$msg, $type)
-    {
-        // Example:
-        //if ($type == "success") $msg = "your success message";
-    }
-
-    // User Logging Out event
-    public function userLoggingOut($usr)
-    {
-        // Enter your code here
-        // To cancel, set return value to false;
-        return true;
-    }
-
-    // User Logged Out event
-    public function userLoggedOut($usr)
-    {
-        //Log("User Logged Out");
-        $sql = "UPDATE sco_users_online SET unlogin = 'S' WHERE username = '".$usr."';";
-        Execute($sql);
+        //Log("Page Render");
     }
 }

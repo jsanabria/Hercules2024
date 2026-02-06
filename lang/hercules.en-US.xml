@@ -1,7 +1,10 @@
-<ew-language date="2026/1/14" id="en-US" author="e.World Technology Limited">
+<ew-language date="2026/2/5" id="en-US" author="e.World Technology Limited">
   <project>
     <phrase id="bodytitle" value="HERCULES - Sistema de Control" />
     <phrase id="footertext" value="&amp;copy;2025. Cementerio del Este. Todos los derechos reservados." />
+    <menu id="1654">
+      <phrase id="menutext" value="Actualizar Actividad del Usaurio" />
+    </menu>
     <menu id="1653">
       <phrase id="menutext" value="Parcela Ventas Notas" />
     </menu>
@@ -5748,6 +5751,9 @@
         <phrase id="fldtagvalue2" value="N" />
         <phrase id="fldtagcaption2" value="NO" />
       </field>
+    </table>
+    <table id="update_activity">
+      <phrase id="tblcaption" value="Actualizar Actividad del Usaurio" />
     </table>
   </project>
 </ew-language>

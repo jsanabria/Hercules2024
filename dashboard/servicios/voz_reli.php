@@ -24,6 +24,38 @@ if ($exp > 0) {
   }
   $stmt->close();
 }
+
+// === Lógica para Fecha/Hora Sugerida (1 hora antes de la salida) ===
+$sug_fecha = date('Y-m-d');
+$sug_hora  = "12:00";
+
+if ($exp > 0) {
+    $stmt_h = $mysqli->prepare("SELECT fecha_fin, hora_fin FROM sco_orden WHERE expediente = ? AND paso = 1 ORDER BY fecha_fin DESC, hora_fin DESC LIMIT 1");
+    $stmt_h->bind_param("i", $exp);
+    $stmt_h->execute();
+    $stmt_h->bind_result($f_fin, $h_fin);
+    
+    if ($stmt_h->fetch()) {
+        // 1. Extraemos solo la fecha por si acaso viene con hora desde la BD
+        $solo_fecha = date('Y-m-d', strtotime($f_fin));
+        
+        // 2. Creamos el timestamp usando la fecha limpia y la hora_fin
+        $timestamp = strtotime("$solo_fecha $h_fin");
+
+        if ($timestamp !== false) {
+            // 3. Restamos los 3600 segundos (1 hora)
+            $timestamp -= 3600;
+            $sug_fecha = date('Y-m-d', $timestamp);
+            $sug_hora  = date('H:i', $timestamp);
+        } else {
+            // Valores de respaldo por si falla la conversión
+            $sug_fecha = date('Y-m-d');
+            $sug_hora  = "12:00";
+        }
+    }
+    $stmt_h->close();
+}
+
 ?>
 <!doctype html>
 <html lang="es">
@@ -95,6 +127,32 @@ if ($exp > 0) {
     </div>
 
     <div class="control">
+      <label class="form-label" for="txt-cantidad">Cantidad</label>
+      <input type="number" id="txt-cantidad" class="form-control" value="1" min="1">
+    </div>
+
+    <div class="control">
+      <label class="form-label" for="txt-fecha-vel">Fecha Velación</label>
+      <input type="date" id="txt-fecha-vel" class="form-control" value="<?= $sug_fecha ?>">
+    </div>
+
+    <div class="control">
+      <label class="form-label" for="sel-hora-vel">Hora Velación</label>
+      <select id="sel-hora-vel" class="form-select">
+        <?php
+        for($i=0; $i<24; $i++) {
+            foreach(['00', '30'] as $min) {
+                $hr = str_pad($i, 2, "0", STR_PAD_LEFT) . ":" . $min;
+                $selected = ($hr == substr($sug_hora, 0, 5)) ? 'selected' : '';
+                $label = date("g:ia", strtotime("2000-01-01 $hr:00"));
+                echo "<option value='$hr' $selected>$label</option>";
+            }
+        }
+        ?>
+      </select>
+    </div>
+
+    <div class="control">
       <button id="btn-guardar-serv" type="button" class="btn btn-primary w-100">
         <span class="btn-label">Guardar servicio</span>
         <span class="spinner-border spinner-border-sm ms-2 d-none" role="status" aria-hidden="true"></span>
@@ -112,6 +170,9 @@ if ($exp > 0) {
           <tr>
             <th>Tipo Servicio</th>
             <th>Servicio</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th class="text-center">Cant.</th>
             <th>Imagen</th>
             <th></th>
           </tr>
@@ -172,23 +233,27 @@ $(function(){
           : `../../carpetacarga/${encodeURIComponent(imgFile)}`;
       }
 
+      
       $tb.append(
         `<tr>
           <td>${r.servicio_tipo || '—'}</td>
           <td>${r.servicio_nombre || r.servicio || '—'}</td>
+          <td>${r.fecha_fin || '—'}</td> 
+          <td>${r.hora_fin || '—'}</td>
+          <td class="text-center"><strong>${r.cantidad || 1}</strong></td>
           <td>
-            <img class="ewImage"
-                 src="${imgSrc}"
-                 alt="${imgFile ? 'Imagen del servicio' : 'Imagen no disponible'}"
-                 style="width:120px;height:120px;object-fit:cover;border:0"
-                 onerror="this.onerror=null; this.src='${PLACEHOLDER}'; this.alt='Imagen no disponible';">
+            <img src="${imgSrc}" 
+                alt="Servicio" 
+                style="width:60px;height:60px;object-fit:cover;border-radius:4px;border:1px solid #ddd;">
           </td>
           <td>
-            <button class="btn btn-outline-danger btn-sm btn-del-servicio"
-                    data-id="${r.Norden}" title="Eliminar servicio">🗑️</button>
+            <button class="btn btn-outline-danger btn-sm btn-del-servicio" 
+                    data-id="${r.Norden}" 
+                    title="Eliminar servicio">🗑️</button>
           </td>
         </tr>`
       );
+
     });
   }
 
@@ -296,6 +361,11 @@ $(function(){
     const servicio        = $serv.val();
     const user            = <?= json_encode($username ?? '') ?>;
 
+    // Captura de nuevos campos
+    const cantidad = $('#txt-cantidad').val();
+    const fecha    = $('#txt-fecha-vel').val();
+    const hora     = $('#sel-hora-vel').val();
+
     if (!expediente || !tipo_servicio || !servicio) {
         alert('Faltan campos obligatorios (Expediente, Tipo o Servicio).');
         return;
@@ -309,7 +379,15 @@ $(function(){
         method: 'POST',
         dataType: 'json',
         timeout: 20000,
-        data: { expediente, tipo_servicio, servicio, user }
+        data: { 
+            expediente, 
+            tipo_servicio, 
+            servicio, 
+            user,
+            cantidad,
+            fecha,
+            hora
+        }
       });
 
       if (res && res.ok) {

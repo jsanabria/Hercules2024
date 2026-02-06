@@ -45,10 +45,16 @@ ini_set('date.timezone', 'America/Caracas');
 
 /** Obtiene el nombre de usuario (mejor esfuerzo) */
 function at_user(): string {
-    // if (session_status() === PHP_SESSION_NONE) { @session_start(); }
+    // 1. Primero intentamos ver si viene en la petición POST (lo que enviamos desde el JS)
+    if (!empty($_POST['usuario']))       return (string)$_POST['usuario'];
+    
+    // 2. Si no, buscamos en la sesión
     if (!empty($_SESSION['username']))   return (string)$_SESSION['username'];
     if (!empty($_SESSION['user']))       return (string)$_SESSION['user'];
+    
+    // 3. Otros métodos
     if (!empty($_SERVER['REMOTE_USER'])) return (string)$_SERVER['REMOTE_USER'];
+    
     return 'sistema';
 }
 

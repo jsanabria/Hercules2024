@@ -56,7 +56,7 @@ $result = $stmt->get_result();
 
 // --- Construcción del HTML de Salida ---
 $out = '<div class="mb-3 d-flex justify-content-end">'; // Contenedor para alinear el botón a la derecha (Bootstrap 5)
-$out .= '<a href="listar_servicios_buscar_excel.php?fd=' . $fecha_desde .'&fh=' . $fecha_hasta. '" class="btn btn-success btn-sm"><i class="bi bi-file-earmark-excel"></i> Exportar a Excel</a>';
+$out .= '<a href="dashboard/listar_servicios_buscar_excel.php?fd=' . $fecha_desde .'&fh=' . $fecha_hasta. '" class="btn btn-success btn-sm"><i class="bi bi-file-earmark-excel"></i> Exportar a Excel</a>';
 $out .= '</div>';
 
 // Tabla Bootstrap 5

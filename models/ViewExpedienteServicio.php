@@ -3182,23 +3182,15 @@ class ViewExpedienteServicio extends DbTable
     					Nstatus = '".$this->estatus->CurrentValue."';";
     		$color = ExecuteScalar($sql);
     		$style = "background-color: $color"; 	
-    		$this->estatus->CellAttrs["style"] = $style;
-    		 $this->nacionalidad_fallecido->CellAttrs["style"] = $style;
-    		 $this->cedula_fallecido->CellAttrs["style"] = $style;
-    		 $this->sexo->CellAttrs["style"] = $style;
-    		 $this->nombre_fallecido->CellAttrs["style"] = $style;
-    		 $this->apellidos_fallecido->CellAttrs["style"] = $style;
-    		 $this->edad_fallecido->CellAttrs["style"] = $style;
-    		 $this->lugar_nacimiento_fallecido->CellAttrs["style"] = $style;
-    		 $this->lugar_ocurrencia->CellAttrs["style"] = $style;
-    		 $this->estado_civil->CellAttrs["style"] = $style;
-    		 $this->fecha_nacimiento->CellAttrs["style"] = $style;
-    		 $this->direccion_ocurrencia->CellAttrs["style"] = $style;
-    		 $this->fecha_ocurrencia->CellAttrs["style"] = $style;
-    		 $this->hora_ocurrencia->CellAttrs["style"] = $style;
-    		 $this->causa_ocurrencia->CellAttrs["style"] = $style;
-    		 $this->descripcion_ocurrencia->CellAttrs["style"] = $style;
-    		 $this->causa_otro->CellAttrs["style"] = $style;
+            $this->estatus->CellAttrs["style"] = $style;
+            $this->cedula_fallecido->CellAttrs["style"] = $style;
+            $this->sexo->CellAttrs["style"] = $style;
+            $this->nombre_fallecido->CellAttrs["style"] = $style;
+            $this->apellidos_fallecido->CellAttrs["style"] = $style;
+            $this->edad_fallecido->CellAttrs["style"] = $style;
+            $this->fecha_nacimiento->CellAttrs["style"] = $style;
+            $this->fecha_ocurrencia->CellAttrs["style"] = $style;
+            $this->causa_ocurrencia->CellAttrs["style"] = $style;
     	 }
     }
 

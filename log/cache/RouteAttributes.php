@@ -523,6 +523,7 @@
         clone $p['PHPMaker2024\\hercules\\Attributes\\Map'],
         clone $p['PHPMaker2024\\hercules\\Attributes\\Map'],
         clone $p['PHPMaker2024\\hercules\\Attributes\\Map'],
+        clone $p['PHPMaker2024\\hercules\\Attributes\\Map'],
     ],
     null,
     [
@@ -3104,6 +3105,11 @@
                     'POST',
                     'OPTIONS',
                 ],
+                [
+                    'GET',
+                    'POST',
+                    'OPTIONS',
+                ],
             ],
             'pattern' => [
                 '/Asistencia[/{params:.*}]',
@@ -3577,6 +3583,7 @@
                 '/TomarServicio2[/{params:.*}]',
                 '/TomarServicio3[/{params:.*}]',
                 '/TomarServicio[/{params:.*}]',
+                '/UpdateActivity[/{params:.*}]',
                 '/UserlevelpermissionsList[/{keys:.*}]',
                 '/UserlevelpermissionsAdd[/{keys:.*}]',
                 '/UserlevelpermissionsView[/{keys:.*}]',
@@ -4102,6 +4109,7 @@
                 'PHPMaker2024\\hercules\\TomarServicio2Controller:custom',
                 'PHPMaker2024\\hercules\\TomarServicio3Controller:custom',
                 'PHPMaker2024\\hercules\\TomarServicioController:custom',
+                'PHPMaker2024\\hercules\\UpdateActivityController:custom',
                 'PHPMaker2024\\hercules\\UserlevelpermissionsController:list',
                 'PHPMaker2024\\hercules\\UserlevelpermissionsController:add',
                 'PHPMaker2024\\hercules\\UserlevelpermissionsController:view',
@@ -4331,6 +4339,9 @@
                     'PHPMaker2024\\hercules\\PermissionMiddleware',
                 ],
                 [],
+                [
+                    'PHPMaker2024\\hercules\\PermissionMiddleware',
+                ],
                 [
                     'PHPMaker2024\\hercules\\PermissionMiddleware',
                 ],
@@ -6196,6 +6207,7 @@
                 'custom.tomar_servicio2',
                 'custom.tomar_servicio3',
                 'custom.tomar_servicio',
+                'custom.update_activity',
                 'list.userlevelpermissions',
                 'add.userlevelpermissions',
                 'view.userlevelpermissions',
@@ -6250,6 +6262,7 @@
                 'delete.view_velacion',
             ],
             'options' => [
+                [],
                 [],
                 [],
                 [],
@@ -7300,6 +7313,7 @@
         $o[520],
         $o[521],
         $o[522],
+        $o[523],
     ],
     []
 );

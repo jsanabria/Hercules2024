@@ -1,1 +1,1 @@
-ew.events={};ew.charts={};ew.clientScript=function(){};ew.startupScript=function(){};
+ew.events={};ew.charts={};ew.clientScript=function(){function enviarLatidoActividad(){if(location.href.includes("login")||location.href.includes("logout")){return}fetch(ew.PATH_BASE+"UpdateActivity").then(response=>response.json()).then(data=>{console.log("Latido OK")}).catch(error=>{console.log("Sesión finalizada")})}loadjs.ready("wrapper",function(){if(!location.href.includes("login")){enviarLatidoActividad();setInterval(enviarLatidoActividad,12e4)}})};ew.startupScript=function(){};

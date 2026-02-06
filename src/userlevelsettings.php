@@ -365,7 +365,9 @@ $USER_LEVEL_PRIVS = [["{8204ED0A-01F4-49C6-8E13-D0A9484A17DD}audittrail","-2","0
     ["{8204ED0A-01F4-49C6-8E13-D0A9484A17DD}view_sms_parcelas","-2","0"],
     ["{8204ED0A-01F4-49C6-8E13-D0A9484A17DD}view_sms_parcelas","0","0"],
     ["{8204ED0A-01F4-49C6-8E13-D0A9484A17DD}view_velacion","-2","0"],
-    ["{8204ED0A-01F4-49C6-8E13-D0A9484A17DD}view_velacion","0","0"]];
+    ["{8204ED0A-01F4-49C6-8E13-D0A9484A17DD}view_velacion","0","0"],
+    ["{8204ED0A-01F4-49C6-8E13-D0A9484A17DD}update_activity.php","-2","0"],
+    ["{8204ED0A-01F4-49C6-8E13-D0A9484A17DD}update_activity.php","0","0"]];
 
 /**
  * Tables
@@ -549,4 +551,5 @@ $USER_LEVEL_TABLES = [["audittrail","audittrail","Auditoría",true,"{8204ED0A-01
     ["view_servicio","view_servicio","Orden de Servicio",true,"{8204ED0A-01F4-49C6-8E13-D0A9484A17DD}","ViewServicioList"],
     ["view_servicio_proveedor","view_servicio_proveedor","view servicio proveedor",true,"{8204ED0A-01F4-49C6-8E13-D0A9484A17DD}",""],
     ["view_sms_parcelas","view_sms_parcelas","Respuesta SMS Ubicación Parcelas",true,"{8204ED0A-01F4-49C6-8E13-D0A9484A17DD}","ViewSmsParcelasList"],
-    ["view_velacion","view_velacion","Horas  Velacion",true,"{8204ED0A-01F4-49C6-8E13-D0A9484A17DD}","ViewVelacionList"]];
+    ["view_velacion","view_velacion","Horas  Velacion",true,"{8204ED0A-01F4-49C6-8E13-D0A9484A17DD}","ViewVelacionList"],
+    ["update_activity.php","update_activity","Actualizar Actividad del Usaurio",true,"{8204ED0A-01F4-49C6-8E13-D0A9484A17DD}","UpdateActivity"]];

@@ -601,15 +601,6 @@ class Login extends ScoUser
     public function userLoggedIn($usr) {
     	//echo "User Logged In";
     	Execute("SET time_zone = '-04:00';");
-    	$sql = "DELETE FROM sco_users_online WHERE username = '".$usr."'";
-    	Execute($sql);
-    	$sql = "INSERT INTO sco_users_online
-    				(timestamp, ip, `file`, username, updated, last_activity, unlogin)
-    			VALUES (UNIX_TIMESTAMP(now()), '".(get_real_ip())."', '',
-    				'".$usr."', NOW(), NOW(), 'N')";
-    	Execute($sql);
-    	$sql = "DELETE FROM sco_users_online WHERE unlogin = 'S'";
-    	Execute($sql);
     }
 
     // User Login Error event

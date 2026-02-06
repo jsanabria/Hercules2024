@@ -240,6 +240,7 @@ return [
     "view_servicio_proveedor" => \DI\create(ViewServicioProveedor::class),
     "view_sms_parcelas" => \DI\create(ViewSmsParcelas::class),
     "view_velacion" => \DI\create(ViewVelacion::class),
+    "update_activity" => \DI\create(UpdateActivity::class),
 
     // User table
     "usertable" => \DI\get("sco_user"),

@@ -17,6 +17,10 @@ try {
   $servicio       = isset($_POST['servicio'])      ? trim($_POST['servicio'])      : '';
   $user           = isset($_POST['user'])          ? trim($_POST['user'])          : '';
 
+  $cantidad     = isset($_POST['cantidad'])   ? (int)$_POST['cantidad']   : 1;
+  $banda        = isset($_POST['banda'])      ? $_POST['banda']            : '';
+  $ubicacion    = isset($_POST['capilla_dest']) ? $_POST['capilla_dest']    : '';
+
   if ($expediente === '' || $tipo_servicio === '' || $servicio === '') {
     jexit(false, 'Faltan campos obligatorios (Expediente, Tipo o Servicio).');
   }
@@ -41,15 +45,15 @@ try {
   $mysqli->begin_transaction();
 
   // Insert sco_orden (proveedor=1, paso=3)
-  $proveedor_i = 1; $cantidad_i = 1; $costo_d = 0.0; $total_d = 0.0; $nota_s = '';
+  $proveedor_i = 1; $cantidad_i = $cantidad; $costo_d = 0.0; $total_d = 0.0; $nota_s = $banda;
   $stmt = $mysqli->prepare("
     INSERT INTO sco_orden
-      (expediente, servicio_tipo, servicio, proveedor, paso, cantidad, costo, total, nota, anulada, user_registra, fecha_registro)
-    VALUES (?, ?, ?, ?, 4, ?, ?, ?, ?, 'N', ?, NOW())
+      (expediente, servicio_tipo, servicio, proveedor, paso, cantidad, costo, total, nota, anulada, user_registra, fecha_registro, llevar_a)
+    VALUES (?, ?, ?, ?, 4, ?, ?, ?, ?, 'N', ?, NOW(), ?)
   ");
-  $stmt->bind_param('issiiddss',
+  $stmt->bind_param('issiiddsss',
     $expediente_i, $tipo_servicio_i, $servicio_i, $proveedor_i,
-    $cantidad_i, $costo_d, $total_d, $nota_s, $user
+    $cantidad_i, $costo_d, $total_d, $nota_s, $user, $ubicacion
   );
   if (!$stmt->execute()) { throw new Exception('Error al insertar en sco_orden: ' . $stmt->error); }
   $norden = $mysqli->insert_id;

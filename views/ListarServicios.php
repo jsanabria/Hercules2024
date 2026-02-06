@@ -8,63 +8,90 @@ $ListarServicios = &$Page;
 <?php
 $Page->showMessage();
 ?>
-<h2>Listar Expedientes</h2>
-<div class="container">
-  <form class="row row-cols-lg-auto g-3 align-items-center">
+<div class="container mt-3">
+  <form id="formBuscarServicios" class="row row-cols-lg-auto g-3 align-items-center bg-light p-3 rounded border">
     <div class="col-12">
-      <label for="fecha_desde" class="form-label visually-hidden">Fecha Registro Desde:</label>
       <div class="input-group">
-        <span class="input-group-text">Fecha Registro:</span>
+        <span class="input-group-text bg-primary text-white">Fecha Registro:</span>
         <input type="date" class="form-control form-control-sm" id="fecha_desde" name="fecha_desde">
       </div>
     </div>
 
     <div class="col-12">
-      <label for="fecha_hasta" class="form-label visually-hidden">Fecha Registro Hasta:</label>
       <div class="input-group">
-        <span class="input-group-text">y</span>
+        <span class="input-group-text">hasta</span>
         <input type="date" class="form-control form-control-sm" id="fecha_hasta" name="fecha_hasta">
       </div>
     </div>
 
     <div class="col-12">
-      <button type="button" class="btn btn-primary btn-sm" id="buscar" name="buscar">Buscar Registros</button>
+      <button type="button" class="btn btn-primary btn-sm d-flex align-items-center" id="buscar">
+        <i class="bi bi-search me-2"></i> <span id="btnText">Buscar Registros</span>
+        <div id="btnSpinner" class="spinner-border spinner-border-sm ms-2 d-none" role="status"></div>
+      </button>
     </div>
   </form>
 </div>
 
 <div class="container mt-4">
   <div id="result">
-  </div>
+    </div>
 </div>
 
 <script type="text/javascript">
-  // El código JavaScript no necesita cambios, ya que depende de los IDs de los elementos
-  $("#buscar").click(function(){
+  $("#buscar").click(function() {
+    // Referencias a elementos para evitar buscarlos varias veces
+    var btn = $(this);
+    var btnText = $("#btnText");
+    var btnSpinner = $("#btnSpinner");
+    var resultDiv = $("#result");
+    
     var fecha_desde = $("#fecha_desde").val();
     var fecha_hasta = $("#fecha_hasta").val();
 
-    if(fecha_desde == "" || fecha_hasta == "") {
-      alert("Fecha no correctas");
+    // Validación básica
+    if (fecha_desde == "" || fecha_hasta == "") {
+      alert("Por favor, seleccione ambas fechas.");
       return false;
     }
+
     $.ajax({
-      url : "dashboard/listar_servicios_buscar.php",
+      url: "dashboard/listar_servicios_buscar.php",
       type: "POST",
-      data : {fecha_desde: fecha_desde, fecha_hasta: fecha_hasta},
-      beforeSend: function(){
-        $("#result").html("Espere. . . ");
+      data: { fecha_desde: fecha_desde, fecha_hasta: fecha_hasta },
+      beforeSend: function() {
+        // 1. Efecto visual en el botón
+        btn.prop("disabled", true); // Deshabilitar clic
+        btnText.text("Buscando..."); // Cambiar texto
+        btnSpinner.removeClass("d-none"); // Mostrar spinner
+        
+        // 2. Efecto visual en el contenedor de resultados
+        resultDiv.css("opacity", "0.5");
+        resultDiv.html(`
+          <div class="text-center my-5">
+            <div class="spinner-grow text-primary" role="status"></div>
+            <p class="mt-2 text-muted">Consultando base de datos, por favor espere...</p>
+          </div>
+        `);
       }
     })
     .done(function(data) {
-      $("#result").html(data);
+      resultDiv.html(data);
     })
-    .fail(function(data) {
-      alert( "error" + data );
+    .fail(function(jqXHR, textStatus, errorThrown) {
+      resultDiv.html(`
+        <div class="alert alert-danger">
+          Error en la consulta: ${textStatus} - ${errorThrown}
+        </div>
+      `);
     })
-    .always(function(data) {
-      // Código opcional de 'always'
+    .always(function() {
+      // Restaurar estado original
+      btn.prop("disabled", false);
+      btnText.text("Buscar Registros");
+      btnSpinner.addClass("d-none");
+      resultDiv.css("opacity", "1");
     });
-  }); 
+  });
 </script>
 <?= GetDebugMessage() ?>

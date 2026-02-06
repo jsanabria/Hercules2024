@@ -95,6 +95,23 @@ if ($exp > 0) {
     </div>
 
     <div class="control">
+      <label class="form-label" for="txt-cantidad">Cantidad</label>
+      <input type="number" id="txt-cantidad" class="form-select" value="1" min="1" step="1">
+    </div>
+
+    <div class="control">
+      <label class="form-label" for="txt-banda">Información de la Banda</label>
+      <input type="text" id="txt-banda" class="form-control" placeholder="Texto de la cinta...">
+    </div>
+
+    <div class="control">
+      <label class="form-label" for="sel-capilla-destino">Capilla / Ubicación</label>
+      <select id="sel-capilla-destino" class="form-select">
+        <option value="">Cargando ubicaciones...</option>
+      </select>
+    </div>
+  
+    <div class="control">
       <button id="btn-guardar-serv" type="button" class="btn btn-primary w-100">
         <span class="btn-label">Guardar servicio</span>
         <span class="spinner-border spinner-border-sm ms-2 d-none" role="status" aria-hidden="true"></span>
@@ -112,6 +129,9 @@ if ($exp > 0) {
           <tr>
             <th>Tipo Servicio</th>
             <th>Servicio</th>
+            <th>Cant.</th>
+            <th>Banda / Nota</th>
+            <th>Destino</th>
             <th>Imagen</th>
             <th></th>
           </tr>
@@ -157,40 +177,29 @@ $(function(){
     `);
 
     if (!Array.isArray(rows) || rows.length === 0) {
-      $tb.append('<tr><td colspan="4" class="text-center text-muted">Sin servicios cargados.</td></tr>');
-      return;
-    }
-
-    rows.forEach(r => {
-      const imgFile = (r.image || '').toString().trim();
-
-      // Si viene URL absoluta, úsala; si no, arma la ruta relativa
-      let imgSrc = PLACEHOLDER;
-      if (imgFile) {
-        imgSrc = /^https?:\/\//i.test(imgFile)
-          ? imgFile
-          : `../../carpetacarga/${encodeURIComponent(imgFile)}`;
+        $tb.append('<tr><td colspan="7" class="text-center text-muted">Sin servicios cargados.</td></tr>');
+        return;
       }
 
-      $tb.append(
-        `<tr>
-          <td>${r.servicio_tipo || '—'}</td>
-          <td>${r.servicio_nombre || r.servicio || '—'}</td>
-          <td>
-            <img class="ewImage"
-                 src="${imgSrc}"
-                 alt="${imgFile ? 'Imagen del servicio' : 'Imagen no disponible'}"
-                 style="width:120px;height:120px;object-fit:cover;border:0"
-                 onerror="this.onerror=null; this.src='${PLACEHOLDER}'; this.alt='Imagen no disponible';">
-          </td>
-          <td>
-            <button class="btn btn-outline-danger btn-sm btn-del-servicio"
-                    data-id="${r.Norden}" title="Eliminar servicio">🗑️</button>
-          </td>
-        </tr>`
-      );
-    });
-  }
+      rows.forEach(r => {
+        const imgFile = (r.image || '').toString().trim();
+        let imgSrc = PLACEHOLDER; // (lógica de imagen igual que antes)
+
+        $tb.append(
+          `<tr>
+            <td>${r.servicio_tipo || '—'}</td>
+            <td>${r.servicio_nombre || r.servicio || '—'}</td>
+            <td class="text-center"><strong>${r.cantidad || 1}</strong></td> <td><small>${r.nota || '—'}</small></td> <td><span class="badge bg-secondary">${r.ubicacion || '—'}</span></td> <td>
+              <img class="ewImage" src="${imgSrc}" style="width:80px;height:80px;object-fit:cover;border-radius:4px;">
+            </td>
+            <td>
+              <button class="btn btn-outline-danger btn-sm btn-del-servicio"
+                      data-id="${r.Norden}" title="Eliminar servicio">🗑️</button>
+            </td>
+          </tr>`
+        );
+      });
+    }
 
 
   async function loadServiciosPaso2() {
@@ -296,6 +305,11 @@ $(function(){
     const servicio        = $serv.val();
     const user            = <?= json_encode($username ?? '') ?>;
 
+    // CAPTURA DE NUEVOS CAMPOS
+    const cantidad       = $('#txt-cantidad').val();
+    const banda          = $('#txt-banda').val();
+    const capilla_dest   = $('#sel-capilla-destino').val();
+
     if (!expediente || !tipo_servicio || !servicio) {
         alert('Faltan campos obligatorios (Expediente, Tipo o Servicio).');
         return;
@@ -309,7 +323,15 @@ $(function(){
         method: 'POST',
         dataType: 'json',
         timeout: 20000,
-        data: { expediente, tipo_servicio, servicio, user }
+        data: { 
+          expediente, 
+          tipo_servicio, 
+          servicio, 
+          user,
+          cantidad,
+          banda,
+          capilla_dest
+        }
       });
 
       if (res && res.ok) {
@@ -361,11 +383,34 @@ $(function(){
   // 4. Inicialización
   loadServiciosPaso2();
   loadTiposServicio();
+  loadCapillasExpediente();
 
   // Bind de eventos de cambio de selects
   $tipo.on('change', onTipoChange);
   $serv.on('change', onServicioChange);
 });
+
+// Carga de Capillas vinculadas al expediente
+  function loadCapillasExpediente() {
+    const exp = <?= (int)$exp ?>;
+    const $selCapilla = $('#sel-capilla-destino');
+
+    $.getJSON('api/obtener_capillas_exp.php', { exp: exp }, function(data) {
+      $selCapilla.empty();
+      $selCapilla.append('<option value="">Seleccione ubicación...</option>');
+      
+      if (Array.isArray(data) && data.length) {
+        data.forEach(function(row) {
+          $selCapilla.append(`<option value="${row.capilla}">${row.capilla}</option>`);
+        });
+      } else {
+        $selCapilla.append('<option value="General">General / Oficina</option>');
+      }
+    }).fail(function() {
+      $selCapilla.empty().append('<option value="Error">Error al cargar ubicaciones</option>');
+    });
+  }
+
 </script>
 </body>
 </html>

@@ -10,6 +10,7 @@ $capilla    = $_POST['capilla'] ?? '';   // Nservicio (varchar)
 $fecha      = $_POST['fecha'] ?? date('Y-m-d');
 $time       = $_POST['time'] ?? '04:00';
 $horas      = max(1, (int)($_POST['horas'] ?? 1)); // al menos 1
+$usuario_registro = $_POST['usuario'];
 
 if (!$expediente || !$localidad || !$capilla) {
   echo json_encode(['ok'=>false,'msg'=>'Datos insuficientes']); exit;
@@ -111,7 +112,7 @@ if (count($solapes) > 0) {
 
 /* 6) Insertar reserva */
 $now   = date('Y-m-d H:i:s');
-$user  = ''; // TODO: usuario de sesión si aplica
+$user  = $usuario_registro; // TODO: usuario de sesión si aplica
 $paso  = 1;
 $cant  = 1;
 $total = 0.0;
